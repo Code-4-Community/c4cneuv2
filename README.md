@@ -13,13 +13,17 @@ nvm install 20
 nvm use 20
 ```
 
-Run the install script:
+Run ```git clone https://github.com/Code-4-Community/c4cneuv2.git``` in the terminal of your choice
+
+Run the install script in the directory of the project ```/c4cneuv2```:
 
 ```shellscript
 npm install
 ```
 
 ## Development
+
+You will need to have the proper keys in your .env file at the root of the project
 
 Run the dev server:
 

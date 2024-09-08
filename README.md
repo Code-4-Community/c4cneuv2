@@ -13,6 +13,8 @@ nvm install 20
 nvm use 20
 ```
 
+Run ```git clone https://github.com/Code-4-Community/c4cneuv2.git``` in the terminal of your choice
+
 Run the install script in the directory of the project ```/c4cneuv2```:
 
 ```shellscript

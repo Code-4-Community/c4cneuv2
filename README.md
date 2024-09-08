@@ -2,6 +2,23 @@
 
 - 📖 [Remix docs](https://remix.run/docs)
 
+## Setup
+
+Install [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
+
+Install node version 20+:
+
+```shellscript
+nvm install 20
+nvm use 20
+```
+
+Run the install script:
+
+```shellscript
+npm install
+```
+
 ## Development
 
 Run the dev server:

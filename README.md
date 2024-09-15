@@ -26,7 +26,9 @@ npm install
 You will need to have the proper keys in your .env file at the root of the project
 
 When working on a ticket, you should make a new branch and push all your code into that branch.
+
 It should follow the naming convention of `your-name/feature-name`
+
 For example: `git checkout -b "david/update-readme"`
 
 Run the dev server:

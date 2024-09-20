@@ -1,31 +1,31 @@
 interface ProjectProps {
     image?: string;
-    name?: string;
-    tagline?: string;
+    title?: string;
+    subtitle?: string;
     description?: string;
-    caseStudy?: string;
+    link?: string;
 }
 
 const Project = ({
     image,
-    name,
-    tagline,
+    title,
+    subtitle,
     description,
-    caseStudy,
+    link
 }: ProjectProps) => {
     return (
         <div className="flex flex-col items-center text-center">
             <img
                 src={image}
-                alt={name}
+                alt={title}
                 className="w-48 h-48 object-cover rounded-lg shadow-lg mb-4"
             />
-            <p className="text-lg font-semibold">{name}</p>
-            <p className="text-sm text-gray-500 mb-4">{tagline}</p>
+            <p className="text-lg font-semibold">{title}</p>
+            <p className="text-sm text-gray-500 mb-4">{subtitle}</p>
             <p className="text-sm text-gray-500 mb-4">{description}</p>
             <div className="flex space-x-4">
-                {caseStudy && (
-                    <a href={caseStudy} className="text-gray-600">
+                {link && (
+                    <a href={link} className="text-gray-600">
                         <button>View Case Study</button>
                     </a>
                 )}

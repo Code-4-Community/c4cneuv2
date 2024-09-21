@@ -14,7 +14,7 @@ const Project = ({
     link
 }: ProjectProps) => {
     return (
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center">
             <img
                 src={image}
                 alt={title}
@@ -22,13 +22,11 @@ const Project = ({
             />
             <p className="text-lg font-semibold">{title}</p>
             <p className="text-sm text-gray-500 mb-4">{subtitle}</p>
-            <p className="text-sm text-gray-500 mb-4">{description}</p>
+            <p className="text-sm text-gray-500 ml-4 mb-4">{description}</p>
             <div className="flex space-x-4">
-                {link && (
-                    <a href={link} className="text-gray-600">
-                        <button>View Case Study</button>
-                    </a>
-                )}
+                <a href={link} >
+                    <button>View Case Study</button>
+                </a>
             </div>
         </div>
     );

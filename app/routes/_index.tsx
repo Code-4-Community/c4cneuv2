@@ -11,11 +11,19 @@ export default function Index() {
   const c4cLightPurple = '#F8EDFF'
   const c4cGray = '#4A4A51'
   return (
-    <div className="m-20">
+    <div className="m-52">
       <h1><b>Code4Community designs software solutions for</b></h1>
       <h1><b>people and causes we love.</b></h1>
       <br />
       <h3>Learn more about Code4Community's mission below.</h3>
+      <br />
+      <div className="grid grid-cols-4 gap-0 content-start" >
+        <img src="https://images.unsplash.com/photo-1726853522009-8dc4c4e306a3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" width={'264px'} height={'264px'}/>
+        <img src="https://images.unsplash.com/photo-1726853522009-8dc4c4e306a3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" width={'264px'} height={'264px'}/>
+        <img src="https://images.unsplash.com/photo-1726853522009-8dc4c4e306a3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" width={'264px'} height={'264px'}/>
+        <img src="https://images.unsplash.com/photo-1726853522009-8dc4c4e306a3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" width={'264px'} height={'264px'}/>
+      </div>
+
       <div id="photos-1">
       </div>
       <br /> <br />

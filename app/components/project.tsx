@@ -20,9 +20,9 @@ const Project = ({
                 alt={title}
                 className="w-48 h-48 object-cover rounded-lg shadow-lg mb-4"
             />
-            <p className="text-lg font-semibold">{title ?? ""}</p>
-            <p className="text-sm text-gray-500 mb-4">{subtitle ?? ""}</p>
-            <p className="text-sm text-gray-500 ml-4 mb-4">{description ?? ""}</p>
+            <p className="text-lg font-semibold">{title ?? "Project Title"}</p>
+            <p className="text-sm text-gray-500 mb-4">{subtitle ?? "Project Subtitle"}</p>
+            <p className="text-sm text-gray-500 ml-4 mb-4">{description ?? "Project Description"}</p>
             <div className="flex space-x-4">
                 {link && (<a href={link} >
                     <button>View Case Study</button>

@@ -16,17 +16,17 @@ const Project = ({
     return (
         <div className="flex flex-col items-center">
             <img
-                src={image}
+                src={image ?? 'https://i.imgur.com/BlBH8Ak.jpeg'}
                 alt={title}
                 className="w-48 h-48 object-cover rounded-lg shadow-lg mb-4"
             />
-            <p className="text-lg font-semibold">{title}</p>
-            <p className="text-sm text-gray-500 mb-4">{subtitle}</p>
-            <p className="text-sm text-gray-500 ml-4 mb-4">{description}</p>
+            <p className="text-lg font-semibold">{title ?? ""}</p>
+            <p className="text-sm text-gray-500 mb-4">{subtitle ?? ""}</p>
+            <p className="text-sm text-gray-500 ml-4 mb-4">{description ?? ""}</p>
             <div className="flex space-x-4">
-                <a href={link} >
+                {link && (<a href={link} >
                     <button>View Case Study</button>
-                </a>
+                </a>)}
             </div>
         </div>
     );

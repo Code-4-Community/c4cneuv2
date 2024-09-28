@@ -1,6 +1,5 @@
 import { MetaFunction } from "@remix-run/react";
-import AboutComponent from "~/components/about-component";
-import Project from "~/components/about-component";
+import WeAreSection from "~/components/about-we-are";
 
 export const meta: MetaFunction = () => {
   return [
@@ -10,11 +9,24 @@ export const meta: MetaFunction = () => {
 };
 
 export default function About() {
+  const aboutItems = [
+    {
+      image: "app/icons/problem-solvers.png",
+      title: "Problem-Solvers",
+      description: "We're a community of forward-thinkers and solution architects. Embrace challenges, spark innovation, and connect with a network of dynamic individuals.",
+    },
+    {
+      image: "app/icons/leaders.png",
+      title: "Leaders",
+      description: "We are a community dedicated to nurturing leadership potential. Explore mentorship, engage in skill-building, and connect with aspiring leaders."
+    },
+    {
+      image: "app/icons/community.png",
+      title: "A Tight-Knit Community",
+      description: "We embrace the strength of togetherness. We are a tight-knit community that fosters genuine relationships and shared experiences."
+    },
+  ];
   return (
-      <AboutComponent
-        image={"app/icons/testpic.png"}
-        title={"Problem-Solvers"}
-        description={"We're a community of forward-thinkers and solution architects. Embrace challenges, spark innovation, and connect with a network of dynamic individuals."}
-      />
+      <WeAreSection aboutItems={aboutItems} />
   );
 }

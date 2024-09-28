@@ -12,7 +12,7 @@ const AboutComponent = ({
   return (
     <div className="flex flex-col items-center text-center">
       <img
-        src={image ?? 'app/icons/testpic.png'}
+        src={image ?? 'app/icons/community.png'}
         alt={title ?? 'About component image'}
         className="h-48 object-cover rounded-lg shadow-lg mb-4"
       />

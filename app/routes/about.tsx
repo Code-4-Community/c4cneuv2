@@ -11,12 +11,10 @@ export const meta: MetaFunction = () => {
 
 export default function About() {
   return (
-    <div>
       <AboutComponent
         image={"app/icons/testpic.png"}
         title={"Problem-Solvers"}
         description={"We're a community of forward-thinkers and solution architects. Embrace challenges, spark innovation, and connect with a network of dynamic individuals."}
       />
-    </div>
   );
 }

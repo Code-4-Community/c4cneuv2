@@ -12,9 +12,9 @@ interface LandingProps {
     images
   }: LandingProps) => {
     return (
-      <div className="flex flex-col items-center m-20">
-        <p className="text-lg font-semibold">{title}</p>
-        <p className="text-lg font-semibold">{weLove?.at(0)}</p>
+      <div className="flex flex-col">
+        <p className="text-2xl font-bold mb-2">{title}</p>
+        <p className="text-2xl font-bold mb-2">{weLove?.at(0)}</p>
         <br />
         <p className="text-sm mb-4">{subtitle}</p>
 

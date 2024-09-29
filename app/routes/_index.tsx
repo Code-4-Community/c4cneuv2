@@ -17,7 +17,7 @@ export default function Index() {
             target="_blank"
             href="https://remix.run/start/quickstart"
             rel="noreferrer"
-          >   
+          >
             5m tutorial
           </a>
         </li>

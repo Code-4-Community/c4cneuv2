@@ -13,20 +13,21 @@ export default function About() {
     {
       image: "app/icons/problem-solvers.png",
       title: "Problem-Solvers",
-      description: "We're a community of forward-thinkers and solution architects. Embrace challenges, spark innovation, and connect with a network of dynamic individuals.",
+      description:
+        "We're a community of forward-thinkers and solution architects. Embrace challenges, spark innovation, and connect with a network of dynamic individuals.",
     },
     {
       image: "app/icons/leaders.png",
       title: "Leaders",
-      description: "We are a community dedicated to nurturing leadership potential. Explore mentorship, engage in skill-building, and connect with aspiring leaders."
+      description:
+        "We are a community dedicated to nurturing leadership potential. Explore mentorship, engage in skill-building, and connect with aspiring leaders.",
     },
     {
       image: "app/icons/community.png",
       title: "A Tight-Knit Community",
-      description: "We embrace the strength of togetherness. We are a tight-knit community that fosters genuine relationships and shared experiences."
+      description:
+        "We embrace the strength of togetherness. We are a tight-knit community that fosters genuine relationships and shared experiences.",
     },
   ];
-  return (
-      <WeAreSection aboutItems={aboutItems} />
-  );
+  return <WeAreSection aboutItems={aboutItems} />;
 }

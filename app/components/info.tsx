@@ -31,7 +31,7 @@ interface InfoProps {
               </div>
               
               <div className="flex-1 text-right">
-                <img src={image} alt="Team working together" className="max-w-full h-auto rounded-lg" width={'458px'} height={'286px'}/>
+               {left && <img src={image} alt="Team working together" className="max-w-full h-auto rounded-lg" width={'458px'} height={'286px'}/>}
               </div>
             </div>
             );

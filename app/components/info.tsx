@@ -2,7 +2,7 @@ interface InfoProps {
     title?: string,
     description?: string; 
     image?: string;
-    button?: string; 
+    buttonText?: string; 
     left?: boolean; 
   }
   
@@ -10,7 +10,7 @@ interface InfoProps {
     title,
     description,
     image,
-    button,
+    buttonText,
     left
   }: InfoProps) => {
     if (left) {

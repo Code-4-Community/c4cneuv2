@@ -1,7 +1,6 @@
 import { type MetaFunction } from "@remix-run/node";
 import Info from "~/components/info";
 import Landing from "~/components/landing";
-import 'app/App.css';
 
 export const meta: MetaFunction = () => {
   return [
@@ -32,21 +31,21 @@ export default function Index() {
         title="Northeastern University's only student-led collective for charitable software development."
         description="C4C is led by Northeastern students who are passionate about developing meaningful and exciting products. Students have the opportunity to learn the fundamentals of product and software development, while also contributing to the Boston community."
         image={image}
-        button="Meet Our Team"
+        buttonText="Meet Our Team"
         left={true}
       ></Info>
       <Info
         title="Northeastern University's only student-led collective for charitable software development."
         description="C4C is led by Northeastern students who are passionate about developing meaningful and exciting products. Students have the opportunity to learn the fundamentals of product and software development, while also contributing to the Boston community."
         image={image}
-        button="Meet Our Team"
+        buttonText="Meet Our Team"
         left={false}
       ></Info>
       <Info
         title="Northeastern University's only student-led collective for charitable software development."
         description="C4C is led by Northeastern students who are passionate about developing meaningful and exciting products. Students have the opportunity to learn the fundamentals of product and software development, while also contributing to the Boston community."
         image={image}
-        button="Meet Our Team"
+        buttonText="Meet Our Team"
         left={true}
       ></Info>
     </div>

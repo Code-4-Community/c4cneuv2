@@ -1,6 +1,6 @@
 import { type MetaFunction } from "@remix-run/node";
-import Info from "~/components/info";
-import Landing from "~/components/landing";
+import WeAreBlock from "~/components/info";
+import MissionStatement from "~/components/landing";
 
 export const meta: MetaFunction = () => {
   return [
@@ -20,34 +20,33 @@ export default function Index() {
 
   return (
     <div className="main">
-      <Landing
-        title="Code4Community designs software solutions for"
+      <MissionStatement
         weLove={weLove}
         subtitle="Learn more about CodeCommunity's mission below."
         images={images}
-      ></Landing>
+      ></MissionStatement>
 
-      <Info
+      <WeAreBlock
         title="Northeastern University's only student-led collective for charitable software development."
         description="C4C is led by Northeastern students who are passionate about developing meaningful and exciting products. Students have the opportunity to learn the fundamentals of product and software development, while also contributing to the Boston community."
         image={image}
         buttonText="Meet Our Team"
         left={true}
-      ></Info>
-      <Info
+      ></WeAreBlock>
+      <WeAreBlock
         title="Northeastern University's only student-led collective for charitable software development."
         description="C4C is led by Northeastern students who are passionate about developing meaningful and exciting products. Students have the opportunity to learn the fundamentals of product and software development, while also contributing to the Boston community."
         image={image}
         buttonText="Meet Our Team"
         left={false}
-      ></Info>
-      <Info
+      ></WeAreBlock>
+      <WeAreBlock
         title="Northeastern University's only student-led collective for charitable software development."
         description="C4C is led by Northeastern students who are passionate about developing meaningful and exciting products. Students have the opportunity to learn the fundamentals of product and software development, while also contributing to the Boston community."
         image={image}
         buttonText="Meet Our Team"
         left={true}
-      ></Info>
+      ></WeAreBlock>
     </div>
   );
 }

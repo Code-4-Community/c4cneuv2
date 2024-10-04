@@ -1,19 +1,17 @@
-interface LandingProps {
-    title?: string,
+interface MissionStatementProps {
     weLove?: string[]; 
     subtitle?: string;
     images?: string[]; 
   }
   
-  const Landing = ({
-    title,
+  const MissionStatement = ({
     weLove,
     subtitle,
     images
-  }: LandingProps) => {
+  }: MissionStatementProps) => {
     return (
       <div className="flex flex-col">
-        <p className="text-2xl font-bold mb-2">{title}</p>
+        <p className="text-2xl font-bold mb-2">Code4Community designs software solutions for</p>
         <p className="text-2xl font-bold mb-2">{weLove?.at(0)}</p>
         <br />
         <p className="text-sm mb-4">{subtitle}</p>
@@ -27,5 +25,5 @@ interface LandingProps {
     );
   };
   
-  export default Landing;
+  export default MissionStatement;
   

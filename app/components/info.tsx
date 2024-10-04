@@ -1,4 +1,4 @@
-interface InfoProps {
+interface WeAreBlockProps {
     title?: string,
     description?: string; 
     image?: string;
@@ -6,13 +6,13 @@ interface InfoProps {
     left?: boolean; 
   }
   
-  const Info = ({
+  const WeAreBlock = ({
     title,
     description,
     image,
     buttonText,
     left
-  }: InfoProps) => {
+  }: WeAreBlockProps) => {
     if (left) {
         return (
             <div className="flex justify-between items-center p-6">
@@ -60,5 +60,5 @@ interface InfoProps {
     }
   };
   
-  export default Info;
+  export default WeAreBlock;
   

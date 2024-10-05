@@ -1,4 +1,5 @@
 import { type MetaFunction } from "@remix-run/node";
+import Footer from "~/components/footer";
 export const meta: MetaFunction = () => {
   return [
     { title: "New Remix App" },
@@ -17,7 +18,7 @@ export default function Index() {
             target="_blank"
             href="https://remix.run/start/quickstart"
             rel="noreferrer"
-          >   
+          >
             5m tutorial
           </a>
         </li>
@@ -42,6 +43,7 @@ export default function Index() {
           </a>
         </li>
       </ul>
+      <Footer />
     </div>
   );
 }

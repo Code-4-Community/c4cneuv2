@@ -1,5 +1,6 @@
 import { MetaFunction } from "@remix-run/react";
-import WeAreSection from "~/components/about-we-are";
+import WeAreSection from "~/components/aboutPage/we-are-section";
+import MainSection from "~/components/aboutPage/main-section";
 
 export const meta: MetaFunction = () => {
   return [
@@ -27,6 +28,9 @@ export default function About() {
     },
   ];
   return (
+    <div className="px-40 pt-20 gap-18">
+      <MainSection />
       <WeAreSection aboutItems={aboutItems} />
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-interface ProjectProps {
+export interface ProjectProps {
   image?: string;
   title?: string;
   subtitle?: string;

@@ -15,18 +15,16 @@ interface WeAreBlockProps {
   }: WeAreBlockProps) => {
     if (left) {
         return (
-            <div className="flex justify-between items-center p-6">
-              <div className="flex-1 mr-8">
+            <div className="flex justify-between items-center mt-10">
+              <div className="flex-1 mr-40 w-half">
                 <h1 className="text-2xl font-bold mb-2">
-                  Northeastern University's only student-led collective for charitable software development.
+                  {title}
                 </h1>
                 <p className="text-base mb-4">
-                  CAC is led by Northeastern students who are passionate about developing meaningful and exciting products. 
-                  Students have the opportunity to learn the fundamentals of product and software development, 
-                  while also contributing to the Boston community.
+                  {description}
                 </p>
-                <button className="bg-purple-100 hover:bg-purple-200 text-black font-bold py-2 px-4 rounded shadow-md">
-                  Meet Our Team
+                <button className="bg-purple-100 hover:bg-purple-200 text-black font-bold py-2 px-4 rounded shadow-md w-full">
+                  {buttonText}
                 </button>
               </div>
               
@@ -38,21 +36,19 @@ interface WeAreBlockProps {
     }
     else {
         return (
-            <div className="flex justify-between items-center p-6">
+            <div className="flex justify-between items-center mt-10">
               <div className="flex-1 text-right">
-                <img src={image} alt="Team working together" className="max-w-full h-auto rounded-lg" width={'458px'} height={'286px'}/>
+                <img src={image} alt="Team working together" className="max-w-full h-auto rounded-lg mr-40" width={'458px'} height={'286px'}/>
               </div>
-              <div className="flex-1 mr-8">
+              <div className="flex-1 mr-8 w-half">
                 <h1 className="text-2xl font-bold mb-2">
-                  Northeastern University's only student-led collective for charitable software development.
+                  {title}
                 </h1>
                 <p className="text-base mb-4">
-                  CAC is led by Northeastern students who are passionate about developing meaningful and exciting products. 
-                  Students have the opportunity to learn the fundamentals of product and software development, 
-                  while also contributing to the Boston community.
+                  {description}
                 </p>
-                <button className="bg-purple-100 hover:bg-purple-200 text-black font-bold py-2 px-4 rounded shadow-md">
-                  Meet Our Team
+                <button className="bg-purple-100 hover:bg-purple-200 text-black font-bold py-2 px-4 rounded shadow-md w-full">
+                  {buttonText}
                 </button>
               </div>
             </div>

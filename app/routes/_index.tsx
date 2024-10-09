@@ -24,7 +24,7 @@ export default function Index() {
         weLove={weLove}
         subtitle="Learn more about CodeCommunity's mission below."
         images={images}
-      ></MissionStatement>
+      />
 
       <WeAreBlock
         title="Northeastern University's only student-led collective for charitable software development."

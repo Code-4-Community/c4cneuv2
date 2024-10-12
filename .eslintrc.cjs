@@ -73,6 +73,9 @@ module.exports = {
         "plugin:@typescript-eslint/stylistic",
         "prettier",
       ],
+      rules: {
+        "@typescript-eslint/no-namespace": "off"
+      }
     },
 
     // Node

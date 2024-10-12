@@ -9,7 +9,7 @@ const MainSection = () => {
           <img
             className="w-screen"
             src={"app/icons/main.png"}
-            alt="About Main Section image"
+            alt="About Main Section"
           />
           <div className="text-2xl absolute inset-0 flex justify-center items-center text-center p-4">
             Empowering through tech, fostering diversity, and leaving a lasting

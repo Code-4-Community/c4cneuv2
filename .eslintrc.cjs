@@ -53,7 +53,7 @@ module.exports = {
     // Typescript
     {
       files: ["**/*.{ts,tsx}"],
-      plugins: ["@typescript-eslint", "import"],
+      plugins: ["@typescript-eslint", "import", "@stylistic/js"],
       parser: "@typescript-eslint/parser",
       settings: {
         "import/internal-regex": "^~/",
@@ -68,9 +68,10 @@ module.exports = {
       },
       extends: [
         "plugin:@typescript-eslint/recommended",
-        "plugin:import/recommended",
-        "plugin:import/typescript",
-        "prettier"
+        "plugin:prettier/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/stylistic",
+        "prettier",
       ],
     },
 

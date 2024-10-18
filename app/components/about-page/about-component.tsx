@@ -1,4 +1,4 @@
-interface AboutProps {
+export interface AboutProps {
   image?: string;
   title?: string;
   description?: string;

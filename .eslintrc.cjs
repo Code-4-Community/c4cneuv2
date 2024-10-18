@@ -19,7 +19,7 @@ module.exports = {
     commonjs: true,
     es6: true,
   },
-  ignorePatterns: ["!**/.server", "!**/.client"],
+  ignorePatterns: ["!**/.server", "!**/.client", "**.generated.ts"],
 
   // Base config
   extends: ["eslint:recommended"],
@@ -48,6 +48,9 @@ module.exports = {
           typescript: {},
         },
       },
+      rules: {
+        "react/no-unescaped-entities": "off",
+      }
     },
 
     // Typescript
@@ -73,6 +76,9 @@ module.exports = {
         "plugin:@typescript-eslint/stylistic",
         "prettier",
       ],
+      rules: {
+        "@typescript-eslint/no-namespace": "off",
+      },
     },
 
     // Node

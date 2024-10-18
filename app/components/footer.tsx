@@ -18,27 +18,37 @@ export default function Footer() {
         <p>Northeastern University, Boston, MA</p>
       </div>
       <div>
-        <a href="https://www.facebook.com/c4cneu/" target="_blank">
+        <a
+          href="https://www.facebook.com/c4cneu/"
+          target="_blank"
+          rel="noreferrer"
+        >
           Facebook
         </a>
-        <a href="http://instagram.com/c4cneu" target="_blank">
+        <a href="http://instagram.com/c4cneu" target="_blank" rel="noreferrer">
           Instagram
         </a>
-        <a href="https://github.com/Code-4-Community" target="_blank">
+        <a
+          href="https://github.com/Code-4-Community"
+          target="_blank"
+          rel="noreferrer"
+        >
           GitHub
         </a>
-        <a href="https://c4cneu.slack.com/" target="_blank">
+        <a href="https://c4cneu.slack.com/" target="_blank" rel="noreferrer">
           Slack
         </a>
         <a
           href="https://www.linkedin.com/company/code-4-community/"
           target="_blank"
+          rel="noreferrer"
         >
           LinkedIn
         </a>
         <a
           href="https://youtube.com/channel/UC7FI2u_BVjB0EkKMmx-yibA"
           target="_blank"
+          rel="noreferrer"
         >
           YouTube
         </a>

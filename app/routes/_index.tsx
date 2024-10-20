@@ -1,5 +1,5 @@
 import { type MetaFunction } from "@remix-run/node";
-import Footer from "~/components/footer";
+import Footer from "~/components/footer/footer";
 export const meta: MetaFunction = () => {
   return [
     { title: "New Remix App" },

@@ -1,4 +1,4 @@
-import AboutComponent from "./about-component";
+import AboutComponent, { AboutProps } from "./about-component";
 
 interface WeAreProps {
   aboutItems: AboutProps[];

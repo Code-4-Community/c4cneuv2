@@ -71,10 +71,8 @@ module.exports = {
       },
       extends: [
         "plugin:@typescript-eslint/recommended",
-        "plugin:prettier/recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/stylistic",
-        "prettier",
       ],
       rules: {
         "@typescript-eslint/no-namespace": "off",

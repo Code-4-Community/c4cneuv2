@@ -1,5 +1,5 @@
 interface MissionStatementProps {
-  weLove?: string[];
+  weLove?: string;
   subtitle?: string;
   images?: string[];
 }
@@ -16,7 +16,7 @@ const MissionStatement = ({
         Code4Community designs software solutions for
       </p>
       <p className="text-4xl font-bold mb-2" style={{ color: c4cPurple }}>
-        {weLove?.at(0)}
+        {weLove ?? "default text"}
       </p>
       <p className="text-lg mb-4">{subtitle}</p>
       <br />

@@ -1,6 +1,6 @@
 import { MetaFunction } from "@remix-run/react";
-import WeAreSection from "~/components/aboutPage/we-are-section";
-import MainSection from "~/components/aboutPage/main-section";
+import WeAreSection from "~/components/about-page/we-are-section";
+import MainSection from "~/components/about-page/main-section";
 
 export const meta: MetaFunction = () => {
   return [

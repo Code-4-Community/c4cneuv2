@@ -14,10 +14,13 @@ const JoinTeamSection = () => {
         use.
       </h3>
       <h2 className="text-normal text-indigo-600 pb-8">
-        {" "}
         We recruit new member prior to the start of each semester. Please learn
         more about our application process below!
       </h2>
+      <h3 className="font-semibold text-left mb-2 pb-8">
+        Our application process for Spring 2025 has closed. Stay in touch for
+        updates about applications for the Fall 2025 semester!
+      </h3>
     </div>
   );
 };

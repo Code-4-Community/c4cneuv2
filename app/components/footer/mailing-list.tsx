@@ -1,10 +1,10 @@
-import SvgC4CLogo from "../icons/C4CLogo";
+import C4C from "../icons/C4C";
 
 export default function MailingList() {
   return (
     <div className="flex flex-col items-center gap-4">
       <div className="w-12 h-[34px] flex justify-center items-center">
-        <SvgC4CLogo />
+        <C4C />
       </div>
       <label
         className="text-[#333333] text-2xl font-medium font-['IBM Plex Sans']"

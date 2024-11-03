@@ -1,5 +1,5 @@
 import { MetaFunction } from "@remix-run/react";
-import ProjectsCarousel from "~/components/projects-carousel";
+import ProjectsCarousel from "~/components/projects/projects-carousel";
 
 export const meta: MetaFunction = () => {
   return [
@@ -37,5 +37,9 @@ const exProjectsList = [
 ];
 
 export default function Projects() {
-  return <ProjectsCarousel projects={exProjectsList} />;
+  return (
+    <div>
+      <ProjectsCarousel projects={exProjectsList} />
+    </div>
+  );
 }

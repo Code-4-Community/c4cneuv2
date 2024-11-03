@@ -1,6 +1,6 @@
 import { type MetaFunction } from "@remix-run/node";
+import Footer from "~/components/footer/footer";
 import ClientCard from "~/components/client-card";
-import Footer from "~/components/footer";
 
 export const meta: MetaFunction = () => {
   return [

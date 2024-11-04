@@ -1,8 +1,11 @@
-import { MetaFunction } from "@remix-run/react";
+import { MetaFunction, useLoaderData } from "@remix-run/react";
 import WeAreSection from "~/components/about-page/we-are-section";
 import MainSection from "~/components/about-page/main-section";
 import EventsSection from "~/components/about-page/events-section";
 import NumbersSection from "~/components/about-page/numbers-section";
+import { AboutCdeDocument } from "types.generated";
+import { AboutPdeDocument } from "types.generated";
+import { getPrismicClient } from "~/utils/prismicio";
 
 export const meta: MetaFunction = () => {
   return [
@@ -11,7 +14,21 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+export const loader = async () => {
+  const client = await getPrismicClient();
+
+  const [cde, pde] = await Promise.all([
+    client.getSingle<AboutCdeDocument>("about-cde"),
+    client.getSingle<AboutPdeDocument>("about-pde"),
+  ]);
+  return { cde, pde };
+};
+
 export default function About() {
+  const { cde, pde } = useLoaderData<{
+    cde: AboutCdeDocument;
+    pde: AboutPdeDocument;
+  }>();
   const aboutItems = [
     {
       image: "app/icons/problem-solvers.png",
@@ -37,7 +54,7 @@ export default function About() {
     <div className="px-40 pt-20 gap-18">
       <MainSection />
       <WeAreSection aboutItems={aboutItems} />
-      <EventsSection />
+      <EventsSection cde={cde} pde={pde} />
       <NumbersSection />
     </div>
   );

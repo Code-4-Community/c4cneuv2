@@ -1,27 +1,17 @@
 import EventsCarousel from "./events-carousel";
+import { EventProps } from "./event";
+import { asText } from "@prismicio/client";
 import { AboutCdeDocument } from "types.generated";
 import { AboutPdeDocument } from "types.generated";
-import { getPrismicClient } from "~/utils/prismicio";
-import { EventProps } from "./event";
-import { useLoaderData } from "@remix-run/react";
-import { asText } from "@prismicio/client";
 
-export const loader1 = async () => {
-  const client = await getPrismicClient();
+interface EventsSectionProps {
+  cde: AboutCdeDocument;
+  pde: AboutPdeDocument;
+}
 
-  return await client.getSingle<AboutCdeDocument>("about-cde");
-};
-
-export const loader2 = async () => {
-  const client = await getPrismicClient();
-
-  return await client.getSingle<AboutPdeDocument>("about-pde");
-};
-
-export default function EventsSection() {
-  const cde = useLoaderData<AboutCdeDocument>();
-  const pde = useLoaderData<AboutPdeDocument>();
-
+export default function EventsSection({ cde, pde }: EventsSectionProps) {
+  console.log(cde.data.events);
+  console.log(pde.data.events);
   const cdEvents: EventProps[] = cde.data.events.map((event) => ({
     image: event.image.url ?? "app/icons/leaders.png",
     title: asText(event.title),

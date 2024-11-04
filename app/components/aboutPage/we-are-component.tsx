@@ -1,10 +1,10 @@
-interface AboutProps {
+export interface AboutProps {
   image?: string;
   title?: string;
   description?: string;
 }
 
-const AboutComponent = ({ image, title, description }: AboutProps) => {
+const WeAreComponent = ({ image, title, description }: AboutProps) => {
   return (
     <div className="flex flex-col">
       <img
@@ -12,14 +12,12 @@ const AboutComponent = ({ image, title, description }: AboutProps) => {
         alt={title ?? "About component image"}
         className="h-full object-cover shadow-lg mb-4"
       />
-      <p className="text-lg font-semibold text-indigo-600">
-        {title ?? "Title"}
-      </p>
-      <p className="py-4 text-sm text-gray-500 mb-4">
+      <p className="text-2xl text-indigo-600 pt-9 pb-3"> {title ?? "Title"}</p>
+      <p className="py-4 text-base text-gray-500">
         {description ?? "Lorem ipsum."}
       </p>
     </div>
   );
 };
 
-export default AboutComponent;
+export default WeAreComponent;

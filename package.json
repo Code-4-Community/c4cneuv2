@@ -83,7 +83,9 @@
     "node": ">=20.0.0"
   },
   "lint-staged": {
-    "*.js,tsx": "eslint --cache --fix",
-    "*.{js,tsx,css,md}": "prettier --write"
+    "*.{js,ts,tsx}": [
+      "prettier --write",
+      "eslint --max-warnings 0 ."
+    ]
   }
 }

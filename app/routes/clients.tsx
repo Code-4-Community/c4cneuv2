@@ -1,10 +1,6 @@
 import { type MetaFunction } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
-import { PeopleDocument } from "types.generated";
-import { getPrismicClient } from "~/utils/prismicio";
-import Member from "~/components/member";
-import { asText } from "@prismicio/client";
-import Footer from "~/components/footer";
+import Footer from "~/components/footer/footer";
+import ClientCard from "~/components/client-card";
 
 export const meta: MetaFunction = () => {
   return [
@@ -13,6 +9,100 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+const exClientsList = [
+  {
+    image: "app/icons/community.png",
+    title: "Client Title",
+    description: "lorem ipsum",
+    caseStudyLink: "https://www.c4cneu.com",
+    websiteLink: "https://www.c4cneu.com",
+  },
+  {
+    image: "app/icons/community.png",
+    title: "Client Title",
+    description: "lorem ipsum",
+    caseStudyLink: "https://www.c4cneu.com",
+    websiteLink: "https://www.c4cneu.com",
+  },
+  {
+    image: "app/icons/community.png",
+    title: "Client Title",
+    description: "lorem ipsum",
+    caseStudyLink: "https://www.c4cneu.com",
+    websiteLink: "https://www.c4cneu.com",
+  },
+  {
+    image: "app/icons/community.png",
+    title: "Client Title",
+    description: "lorem ipsum",
+    caseStudyLink: "https://www.c4cneu.com",
+    websiteLink: "https://www.c4cneu.com",
+  },
+  {
+    image: "app/icons/community.png",
+    title: "Client Title",
+    description: "lorem ipsum",
+    caseStudyLink: "https://www.c4cneu.com",
+    websiteLink: "https://www.c4cneu.com",
+  },
+  {
+    image: "app/icons/community.png",
+    title: "Client Title",
+    description: "lorem ipsum",
+    caseStudyLink: "https://www.c4cneu.com",
+    websiteLink: "https://www.c4cneu.com",
+  },
+  {
+    image: "app/icons/community.png",
+    title: "Client Title",
+    description: "lorem ipsum",
+    caseStudyLink: "https://www.c4cneu.com",
+    websiteLink: "https://www.c4cneu.com",
+  },
+];
+
+const exClientsListPast = [
+  {
+    image: "app/icons/community.png",
+    title: "Client Title",
+    description: "lorem ipsum",
+    caseStudyLink: "https://www.c4cneu.com",
+    websiteLink: "https://www.c4cneu.com",
+  },
+  {
+    image: "app/icons/community.png",
+    title: "Client Title",
+    description: "lorem ipsum",
+    caseStudyLink: "https://www.c4cneu.com",
+    websiteLink: "https://www.c4cneu.com",
+  },
+  {
+    image: "app/icons/community.png",
+    title: "Client Title",
+    description: "lorem ipsum",
+    caseStudyLink: "https://www.c4cneu.com",
+    websiteLink: "https://www.c4cneu.com",
+  },
+];
+
 export default function Clients() {
-  return <Footer />;
+  return (
+    <div>
+      <h3 className="text-xl font-semibold text-left mb-2">Current Clients</h3>
+      <div className="flex flex-row">
+        {exClientsList.map((client, index) => (
+          <ClientCard {...client} key={index} />
+        ))}
+      </div>
+      <div>
+        <h3 className="text-xl font-semibold text-left mb-2">Past Clients</h3>
+        <div className="flex flex-row">
+          {exClientsListPast.map((client, index) => (
+            <ClientCard {...client} key={index} />
+          ))}
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
 }

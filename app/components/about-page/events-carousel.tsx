@@ -32,7 +32,7 @@ const EventsCarousel = ({ events }: EventsCarouselProps) => {
   }, [api]);
 
   return (
-    <div className="flex flex-col justify-center mt-4">
+    <div className="flex flex-col justify-center">
       <Carousel
         setApi={setApi}
         opts={{
@@ -48,12 +48,11 @@ const EventsCarousel = ({ events }: EventsCarouselProps) => {
                 image={event.image}
                 title={event.title}
                 description={event.description}
-                link={event.link}
               />
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="bg-[radial-gradient(circle,rgba(238,210,255,1) 100%, rgba(238,210,255,0) 100%)]" />
+        <CarouselPrevious />
         <CarouselNext />
       </Carousel>
       <div className="py-2 text-center">
@@ -65,8 +64,8 @@ const EventsCarousel = ({ events }: EventsCarouselProps) => {
               size="icon"
               className={`rounded-full ${
                 index === current
-                  ? "bg-indigo-600 w-3.5 h-3.5"
-                  : "bg-muted w-2 h-2"
+                  ? "bg-indigo-600 w-4 h-4"
+                  : "bg-muted w-2.5 h-2.5"
               }`}
               onClick={() => api?.scrollTo(index)}
             />

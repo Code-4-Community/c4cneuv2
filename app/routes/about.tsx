@@ -1,7 +1,8 @@
 import { MetaFunction } from "@remix-run/react";
-import WeAreSection from "~/components/about-page/we-are-section";
-import MainSection from "~/components/about-page/main-section";
-import EventsSection from "~/components/about-page/events-section";
+import WeAreSection from "~/components/aboutPage/we-are-section";
+import MainSection from "~/components/aboutPage/main-section";
+import EventsSection from "~/components/aboutPage/events-section";
+import NumbersSection from "~/components/aboutPage/numbers-section";
 
 export const meta: MetaFunction = () => {
   return [
@@ -37,6 +38,8 @@ export default function About() {
       <MainSection />
       <WeAreSection aboutItems={aboutItems} />
       <EventsSection />
+      <EventsSection />
+      <NumbersSection />
     </div>
   );
 }

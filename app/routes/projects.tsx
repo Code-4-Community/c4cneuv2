@@ -1,7 +1,7 @@
 import { asImageSrc, asLink, asText } from "@prismicio/client";
 import { MetaFunction, useLoaderData } from "@remix-run/react";
 import { ProjectDocument } from "types.generated";
-import ProjectsCarousel from "~/components/projects/projects-carousel";
+import ProjectsPage from "~/components/projects/projects-page";
 import { getPrismicClient } from "~/utils/prismicio";
 
 export const meta: MetaFunction = () => {
@@ -31,7 +31,7 @@ export default function Projects() {
 
   return (
     <div>
-      <ProjectsCarousel projects={projectsList} />
+      <ProjectsPage projects={projectsList} />
     </div>
   );
 }

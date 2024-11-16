@@ -8,17 +8,17 @@ import {
 } from "../ui/carousel";
 import Project, { ProjectProps } from "./project";
 
-interface ProjectsCarouselProps {
+export interface ProjectsCarouselProps {
   projects: ProjectProps[];
 }
 
 const ProjectsCarousel = ({ projects }: ProjectsCarouselProps) => {
   return (
-    <div className="flex justify-center mt-4">
-      <Carousel className="w-full max-w-3xl">
+    <div className="flex justify-center mt-4 m-4 px-20">
+      <Carousel className="w-full max-w-5xl">
         <CarouselContent className="-ml-2 md:-ml-4">
           {projects.map((project, index) => (
-            <CarouselItem key={index} className="basis-1/3 pl-2 md:pl-4">
+            <CarouselItem key={index} className="basis-1/3">
               <Project
                 image={project.image}
                 title={project.title}
@@ -29,7 +29,9 @@ const ProjectsCarousel = ({ projects }: ProjectsCarouselProps) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
+        <div className="mt-4">
+          <CarouselPrevious />
+        </div>
         <CarouselNext />
         <CarouselDots className="mt-4" />
       </Carousel>

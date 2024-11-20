@@ -1,4 +1,4 @@
-import AboutComponent, { AboutProps } from "./about-component";
+import AboutComponent, { AboutProps } from "./we-are-component";
 
 interface WeAreProps {
   aboutItems: AboutProps[];
@@ -7,7 +7,7 @@ interface WeAreProps {
 const WeAreSection = ({ aboutItems }: WeAreProps) => {
   return (
     <div>
-      <h2 className="text-2xl py-12 text-indigo-600">We are</h2>
+      <h2 className="text-4xl pb-12 text-indigo-600">We are</h2>
       <div className="flex flex-col items-center text-indigo-600">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {aboutItems.map((item, index) => (

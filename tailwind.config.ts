@@ -11,7 +11,7 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        custom: "8px 8px 0px 0px #4A4A51",
+        default: "8px 8px 0px 0px #4A4A51",
       },
       colors: {
         background: "hsl(var(--background))",

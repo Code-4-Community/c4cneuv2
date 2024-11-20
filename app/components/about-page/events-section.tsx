@@ -10,8 +10,6 @@ interface EventsSectionProps {
 }
 
 export default function EventsSection({ cde, pde }: EventsSectionProps) {
-  console.log(cde.data.events);
-  console.log(pde.data.events);
   const cdEvents: EventProps[] = cde.data.events.map((event) => ({
     image: event.image.url ?? "app/icons/leaders.png",
     title: asText(event.title),

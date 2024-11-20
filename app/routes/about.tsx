@@ -31,19 +31,19 @@ export default function About() {
   }>();
   const aboutItems = [
     {
-      image: "app/icons/problem-solvers.png",
+      image: "app/images/problem-solvers.png",
       title: "Problem-Solvers",
       description:
         "We're a community of forward-thinkers and solution architects. Embrace challenges, spark innovation, and connect with a network of dynamic individuals.",
     },
     {
-      image: "app/icons/leaders.png",
+      image: "app/images/leaders.png",
       title: "Leaders",
       description:
         "We are a community dedicated to nurturing leadership potential. Explore mentorship, engage in skill-building, and connect with aspiring leaders.",
     },
     {
-      image: "app/icons/community.png",
+      image: "app/images/community.png",
       title: "A Tight-Knit Community",
       description:
         "We embrace the strength of togetherness. We are a tight-knit community that fosters genuine relationships and shared experiences.",

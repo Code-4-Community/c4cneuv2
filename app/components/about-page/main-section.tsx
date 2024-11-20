@@ -8,7 +8,7 @@ const MainSection = () => {
         <div className="relative">
           <img
             className="w-screen"
-            src={"app/icons/main.png"}
+            src={"app/images/main.png"}
             alt="About Main Section"
           />
           <div className="text-4xl absolute left-24 bottom-36">

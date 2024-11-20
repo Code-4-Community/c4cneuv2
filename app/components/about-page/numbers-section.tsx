@@ -19,7 +19,7 @@ const NumbersSection = () => {
         </div>
         <div className="flex justify-center">
           <img
-            src="app/icons/numbers.png"
+            src="app/images/numbers.png"
             alt="Illustration"
             className="w-80 h-auto"
           />

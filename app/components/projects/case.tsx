@@ -1,6 +1,3 @@
-import { LaptopShadow } from "../icons";
-import { Laptop } from "../icons";
-
 export interface CaseProps {
   logo?: string | null;
   title?: string | null;
@@ -21,86 +18,75 @@ const Case = ({ case: caseData }: { case: CaseProps }) => {
     website_image,
     link,
   } = caseData;
+
   return (
-    <div className="flex flex-col items-center">
-      <div className="h-[1740.88px] flex-col justify-center items-center gap-[72px] inline-flex">
-        <div className="w-[1128px] justify-start items-center gap-6 inline-flex">
-          <div className="text-[#333333] text-5xl font-medium font-['IBM Plex Sans'] leading-[57.60px]">
-            {title ?? "Title"}
-          </div>
+    <div className="flex flex-col items-center px-4 md:px-8 lg:px-16">
+      <div className="w-full max-w-5xl text-left my-8">
+        <h1 className="text-3xl md:text-5xl font-medium text-[#333333]">
+          {title ?? "Title"}
+        </h1>
+      </div>
+      <div className="flex flex-col lg:flex-row w-full max-w-5xl gap-8 my-8">
+        <div className="flex-1">
+          <h2 className="text-2xl md:text-4xl font-medium text-[#333333] mb-6">
+            Introduction
+          </h2>
+          <p className="text-base leading-relaxed text-[#333333]">
+            {introduction ?? "Introduction"}
+          </p>
         </div>
-        <div className="h-40 flex-col justify-start items-start gap-[98px] flex">
-          <div className="self-stretch justify-start items-start gap-[120px] inline-flex">
-            <div className="w-[744px] relative">
-              <div className="left-0 top-0 absolute text-[#333333] text-4xl font-medium font-['IBM Plex Sans'] leading-[43.20px]">
-                Introduction
-              </div>
-              <div className="w-[743px] left-[1px] top-[65px] absolute text-[#333333] text-base font-normal font-['IBM Plex Sans'] leading-tight">
-                {introduction ?? "Introduction"}
-              </div>
-            </div>
-            <div className="w-[264px] h-40 pt-[21px] pb-[20.71px] bg-[#fcfcfc] shadow border-2 border-[#4a4951] justify-center items-center flex">
-              <img
-                className="w-[264px] h-[118.29px]"
-                src={logo ?? "Logo"}
-                alt={`${title} Logo`}
-              />
-            </div>
-          </div>
+        <div className="w-48 h-48 lg:w-auto lg:h-auto bg-[#fcfcfc] object-cover shadow-default border-2 border-[#4a4951] flex items-center justify-center">
+          {logo ? (
+            <img
+              className="max-w-full max-h-full"
+              src={logo}
+              alt={`${title} Logo`}
+            />
+          ) : (
+            <span className="text-gray-500">Logo</span>
+          )}
         </div>
-        <div className="h-[311px] px-24 py-[72px] bg-[#fcfcfc] shadow border-2 border-[#4a4951] flex-col justify-start items-start gap-12 flex">
-          <div className="flex-col justify-start items-start gap-12 flex">
-            <div className="text-center text-[#6059cd] text-4xl font-medium font-['IBM Plex Sans'] leading-[43.20px]">
-              Problem Statement
-            </div>
-            <div className="justify-center items-center gap-2.5 inline-flex">
-              <div className="w-[936px] text-[#333333] text-base font-normal font-['IBM Plex Sans'] leading-tight">
-                {problem_statement ?? "Problem Statement"}
-              </div>
-            </div>
-          </div>
+      </div>
+
+      <div className="w-full max-w-5xl bg-[#fcfcfc] object-cover shadow-default border-2 border-[#4a4951]  p-6 md:p-8 my-8">
+        <h2 className="text-2xl md:text-4xl font-medium text-[#6059cd] mb-4">
+          Problem Statement
+        </h2>
+        <p className="text-base leading-relaxed text-[#333333]">
+          {problem_statement ?? "Problem Statement"}
+        </p>
+      </div>
+
+      <div className="w-full max-w-5xl bg-[#fcfcfc] object-cover shadow-default border-2 border-[#4a4951] p-6 md:p-8 my-8">
+        <h2 className="text-2xl md:text-4xl font-medium text-[#6059cd] mb-4">
+          Our Solution
+        </h2>
+        <p className="text-base leading-relaxed text-[#333333]">
+          {solution ?? "Solution"}
+        </p>
+      </div>
+
+      <div className="w-full max-w-4xl flex flex-col items-center my-8">
+        <div className="relative w-full max-w-2xl">
+          {website_image && (
+            <img
+              className="relative z-10 w-full rounded-lg"
+              src={website_image}
+              alt={`${title} Website`}
+            />
+          )}
         </div>
-        <div className="h-[311px] px-24 py-[72px] bg-[#fcfcfc] shadow border-2 border-[#4a4951] flex-col justify-start items-start gap-12 flex">
-          <div className="flex-col justify-start items-start gap-12 flex">
-            <div className="text-center text-[#6059cd] text-4xl font-medium font-['IBM Plex Sans'] leading-[43.20px]">
-              Our Solution
-            </div>
-            <div className="justify-center items-center gap-2.5 inline-flex">
-              <div className="w-[936px] text-[#333333] text-base font-normal font-['IBM Plex Sans'] leading-tight">
-                {solution ?? "Solution"}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex-col justify-start items-center gap-8 flex">
-          <div className="w-[936px] h-[500.88px] relative">
-            <div className="w-[936px] h-[14.55px] left-0 top-[486.33px] absolute opacity-60 mix-blend-multiply">
-              <LaptopShadow />
-            </div>
-            <div className="w-[852.11px] h-[493.70px] left-[43.64px] top-0 absolute">
-              <Laptop />
-            </div>
-            <div className="w-[685.09px] h-[424.88px] left-[132.25px] top-[22.11px] absolute">
-              <img
-                className="w-[685.40px] h-[459.79px] left-[-0.32px] top-[-0.53px] absolute"
-                src={website_image}
-                alt={`${title} Website`}
-              />
-            </div>
-          </div>
-          <div className="self-stretch h-[38px] bg-[#fcfcfc] flex-col justify-start items-start flex">
-            <div className="self-stretch px-[18px] py-3 bg-[#fcfcfc] shadow border border-[#4a4951] justify-center items-center gap-2 inline-flex">
-              <a
-                href={link}
-                target="_blank"
-                className="text-center text-[#333333] text-sm font-bold font-['IBM Plex Sans'] leading-[14px]"
-                rel="noreferrer"
-              >
-                Launch Live Website
-              </a>
-            </div>
-          </div>
-        </div>
+        <div></div>
+        {link && (
+          <a
+            href={link}
+            target="_blank"
+            className="w-full mt-6 bg-[#fcfcfc] text-[#333333] text-center border border-[#4a4951] px-6 py-2 object-cover shadow-button font-bold text-sm hover:bg-[#EDBAFF] transition"
+            rel="noreferrer"
+          >
+            <button>Launch Live Website</button>
+          </a>
+        )}
       </div>
     </div>
   );

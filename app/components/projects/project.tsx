@@ -1,47 +1,56 @@
 export interface ProjectProps {
-  image?: string;
+  logo?: string;
   title?: string;
   subtitle?: string;
   description?: string;
   link?: string;
+  has_case?: boolean;
 }
 
 const Project = ({
-  image,
+  logo,
   title,
   subtitle,
   description,
   link,
+  has_case,
 }: ProjectProps) => {
   return (
-    <div className="px-0.5 py-12 shadow border-2 border-[#4a4951] flex flex-col justify-start items-center gap-12 h-full">
-      <img
-        src={image ?? "https://i.imgur.com/BlBH8Ak.jpeg"}
-        alt={title}
-        className="w-96 h-44 object-cover rounded-lg mb-4"
-      />
-      <div className="flex-col justify-between items-center gap-6 flex mx-6">
-        <div>
-          <div className=" text-center text-black text-2xl font-medium font-['IBM Plex Sans'] leading-7 mb-2">
-            {title || "Title"}
+    <div className="px-2 py-6 flex flex-col justify-between items-center h-full bg-[#FDFDFD]">
+      <div className="px-8 py-8 border-2 border-[#4a4951] flex flex-col justify-between items-center gap-2 h-full object-cover shadow-default">
+        <img
+          src={logo ?? "https://i.imgur.com/BlBH8Ak.jpeg"}
+          alt={title}
+          className="w-96 h-44 object-cover rounded-lg mb-4"
+        />
+        <div className="flex flex-col justify-start items-center gap-6 mx-6 flex-grow w-full">
+          <div>
+            <div className="text-center text-black text-2xl font-medium font-['IBM Plex Sans'] leading-7 mb-2">
+              {title || "Title"}
+            </div>
+            <div className="text-center text-[#929292] text-base font-normal font-['IBM Plex Sans'] leading-tight">
+              {subtitle || "Project Subtitle"}
+            </div>
           </div>
-          <div className="text-center text-[#929292] text-base font-normal font-['IBM Plex Sans'] leading-tight">
-            {subtitle || "Project Subtitle"}
+          <div className="text-sm text-gray-500 line-clamp-[9] text-start w-full">
+            {description || "Project Description"}
           </div>
         </div>
-        <div className=" text-sm m-auto text-gray-500 line-clamp-[9]">
-          {description || "Project Description"}
-        </div>
-        <div className="text-center text-[#333333] text-sm font-bold font-['IBM Plex Sans'] leading-none ">
+        <div className="mt-2 w-full text-left ">
           {link && (
-            <div className="mt-auto w-full self-stretch h-9 flex-col justify-start items-start flex">
-              <div className="self-stretch px-6 py-3 bg-[#f8ecff] shadow border border-[#4a4951] justify-center items-center gap-2.5 inline-flex">
-                <div className="text-center text-[#333333] text-sm font-bold font-['IBM Plex Sans'] leading-none">
-                  <a href={link}>
-                    <button>View Case Study</button>
-                  </a>
-                </div>
-              </div>
+            <div
+              className={`px-8 py-3 object-cover shadow-button ${
+                has_case
+                  ? "bg-[#f8ecff] border-[#4a4951]"
+                  : "bg-[#E7E5EE] text-[#CAC9D0] border-[#9A98A2]"
+              } shadow border flex justify-center items-center`}
+            >
+              <a
+                href={has_case ? link : ""}
+                className="text-sm font-bold leading-none"
+              >
+                <button disabled={!has_case}>View Case Study</button>
+              </a>
             </div>
           )}
         </div>

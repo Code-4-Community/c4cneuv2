@@ -289,7 +289,7 @@ const CarouselDots = React.forwardRef<
     return (
       <div
         ref={ref}
-        className={`flex justify-center shadow-none p-5 ${props.className}`}
+        className={`flex justify-center shadow-none p-1 ${props.className}`}
       >
         {Array.from({ length: numberOfSlides }, (_, i) => (
           <Button

@@ -14,17 +14,18 @@ export interface ProjectsCarouselProps {
 
 const ProjectsCarousel = ({ projects }: ProjectsCarouselProps) => {
   return (
-    <div className="flex justify-center mt-4 m-4 px-20">
+    <div className="flex flex-col justify-center mt-4  ">
       <Carousel className="w-full max-w-5xl">
         <CarouselContent className="-ml-2 md:-ml-4">
           {projects.map((project, index) => (
             <CarouselItem key={index} className="basis-1/3">
               <Project
-                image={project.image}
+                logo={project.logo}
                 title={project.title}
                 subtitle={project.subtitle}
                 description={project.description}
                 link={project.link}
+                has_case={project.has_case}
               />
             </CarouselItem>
           ))}
@@ -33,7 +34,7 @@ const ProjectsCarousel = ({ projects }: ProjectsCarouselProps) => {
           <CarouselPrevious />
         </div>
         <CarouselNext />
-        <CarouselDots className="mt-4" />
+        <CarouselDots />
       </Carousel>
     </div>
   );

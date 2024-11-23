@@ -1,18 +1,21 @@
+import { LaptopShadow } from "../icons";
+import { Laptop } from "../icons";
+
 export interface CaseProps {
-  logo?: string;
-  title?: string;
-  description?: string;
-  problem_statement?: string;
-  solution?: string;
-  website_image?: string;
-  link?: string;
+  logo?: string | null;
+  title?: string | null;
+  introduction?: string | null;
+  problem_statement?: string | null;
+  solution?: string | null;
+  website_image?: string | undefined;
+  link?: string | undefined;
 }
 
 const Case = ({ case: caseData }: { case: CaseProps }) => {
   const {
     logo,
     title,
-    description,
+    introduction,
     problem_statement,
     solution,
     website_image,
@@ -33,7 +36,7 @@ const Case = ({ case: caseData }: { case: CaseProps }) => {
                 Introduction
               </div>
               <div className="w-[743px] left-[1px] top-[65px] absolute text-[#333333] text-base font-normal font-['IBM Plex Sans'] leading-tight">
-                {description ?? "Description"}
+                {introduction ?? "Introduction"}
               </div>
             </div>
             <div className="w-[264px] h-40 pt-[21px] pb-[20.71px] bg-[#fcfcfc] shadow border-2 border-[#4a4951] justify-center items-center flex">
@@ -71,16 +74,12 @@ const Case = ({ case: caseData }: { case: CaseProps }) => {
         </div>
         <div className="flex-col justify-start items-center gap-8 flex">
           <div className="w-[936px] h-[500.88px] relative">
-            <img
-              className="w-[936px] h-[14.55px] left-0 top-[486.33px] absolute opacity-60 mix-blend-multiply"
-              src="app\icons\image.png"
-              alt=""
-            />
-            <img
-              className="w-[852.11px] h-[493.70px] left-[43.64px] top-0 absolute"
-              src="app\icons\laptop.png"
-              alt=""
-            />
+            <div className="w-[936px] h-[14.55px] left-0 top-[486.33px] absolute opacity-60 mix-blend-multiply">
+              <LaptopShadow />
+            </div>
+            <div className="w-[852.11px] h-[493.70px] left-[43.64px] top-0 absolute">
+              <Laptop />
+            </div>
             <div className="w-[685.09px] h-[424.88px] left-[132.25px] top-[22.11px] absolute">
               <img
                 className="w-[685.40px] h-[459.79px] left-[-0.32px] top-[-0.53px] absolute"
@@ -93,7 +92,9 @@ const Case = ({ case: caseData }: { case: CaseProps }) => {
             <div className="self-stretch px-[18px] py-3 bg-[#fcfcfc] shadow border border-[#4a4951] justify-center items-center gap-2 inline-flex">
               <a
                 href={link}
+                target="_blank"
                 className="text-center text-[#333333] text-sm font-bold font-['IBM Plex Sans'] leading-[14px]"
+                rel="noreferrer"
               >
                 Launch Live Website
               </a>

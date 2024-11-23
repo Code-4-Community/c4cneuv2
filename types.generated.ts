@@ -371,14 +371,24 @@ export type PersonDocument<Lang extends string = string> = prismic.PrismicDocume
  */
 export interface ProjectDocumentDataProjectItem {
 	/**
-	 * Image field in *Project → Project*
+	 * Logo Image field in *Project → Project*
 	 *
 	 * - **Field Type**: Image
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: project.project[].image
+	 * - **API ID Path**: project.project[].logo_image
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
-	image: prismic.ImageField<never>;
+	logo_image: prismic.ImageField<never>;
+	
+	/**
+	 * Website Image field in *Project → Project*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: project.project[].website_image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	website_image: prismic.ImageField<never>;
 	
 	/**
 	 * Title field in *Project → Project*
@@ -411,14 +421,45 @@ export interface ProjectDocumentDataProjectItem {
 	description: prismic.RichTextField;
 	
 	/**
-	 * Link field in *Project → Project*
+	 * Has Case Study field in *Project → Project*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: project.project[].has_case_study
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	has_case_study: prismic.BooleanField;
+	
+	/**
+	 * Case Problem field in *Project → Project*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: project.project[].case_problem
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	case_problem: prismic.RichTextField;
+	
+	/**
+	 * Case Solution field in *Project → Project*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: project.project[].case_solution
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	case_solution: prismic.RichTextField;
+	
+	/**
+	 * Live Website field in *Project → Project*
 	 *
 	 * - **Field Type**: Link
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: project.project[].link
+	 * - **API ID Path**: project.project[].live_website
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
-	link: prismic.LinkField;
+	live_website: prismic.LinkField;
 }
 
 /**

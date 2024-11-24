@@ -1,6 +1,3 @@
-import SvgArrow from "app/components/icons/Arrow";
-import SoftwareEngineer from "app/components/icons/SoftwareEngineer";
-import WebsiteGear from "app/components/icons/WebsiteGear";
 const RoleDetailsSection = () => {
   return (
     <div
@@ -12,7 +9,11 @@ const RoleDetailsSection = () => {
           href={"https://www.c4cneu.com/apply"}
           style={{ alignSelf: "center", marginRight: "24px" }}
         >
-          <SvgArrow />
+          <img
+            src={"/app/icons/arrow.svg"}
+            style={{ height: 100, width: 100 }}
+            alt="arrow"
+          />
         </a>
         <div>
           <h1 className="text-3xl text-gray-700 font-semibold">
@@ -49,7 +50,11 @@ const RoleDetailsSection = () => {
             life threatening illnesses, environmental conservators, and
             disadvantaged youth.
           </p>
-          <SoftwareEngineer />
+          <img
+            src={"/app/icons/software-engineer.svg"}
+            style={{ height: 290.811, width: 360 }}
+            alt="software-engineer"
+          />
         </div>
       </div>
       <div className="border-2 border-gray-300 shadow-lg p-8 mb-4">
@@ -58,7 +63,11 @@ const RoleDetailsSection = () => {
           What We’re Looking For{" "}
         </h2>
         <div style={{ display: "flex", alignItems: "center" }}>
-          <WebsiteGear />
+          <img
+            src={"/app/icons/website-gear.svg"}
+            style={{ height: 297.342, width: 360 }}
+            alt="website gear"
+          />
           <div style={{ paddingLeft: "60px" }}>
             <p className="text-gray-700 text-left mb-6">
               A great developer is someone who is highly motivated and willing

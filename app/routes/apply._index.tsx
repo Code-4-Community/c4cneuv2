@@ -5,10 +5,7 @@ import JoinTeamSection from "~/components/apply-page/join-team";
 import ApplyClient from "~/components/apply-page/apply-client";
 
 export const meta: MetaFunction = () => {
-  return [
-    { title: "Apply" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
+  return [{ title: "Apply" }, { name: "apply", content: "Welcome to Remix!" }];
 };
 
 const exPositionList = [

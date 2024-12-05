@@ -1,5 +1,4 @@
 import { type MetaFunction } from "@remix-run/node";
-import Footer from "~/components/footer/footer";
 import ClientCard from "~/components/client-card";
 
 export const meta: MetaFunction = () => {
@@ -102,7 +101,6 @@ export default function Clients() {
           ))}
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

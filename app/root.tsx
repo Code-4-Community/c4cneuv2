@@ -7,6 +7,7 @@ import {
 } from "@remix-run/react";
 import "./tailwind.css";
 import { PrismicProvider } from "../node_modules/@prismicio/react"; // fixes a cannot use import statement outside of a module error
+import Footer from "./components/footer/footer";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -19,6 +20,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
+        <Footer />
         <ScrollRestoration />
         <Scripts />
         <PrismicProvider />

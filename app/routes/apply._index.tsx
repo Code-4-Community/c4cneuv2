@@ -1,6 +1,5 @@
 import { type MetaFunction } from "@remix-run/node";
-import Footer from "~/components/footer/footer";
-import PositionCard from "~/components/apply-page/position";
+import PositionCard from "~/components/apply-page/position-apply-card";
 import JoinTeamSection from "~/components/apply-page/join-team";
 
 export const meta: MetaFunction = () => {
@@ -49,7 +48,6 @@ export default function Apply() {
           ))}
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

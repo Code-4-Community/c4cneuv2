@@ -12,7 +12,7 @@
     "customtypegen": "npx prismic-ts-codegen",
     "icons": "npx @svgr/cli --out-dir app/components/icons -- app/icons",
     "icons:watch": "npm-watch icons",
-    "prepare": "husky init",
+    "prepare": "husky",
     "format": "npx prettier . --write"
   },
   "watch": {

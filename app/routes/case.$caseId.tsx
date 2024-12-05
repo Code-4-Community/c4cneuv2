@@ -2,7 +2,6 @@ import { asImageSrc, asText, asLink } from "@prismicio/client";
 import { LoaderFunctionArgs } from "@remix-run/node";
 import { MetaFunction, useLoaderData } from "@remix-run/react";
 import { ProjectDocument } from "types.generated";
-import Footer from "~/components/footer/footer";
 import Case from "~/components/projects/case";
 import { getPrismicClient } from "~/utils/prismicio";
 
@@ -37,10 +36,5 @@ export default function Projects() {
     website_image: asImageSrc(project?.website_image) ?? undefined,
     link: asLink(project?.live_website) ?? undefined,
   };
-  return (
-    <div className="p-16">
-      {<Case case={caseDetails} />}
-      <Footer />
-    </div>
-  );
+  return <div className="p-16">{<Case case={caseDetails} />}</div>;
 }

@@ -3,7 +3,6 @@ import { MetaFunction, useLoaderData } from "@remix-run/react";
 import { ProjectDocument } from "types.generated";
 import ProjectsCarousel from "~/components/projects/projects-carousel";
 import { getPrismicClient } from "~/utils/prismicio";
-import Footer from "~/components/footer/footer";
 
 export const meta: MetaFunction = () => {
   return [
@@ -51,7 +50,6 @@ export default function Projects() {
                   translate-x-1/2 translate-y-1/8"
         />
       </div>
-      <Footer />
     </div>
   );
 }

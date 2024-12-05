@@ -1,4 +1,5 @@
 import { type MetaFunction } from "@remix-run/node";
+import Navbar from "~/components/navbar";
 import Footer from "~/components/footer/footer";
 
 export const meta: MetaFunction = () => {
@@ -9,5 +10,10 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Home() {
-  return <Footer />;
+  return (
+    <div>
+      <Navbar />
+      <Footer />
+    </div>
+  );
 }

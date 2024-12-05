@@ -1,4 +1,5 @@
 import { type MetaFunction } from "@remix-run/node";
+import Navbar from "~/components/navbar";
 import Footer from "~/components/footer/footer";
 import ClientCard from "~/components/client-card";
 
@@ -88,6 +89,7 @@ const exClientsListPast = [
 export default function Clients() {
   return (
     <div>
+      <Navbar />
       <h3 className="text-xl font-semibold text-left mb-2">Current Clients</h3>
       <div className="flex flex-row">
         {exClientsList.map((client, index) => (

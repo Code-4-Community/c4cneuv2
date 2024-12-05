@@ -1,5 +1,6 @@
 import { type MetaFunction } from "@remix-run/node";
 import RoleDetailsCard from "~/components/apply-page/role-details";
+import Navbar from "~/components/navbar";
 import Footer from "~/components/footer/footer";
 
 export const meta: MetaFunction = () => {
@@ -52,6 +53,7 @@ const SoftwareDevRoleDetails = {
 export default function Role() {
   return (
     <div>
+      <Navbar />
       <RoleDetailsCard {...SoftwareDevRoleDetails} />
       <Footer />;
     </div>

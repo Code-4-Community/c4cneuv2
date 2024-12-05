@@ -3,6 +3,8 @@ import WeAreBlock from "~/components/home-page/we-are-block";
 import MissionStatement from "~/components/home-page/landing";
 
 import Footer from "~/components/footer/footer";
+import Navbar from "~/components/navbar";
+
 export const meta: MetaFunction = () => {
   return [
     { title: "Code4Community" },
@@ -25,6 +27,7 @@ export default function Index() {
 
   return (
     <div>
+      <Navbar />
       <div className="mt-60 ml-96 mr-96 mb-32">
         <MissionStatement
           weLove={weLove}

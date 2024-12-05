@@ -34,7 +34,7 @@ const JoinTeamSection = () => {
       <h1 className="text-3xl font-semibold  pb-8">
         <span className="text-indigo-600">Join Our Team!</span>
       </h1>
-      <div className="flex mb-10">
+      <div className="grid grid-cols-2 flex-row  justify-center  mb-10 ">
         <div>
           <h3 className="pb-8">
             Are you passionate about making a positive impact through
@@ -60,7 +60,9 @@ const JoinTeamSection = () => {
               "https://images.unsplash.com/photo-1499796683658-b659bc751db1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             }
             alt="Team working together"
-            className="max-w-full h-auto mr-40 shadow-default border-2 border-gray-300"
+            className="mr-40 shadow-default border-2 border-gray-300"
+            width={"300px"}
+            height={"300px"}
           />
         </div>
       </div>

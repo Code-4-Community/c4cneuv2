@@ -3,6 +3,7 @@ import { MetaFunction, useLoaderData } from "@remix-run/react";
 import { ProjectDocument } from "types.generated";
 import ProjectsCarousel from "~/components/projects/projects-carousel";
 import { getPrismicClient } from "~/utils/prismicio";
+import Footer from "~/components/footer/footer";
 
 export const meta: MetaFunction = () => {
   return [
@@ -31,23 +32,26 @@ export default function Projects() {
   }));
 
   return (
-    <div className="pt-16 px-16 relative overflow-hidden flex justify-center flex-row">
-      <div className="flex-col  w-fit">
-        <div className="flex-col justify-start items-start gap-4 inline-flex mb-6 ">
-          <h1 className="text-black font-medium text-5xl font-['IBM Plex Sans'] leading-10">
-            Projects
-          </h1>
-          <h3 className="text-center text-[#333333] text-2xl font-medium font-['IBM Plex Sans'] leading-7">
-            Take a look at some of the work we've done!
-          </h3>
+    <div>
+      <div className="pt-16 px-16 relative overflow-hidden flex justify-center flex-row">
+        <div className="flex-col  w-fit">
+          <div className="flex-col justify-start items-start gap-4 inline-flex mb-6 ">
+            <h1 className="text-black font-medium text-5xl font-['IBM Plex Sans'] leading-10">
+              Projects
+            </h1>
+            <h3 className="text-center text-[#333333] text-2xl font-medium font-['IBM Plex Sans'] leading-7">
+              Take a look at some of the work we've done!
+            </h3>
+          </div>
+          <ProjectsCarousel projects={projectsList} />
         </div>
-        <ProjectsCarousel projects={projectsList} />
-      </div>
-      <div
-        className="absolute bottom-0 right-0 -z-10 h-[500px] w-[500px] rounded-full shadow-none
+        <div
+          className="absolute bottom-0 right-0 -z-10 h-[500px] w-[500px] rounded-full shadow-none
                   bg-[radial-gradient(circle,_rgba(238,210,255,0.5)_30%,_transparent_70%)]
                   translate-x-1/2 translate-y-1/8"
-      />
+        />
+      </div>
+      <Footer />
     </div>
   );
 }

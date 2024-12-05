@@ -2,7 +2,7 @@ import MailingList from "./mailing-list";
 
 export default function Footer() {
   return (
-    <footer className="bg-white py-8 px-6 md:px-12">
+    <footer className="bg-white py-8 px-6 md:px-12 pt-16">
       <div className="mb-8">
         <MailingList />
       </div>

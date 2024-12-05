@@ -18,7 +18,7 @@ const ProjectsCarousel = ({ projects }: ProjectsCarouselProps) => {
       <Carousel className="w-full max-w-5xl">
         <CarouselContent className="-ml-2 md:-ml-4">
           {projects.map((project, index) => (
-            <CarouselItem key={index} className="basis-1/3">
+            <CarouselItem key={index} className="basis-1/3 ">
               <Project
                 logo={project.logo}
                 title={project.title}

@@ -1,3 +1,6 @@
+import { ArrowLeftIcon } from "@radix-ui/react-icons";
+import { OpenLink } from "../icons";
+
 export interface CaseProps {
   logo?: string | null;
   title?: string | null;
@@ -21,7 +24,17 @@ const Case = ({ case: caseData }: { case: CaseProps }) => {
 
   return (
     <div className="flex flex-col items-center px-4 md:px-8 lg:px-16">
-      <div className="w-full max-w-5xl text-left my-8">
+      <div className="w-full max-w-5xl text-left my-8 flex">
+        <a
+          className="relative flex items-center justify-center ms-2 me-14"
+          href={"/projects"}
+        >
+          <div
+            className="absolute inset-0 h-20 w-20 rounded-full 
+               bg-[radial-gradient(circle,_rgba(238,210,255,0.5)_30%,_transparent_70%)] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          ></div>
+          <ArrowLeftIcon className="relative z-10 h-8 w-8 text-gray-800" />
+        </a>
         <h1 className="text-3xl md:text-5xl font-medium text-[#333333]">
           {title ?? "Title"}
         </h1>
@@ -48,8 +61,8 @@ const Case = ({ case: caseData }: { case: CaseProps }) => {
         </div>
       </div>
 
-      <div className="w-full max-w-5xl bg-[#fcfcfc] object-cover shadow-default border-2 border-[#4a4951]  p-6 md:p-8 my-8">
-        <h2 className="text-2xl md:text-4xl font-medium text-[#6059cd] mb-4">
+      <div className="w-full max-w-5xl bg-[#fcfcfc] object-cover shadow-default border-2 border-[#4a4951]  p-6 md:p-16 my-8">
+        <h2 className="text-2xl md:text-4xl font-medium text-[#6059cd] mb-4 md:mb-8">
           Problem Statement
         </h2>
         <p className="text-base leading-relaxed text-[#333333]">
@@ -57,8 +70,8 @@ const Case = ({ case: caseData }: { case: CaseProps }) => {
         </p>
       </div>
 
-      <div className="w-full max-w-5xl bg-[#fcfcfc] object-cover shadow-default border-2 border-[#4a4951] p-6 md:p-8 my-8">
-        <h2 className="text-2xl md:text-4xl font-medium text-[#6059cd] mb-4">
+      <div className="w-full max-w-5xl bg-[#fcfcfc] object-cover shadow-default border-2 border-[#4a4951] p-6 md:p-16 my-8">
+        <h2 className="text-2xl md:text-4xl font-medium text-[#6059cd] mb-4 md:mb-8">
           Our Solution
         </h2>
         <p className="text-base leading-relaxed text-[#333333]">
@@ -76,15 +89,14 @@ const Case = ({ case: caseData }: { case: CaseProps }) => {
             />
           )}
         </div>
-        <div></div>
         {link && (
           <a
             href={link}
             target="_blank"
-            className="w-full mt-6 bg-[#fcfcfc] text-[#333333] text-center border border-[#4a4951] px-6 py-2 object-cover shadow-button font-bold text-sm hover:bg-[#EDBAFF] transition"
+            className="w-full mt-6 bg-[#fcfcfc] text-[#333333] text-center border border-[#4a4951] px-6 py-2 object-cover shadow-button font-bold text-sm hover:bg-[#EDBAFF] transition flex justify-center items-center gap-2"
             rel="noreferrer"
           >
-            <button>Launch Live Website</button>
+            Launch Live Website <OpenLink />
           </a>
         )}
       </div>

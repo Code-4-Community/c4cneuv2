@@ -47,7 +47,6 @@ export default function Apply() {
             ))}
           </div>
         </div>
-        <Footer />
       </div>
       <ApplyClient />
     </div>

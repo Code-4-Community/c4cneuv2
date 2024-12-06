@@ -1,5 +1,6 @@
 import C4C from "./icons/C4C";
 import { useLocation } from "@remix-run/react";
+import { Link } from "@remix-run/react";
 
 export default function Navbar(): React.ReactElement {
   const location = useLocation();
@@ -21,25 +22,25 @@ export default function Navbar(): React.ReactElement {
           { name: "Apply", href: "/apply" },
           { name: "FAQs", href: "/faqs" },
         ].map((link) => (
-          <a
+          <Link
             key={link.name}
-            href={link.href}
+            to={link.href}
             className={`font-['IBM Plex Sans'] text-2xl ${
               isActive(link.href) ? "text-indigo-600" : "text-black"
             }`}
           >
             {link.name}
-          </a>
+          </Link>
         ))}
       </div>
-      <a
+      <Link
         className={`font-['IBM Plex Sans'] text-2xl mr-14 ${
           isActive("/about") ? "text-indigo-600" : "text-black"
         }`}
-        href="/about"
+        to="/about"
       >
         About Us
-      </a>
+      </Link>
     </nav>
   );
 }

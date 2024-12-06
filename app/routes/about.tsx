@@ -6,7 +6,6 @@ import NumbersSection from "~/components/about-page/numbers-section";
 import { AboutCdeDocument } from "types.generated";
 import { AboutPdeDocument } from "types.generated";
 import { getPrismicClient } from "~/utils/prismicio";
-import Navbar from "~/components/navbar";
 import Footer from "~/components/footer/footer";
 
 export const meta: MetaFunction = () => {
@@ -54,7 +53,6 @@ export default function About() {
 
   return (
     <div>
-      <Navbar />
       <div className="px-40 pt-20 gap-18">
         <MainSection />
         <WeAreSection aboutItems={aboutItems} />

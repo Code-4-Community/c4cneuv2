@@ -4,7 +4,6 @@ import { PeopleDocument } from "types.generated";
 import { getPrismicClient } from "~/utils/prismicio";
 import Member from "~/components/member";
 import { asText } from "@prismicio/client";
-import Navbar from "~/components/navbar";
 import Footer from "~/components/footer/footer";
 
 export const meta: MetaFunction = () => {
@@ -27,7 +26,6 @@ export default function People() {
 
   return (
     <div>
-      <Navbar />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 p-4">
         {people.map((person, i) => (
           <Member

@@ -1,6 +1,5 @@
 import { MetaFunction } from "@remix-run/react";
 import ProjectsCarousel from "~/components/projects/projects-carousel";
-import Navbar from "~/components/navbar";
 import Footer from "~/components/footer/footer";
 
 export const meta: MetaFunction = () => {
@@ -41,7 +40,6 @@ const exProjectsList = [
 export default function Projects() {
   return (
     <div>
-      <Navbar />
       <ProjectsCarousel projects={exProjectsList} />
       <Footer />
     </div>

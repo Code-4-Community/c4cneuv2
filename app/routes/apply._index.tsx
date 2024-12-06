@@ -1,7 +1,6 @@
 import { type MetaFunction } from "@remix-run/node";
 import PositionCard from "~/components/apply-page/position";
 import JoinTeamSection from "~/components/apply-page/join-team";
-import Navbar from "~/components/navbar";
 import Footer from "~/components/footer/footer";
 
 export const meta: MetaFunction = () => {
@@ -41,7 +40,6 @@ const exPositionList = [
 export default function Apply() {
   return (
     <div>
-      <Navbar />
       <div className="pl-8 pb-8">
         <JoinTeamSection />
         <div className="pb-18">

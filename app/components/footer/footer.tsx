@@ -23,14 +23,14 @@ export default function Footer() {
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-[#4a4951] text-sm font-bold underline font-['IBM Plex Sans']"
+                className="text-[#4a4951] text-sm font-bold underline"
               >
                 {link.name}
               </Link>
             ))}
           </nav>
 
-          <div className="text-[#4a4951] text-sm font-bold font-['IBM Plex Sans']">
+          <div className="text-[#4a4951] text-sm font-bold">
             Contact us at{" "}
             <a href="mailto:c4cneu@gmail.com" className="underline">
               c4cneu@gmail.com
@@ -39,7 +39,7 @@ export default function Footer() {
         </div>
 
         <div className="text-center">
-          <p className="text-[#4a4951] text-base font-['IBM Plex Sans']">
+          <p className="text-[#4a4951] text-base ">
             Made with love by Code4Community
           </p>
           <p className="text-[#9997a2] text-xs">
@@ -67,7 +67,7 @@ export default function Footer() {
               to={social.href}
               target="_blank"
               rel="noreferrer"
-              className="text-[#4a4951] text-sm font-bold underline font-['IBM Plex Sans']"
+              className="text-[#4a4951] text-sm font-bold underline "
             >
               {social.name}
             </Link>

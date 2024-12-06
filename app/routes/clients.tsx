@@ -1,5 +1,5 @@
 import { type MetaFunction } from "@remix-run/node";
-import ClientCard from "~/components/client-card";
+import ClientCard from "~/components/clients-page/client-card";
 
 export const meta: MetaFunction = () => {
   return [

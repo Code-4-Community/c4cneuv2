@@ -1,6 +1,6 @@
 const NumbersSection = () => {
   return (
-    <div>
+    <div className="mb-28">
       <h2 className="text-3xl pb-16">By the Numbers</h2>
       <div className="flex justify-center columns-3">
         <div>

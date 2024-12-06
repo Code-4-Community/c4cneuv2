@@ -56,7 +56,7 @@ const EventsCarousel = ({ events }: EventsCarouselProps) => {
         <CarouselNext />
       </Carousel>
       <div className="py-2 text-center">
-        <div className="flex justify-center items-center gap-2 py-2">
+        <div className="flex justify-center items-center gap-2 pt-2 pb-16">
           {Array.from({ length: count }).map((_, index) => (
             <Button
               key={index}

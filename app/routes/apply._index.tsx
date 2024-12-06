@@ -1,20 +1,17 @@
 import { type MetaFunction } from "@remix-run/node";
-import Footer from "~/components/footer/footer";
 import PositionCard from "~/components/apply-page/position";
 import JoinTeamSection from "~/components/apply-page/join-team";
+import ApplyClient from "~/components/apply-page/apply-client";
 
 export const meta: MetaFunction = () => {
-  return [
-    { title: "Apply" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
+  return [{ title: "Apply" }, { name: "apply", content: "Welcome to Remix!" }];
 };
 
 const exPositionList = [
   {
     title: "Software Developer",
     description:
-      "Developers write the code that make our projects a reality." +
+      "Developers write the code that make our projects a reality. " +
       "Help us tackle tough technical problems while creating the code that powers C4C!",
     linkLearnMore: "https://www.c4cneu.com",
     linkApply: "https://www.c4cneu.com",
@@ -39,17 +36,19 @@ const exPositionList = [
 
 export default function Apply() {
   return (
-    <div className="pl-8 pb-8">
-      <JoinTeamSection />
-      <div className="pb-18">
-        <h3 className="text-xl text-left mb-2 pb-8">Positions</h3>
-        <div className="flex flex-row">
-          {exPositionList.map((position, index) => (
-            <PositionCard {...position} key={index} />
-          ))}
+    <div>
+      <div className="pl-8 pb-8">
+        <JoinTeamSection />
+        <div className="pb-18">
+          <h3 className="text-xl text-left mb-2 pb-8">Positions</h3>
+          <div className="flex flex-row">
+            {exPositionList.map((position, index) => (
+              <PositionCard {...position} key={index} />
+            ))}
+          </div>
         </div>
       </div>
-      <Footer />
+      <ApplyClient />
     </div>
   );
 }

@@ -25,7 +25,7 @@ export default function Navbar(): React.ReactElement {
           <Link
             key={link.name}
             to={link.href}
-            className={`font-['IBM Plex Sans'] text-2xl ${
+            className={` text-2xl ${
               isActive(link.href) ? "text-indigo-600" : "text-black"
             }`}
           >
@@ -34,7 +34,7 @@ export default function Navbar(): React.ReactElement {
         ))}
       </div>
       <Link
-        className={`font-['IBM Plex Sans'] text-2xl mr-14 ${
+        className={`text-2xl mr-14 ${
           isActive("/about") ? "text-indigo-600" : "text-black"
         }`}
         to="/about"

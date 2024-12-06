@@ -11,50 +11,25 @@ export const meta: MetaFunction = () => {
 
 const exClientsList = [
   {
-    image: "app/icons/community.png",
+    image:
+      "https://cdn.pixabay.com/photo/2023/08/05/15/42/panda-8171354_1280.jpg",
     title: "Client Title",
     description: "lorem ipsum",
     caseStudyLink: "https://www.c4cneu.com",
     websiteLink: "https://www.c4cneu.com",
   },
   {
-    image: "app/icons/community.png",
-    title: "Client Title",
+    image:
+      "https://cdn.pixabay.com/photo/2023/08/05/15/42/panda-8171354_1280.jpg",
+    title: "new new client",
     description: "lorem ipsum",
     caseStudyLink: "https://www.c4cneu.com",
     websiteLink: "https://www.c4cneu.com",
   },
   {
-    image: "app/icons/community.png",
-    title: "Client Title",
-    description: "lorem ipsum",
-    caseStudyLink: "https://www.c4cneu.com",
-    websiteLink: "https://www.c4cneu.com",
-  },
-  {
-    image: "app/icons/community.png",
-    title: "Client Title",
-    description: "lorem ipsum",
-    caseStudyLink: "https://www.c4cneu.com",
-    websiteLink: "https://www.c4cneu.com",
-  },
-  {
-    image: "app/icons/community.png",
-    title: "Client Title",
-    description: "lorem ipsum",
-    caseStudyLink: "https://www.c4cneu.com",
-    websiteLink: "https://www.c4cneu.com",
-  },
-  {
-    image: "app/icons/community.png",
-    title: "Client Title",
-    description: "lorem ipsum",
-    caseStudyLink: "https://www.c4cneu.com",
-    websiteLink: "https://www.c4cneu.com",
-  },
-  {
-    image: "app/icons/community.png",
-    title: "Client Title",
+    image:
+      "https://cdn.pixabay.com/photo/2023/08/05/15/42/panda-8171354_1280.jpg",
+    title: "the new client",
     description: "lorem ipsum",
     caseStudyLink: "https://www.c4cneu.com",
     websiteLink: "https://www.c4cneu.com",
@@ -63,22 +38,25 @@ const exClientsList = [
 
 const exClientsListPast = [
   {
-    image: "app/icons/community.png",
-    title: "Client Title",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlgHYcdmZEvuKAv8B-hRXW9MtY0layhqSpJQ&s",
+    title: "wowzer",
     description: "lorem ipsum",
     caseStudyLink: "https://www.c4cneu.com",
     websiteLink: "https://www.c4cneu.com",
   },
   {
-    image: "app/icons/community.png",
-    title: "Client Title",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlgHYcdmZEvuKAv8B-hRXW9MtY0layhqSpJQ&s",
+    title: "C4C recruitment",
     description: "lorem ipsum",
     caseStudyLink: "https://www.c4cneu.com",
     websiteLink: "https://www.c4cneu.com",
   },
   {
-    image: "app/icons/community.png",
-    title: "Client Title",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlgHYcdmZEvuKAv8B-hRXW9MtY0layhqSpJQ&s",
+    title: "C4C",
     description: "lorem ipsum",
     caseStudyLink: "https://www.c4cneu.com",
     websiteLink: "https://www.c4cneu.com",

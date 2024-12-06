@@ -1,5 +1,8 @@
-import { MetaFunction } from "@remix-run/react";
+import { asImageSrc, asText } from "@prismicio/client";
+import { MetaFunction, useLoaderData } from "@remix-run/react";
+import { ProjectDocument } from "types.generated";
 import ProjectsCarousel from "~/components/projects/projects-carousel";
+import { getPrismicClient } from "~/utils/prismicio";
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,38 +11,45 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-const exProjectsList = [
-  {
-    image: "https://i.imgur.com/1D8yxOo.gif",
-    title: "Lucy's Love Bus",
-    subtitle: "Practitioner Search Directory",
-    description:
-      "Lucy’s Love Bus improves quality of life for children with cancer or other life-threatening illnesses with integrative therapies like massage, meditation, acupuncture, music therapy, and therapeutic horseback riding. Integrative therapies ease children’s pain and anxiety during and after traditional medical... treatments. We are building an open search directory to allow families across New England to find integrative therapists in their area.",
-    link: "https://en.wikipedia.org/wiki/Sirocco_(parrot)",
-  },
-  {
-    image: "https://i.imgur.com/F4IOuav.jpeg",
-    title: "Speak For The Trees",
-    subtitle: "Tree Stewardship System",
-    description:
-      "Speak for the Trees Boston aims to improve the size and health of the urban forest in the greater Boston area, with a focus on under-served and under-canopied neighborhoods. They work with volunteers to inventory (collect data on) trees, plant trees, and educate those about trees...",
-    link: "https://en.wikipedia.org/wiki/Sirocco_(parrot)",
-  },
-  {
-    image: "https://i.imgur.com/1D8yxOo.gif",
-    title: "This Star Won't Go Out",
-    subtitle: "Grant Application System",
-    description:
-      "Since its founding in 2011, This Star Won’t Go Out has helped hundreds of families, with gifts totaling over $450,000 to help families suffering from financial hardship related to childhood cancer. We're helping to streamline this system so that TSWGO can focus their attention on helping families.",
-    link: "https://en.wikipedia.org/wiki/Sirocco_(parrot)",
-  },
-  {},
-];
+export const loader = async () => {
+  const client = await getPrismicClient();
+
+  return await client.getSingle<ProjectDocument>("project");
+};
 
 export default function Projects() {
+  const document = useLoaderData<ProjectDocument>();
+  const projects = document.data.project;
+
+  const projectsList = projects.map((project) => ({
+    logo: asImageSrc(project.logo_image) ?? undefined,
+    title: asText(project.title),
+    subtitle: asText(project.subtitle),
+    description: asText(project.description),
+    has_case: project.has_case_study,
+    link: `http://localhost:5173/case/${asText(project.title)}`,
+  }));
+
   return (
     <div>
-      <ProjectsCarousel projects={exProjectsList} />
+      <div className="pt-16 px-16 relative overflow-hidden flex justify-center flex-row">
+        <div className="flex-col  w-fit">
+          <div className="flex-col justify-start items-start gap-4 inline-flex mb-6 ">
+            <h1 className="text-black font-medium text-5xl font-['IBM Plex Sans'] leading-10">
+              Projects
+            </h1>
+            <h3 className="text-center text-[#333333] text-2xl font-medium font-['IBM Plex Sans'] leading-7">
+              Take a look at some of the work we've done!
+            </h3>
+          </div>
+          <ProjectsCarousel projects={projectsList} />
+        </div>
+        <div
+          className="absolute bottom-0 right-0 -z-10 h-[500px] w-[500px] rounded-full shadow-none
+                  bg-[radial-gradient(circle,_rgba(238,210,255,0.5)_30%,_transparent_70%)]
+                  translate-x-1/2 translate-y-1/8"
+        />
+      </div>
     </div>
   );
 }

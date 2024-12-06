@@ -19,7 +19,7 @@ module.exports = {
     commonjs: true,
     es6: true,
   },
-  ignorePatterns: ["!**/.server", "!**/.client", "build", "**.generated.ts"],
+  ignorePatterns: ["**/.server", "**/.client", "build", "**.generated.ts", "app/components/icons"],
 
   // Base config
   extends: ["eslint:recommended"],

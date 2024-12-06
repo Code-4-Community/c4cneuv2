@@ -16,14 +16,14 @@ const Project = ({
   has_case,
 }: ProjectProps) => {
   return (
-    <div className="px-2 py-6 flex flex-col justify-between items-center h-full bg-[#FDFDFD]">
+    <div className="px-2 py-6 flex flex-col justify-between items-center h-full bg-[#FDFDFD] ">
       <div className="px-8 py-8 border-2 border-[#4a4951] flex flex-col justify-between items-center gap-2 h-full object-cover shadow-default">
         <img
           src={logo ?? "https://i.imgur.com/BlBH8Ak.jpeg"}
           alt={title}
-          className="w-96 h-44 object-cover rounded-lg mb-4"
+          className="w-96 h-44 object-cover rounded-sm mb-4"
         />
-        <div className="flex flex-col justify-start items-center gap-6 mx-6 flex-grow w-full">
+        <div className="flex flex-col justify-start items-center gap-6 mx-6 flex-grow w-full max-w-lg">
           <div>
             <div className="text-center text-black text-2xl font-medium font-['IBM Plex Sans'] leading-7 mb-2">
               {title || "Title"}
@@ -32,7 +32,7 @@ const Project = ({
               {subtitle || "Project Subtitle"}
             </div>
           </div>
-          <div className="text-sm text-gray-500 line-clamp-[9] text-start w-full">
+          <div className="clamped-text text-sm text-gray-500 line-clamp-[9] text-start w-full overflow-hidden">
             {description || "Project Description"}
           </div>
         </div>

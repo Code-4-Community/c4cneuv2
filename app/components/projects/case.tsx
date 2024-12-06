@@ -80,7 +80,7 @@ const Case = ({ case: caseData }: { case: CaseProps }) => {
       </div>
 
       <div className="w-full max-w-4xl flex flex-col items-center my-8">
-        <div className="relative w-full max-w-2xl">
+        <div className="relative w-full max-w-2xl border ">
           {website_image && (
             <img
               className="relative z-10 w-full rounded-lg"

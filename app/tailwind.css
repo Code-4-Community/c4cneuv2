@@ -55,6 +55,15 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+  .clamped-text {
+    display: -webkit-box;
+    line-clamp: 9;
+    -webkit-line-clamp: 9; /* Number of lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
 }
 @layer base {
   * {

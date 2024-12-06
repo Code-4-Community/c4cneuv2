@@ -3,6 +3,7 @@ import WeAreBlock from "~/components/home-page/we-are-block";
 import MissionStatement from "~/components/home-page/landing";
 
 import Footer from "~/components/footer/footer";
+
 export const meta: MetaFunction = () => {
   return [
     { title: "Code4Community" },

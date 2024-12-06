@@ -9,5 +9,9 @@ export const meta: MetaFunction = () => {
 };
 
 export default function FAQs() {
-  return <Footer />;
+  return (
+    <div>
+      <Footer />
+    </div>
+  );
 }

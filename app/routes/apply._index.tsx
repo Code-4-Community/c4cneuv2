@@ -1,5 +1,4 @@
 import { type MetaFunction } from "@remix-run/node";
-import Footer from "~/components/footer/footer";
 import PositionCard from "~/components/apply-page/position";
 import JoinTeamSection from "~/components/apply-page/join-team";
 import ApplyClient from "~/components/apply-page/apply-client";
@@ -37,18 +36,20 @@ const exPositionList = [
 
 export default function Apply() {
   return (
-    <div className="pl-8 pb-8">
-      <JoinTeamSection />
-      <div className="pb-18">
-        <h3 className="text-xl text-left mb-2 pb-8">Positions</h3>
-        <div className="flex flex-row">
-          {exPositionList.map((position, index) => (
-            <PositionCard {...position} key={index} />
-          ))}
+    <div>
+      <div className="pl-8 pb-8">
+        <JoinTeamSection />
+        <div className="pb-18">
+          <h3 className="text-xl text-left mb-2 pb-8">Positions</h3>
+          <div className="flex flex-row">
+            {exPositionList.map((position, index) => (
+              <PositionCard {...position} key={index} />
+            ))}
+          </div>
         </div>
+        <Footer />
       </div>
       <ApplyClient />
-      <Footer />
     </div>
   );
 }

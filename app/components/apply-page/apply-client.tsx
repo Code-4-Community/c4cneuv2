@@ -43,7 +43,7 @@ const ApplyClient = () => {
         </Label>
         <Textarea
           className="w-full h-40 border border-gray-400 p-3 rounded-md text-gray-700"
-          placeholder="Your Message."
+          placeholder="Your Message"
           id="message"
         />
       </div>

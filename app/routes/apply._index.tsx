@@ -2,19 +2,17 @@ import { type MetaFunction } from "@remix-run/node";
 import Footer from "~/components/footer/footer";
 import PositionCard from "~/components/apply-page/position";
 import JoinTeamSection from "~/components/apply-page/join-team";
+import ApplyClient from "~/components/apply-page/apply-client";
 
 export const meta: MetaFunction = () => {
-  return [
-    { title: "Apply" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
+  return [{ title: "Apply" }, { name: "apply", content: "Welcome to Remix!" }];
 };
 
 const exPositionList = [
   {
     title: "Software Developer",
     description:
-      "Developers write the code that make our projects a reality." +
+      "Developers write the code that make our projects a reality. " +
       "Help us tackle tough technical problems while creating the code that powers C4C!",
     linkLearnMore: "https://www.c4cneu.com",
     linkApply: "https://www.c4cneu.com",
@@ -49,6 +47,7 @@ export default function Apply() {
           ))}
         </div>
       </div>
+      <ApplyClient />
       <Footer />
     </div>
   );

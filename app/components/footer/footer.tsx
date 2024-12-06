@@ -1,3 +1,4 @@
+import { Link } from "@remix-run/react";
 import MailingList from "./mailing-list";
 
 export default function Footer() {
@@ -11,7 +12,7 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start text-center items-start gap-1">
           <nav className="flex flex-wrap justify-center gap-4">
             {[
-              { name: "Home", href: "/home" },
+              { name: "Home", href: "/" },
               { name: "About", href: "/about" },
               { name: "People", href: "/people" },
               { name: "Projects", href: "/projects" },
@@ -19,17 +20,17 @@ export default function Footer() {
               { name: "Apply", href: "/apply" },
               { name: "FAQs", href: "/faqs" },
             ].map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
-                className="text-[#4a4951] text-sm font-bold underline font-['IBM Plex Sans']"
+                to={link.href}
+                className="text-[#4a4951] text-sm font-bold underline"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
-          <div className="text-[#4a4951] text-sm font-bold font-['IBM Plex Sans']">
+          <div className="text-[#4a4951] text-sm font-bold">
             Contact us at{" "}
             <a href="mailto:c4cneu@gmail.com" className="underline">
               c4cneu@gmail.com
@@ -38,7 +39,7 @@ export default function Footer() {
         </div>
 
         <div className="text-center">
-          <p className="text-[#4a4951] text-base font-['IBM Plex Sans']">
+          <p className="text-[#4a4951] text-base ">
             Made with love by Code4Community
           </p>
           <p className="text-[#9997a2] text-xs">
@@ -61,15 +62,15 @@ export default function Footer() {
               href: "https://youtube.com/channel/UC7FI2u_BVjB0EkKMmx-yibA",
             },
           ].map((social) => (
-            <a
+            <Link
               key={social.name}
-              href={social.href}
+              to={social.href}
               target="_blank"
               rel="noreferrer"
-              className="text-[#4a4951] text-sm font-bold underline font-['IBM Plex Sans']"
+              className="text-[#4a4951] text-sm font-bold underline "
             >
               {social.name}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

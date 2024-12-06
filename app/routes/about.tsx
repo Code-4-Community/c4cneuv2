@@ -51,11 +51,13 @@ export default function About() {
   ];
 
   return (
-    <div className="px-40 pt-20 gap-18">
-      <MainSection />
-      <WeAreSection aboutItems={aboutItems} />
-      <EventsSection cde={cde} pde={pde} />
-      <NumbersSection />
+    <div>
+      <div className="px-40 pt-20 gap-18">
+        <MainSection />
+        <WeAreSection aboutItems={aboutItems} />
+        <EventsSection cde={cde} pde={pde} />
+        <NumbersSection />
+      </div>
     </div>
   );
 }

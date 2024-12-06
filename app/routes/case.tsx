@@ -1,6 +1,5 @@
 import { MetaFunction } from "@remix-run/react";
 import Case from "~/components/projects/case";
-import Footer from "~/components/footer/footer";
 
 export const meta: MetaFunction = () => {
   return [
@@ -26,7 +25,6 @@ export default function Projects() {
   return (
     <div>
       <Case case={exCase} />
-      <Footer />
     </div>
   );
 }

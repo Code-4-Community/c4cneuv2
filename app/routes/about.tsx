@@ -6,7 +6,6 @@ import NumbersSection from "~/components/about-page/numbers-section";
 import { AboutCdeDocument } from "types.generated";
 import { AboutPdeDocument } from "types.generated";
 import { getPrismicClient } from "~/utils/prismicio";
-import Footer from "~/components/footer/footer";
 
 export const meta: MetaFunction = () => {
   return [
@@ -59,7 +58,6 @@ export default function About() {
         <EventsSection cde={cde} pde={pde} />
         <NumbersSection />
       </div>
-      <Footer />
     </div>
   );
 }

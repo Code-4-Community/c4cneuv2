@@ -1,3 +1,6 @@
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
+import { Textarea } from "../ui/textarea";
 const ApplyClient = () => {
   return (
     <div className="p-8 max-w-3xl mx-auto">
@@ -11,43 +14,43 @@ const ApplyClient = () => {
       </div>
       <div className="flex flex-row gap-4 pb-8">
         <div className="w-full">
-          <label htmlFor="nameInput" className="font-semibold block pb-1">
+          <Label className="font-semibold block pb-1" htmlFor="Name">
             Name*
-          </label>
-          <input
-            id="nameInput"
-            name="nameInput"
-            defaultValue="Your Name"
+          </Label>
+          <Input
             className="w-full border border-gray-400 p-3 rounded-md text-gray-700"
+            type="text"
+            id="name"
+            placeholder="Your Name"
           />
         </div>
         <div className="w-full">
-          <label htmlFor="emailInput" className="font-semibold block pb-1">
+          <Label className="font-semibold block pb-1" htmlFor="Email">
             Email*
-          </label>
-          <input
-            id="emailInput"
-            name="emailInput"
-            defaultValue="Your Email Address"
+          </Label>
+          <Input
             className="w-full border border-gray-400 p-3 rounded-md text-gray-700"
+            type="text"
+            id="email"
+            placeholder="Your Email"
           />
         </div>
       </div>
       <div className="pb-8">
-        <label htmlFor="messageInput" className="font-semibold block pb-1">
+        <Label className="font-semibold block pb-1" htmlFor="message">
+          {" "}
           Message*
-        </label>
-        <textarea
-          id="messageInput"
-          name="messageInput"
-          defaultValue="Your Message"
-          className="w-full h-40 border border-gray-400 p-3 rounded-md text-gray-700 resize-none"
+        </Label>
+        <Textarea
+          className="w-full h-40 border border-gray-400 p-3 rounded-md text-gray-700"
+          placeholder="Your Message."
+          id="message"
         />
       </div>
       <div className="flex justify-center">
         <button
           type="submit"
-          className="w-24 bg-purple-200 text-black-700 font-semibold py-2 text-center border-2 border-gray-300"
+          className="w-24 bg-purple-200 text-black-700 font-semibold py-2 text-top border-2 border-gray-400"
         >
           Submit
         </button>

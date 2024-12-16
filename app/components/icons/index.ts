@@ -6,3 +6,5 @@ export { default as Linkedin } from "./Linkedin";
 export { default as Site } from "./Site";
 export { default as SoftwareEngineer } from "./SoftwareEngineer";
 export { default as WebsiteGear } from "./WebsiteGear";
+export { default as LQuote } from "./LeftQuote";
+export { default as RQuote } from "./RightQuote";

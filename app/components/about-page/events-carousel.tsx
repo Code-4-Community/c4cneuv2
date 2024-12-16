@@ -41,9 +41,9 @@ const EventsCarousel = ({ events }: EventsCarouselProps) => {
         }}
         className="w-full"
       >
-        <CarouselContent className="-ml-2 md:-ml-4">
+        <CarouselContent className="-ml-2 md:-ml-4 mr-2">
           {events.map((event, index) => (
-            <CarouselItem key={index} className="basis-1/3 pl-2 md:pl-4">
+            <CarouselItem key={index} className="basis-1/3 md:pl-4">
               <Event
                 image={event.image}
                 title={event.title}

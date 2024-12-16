@@ -1,5 +1,6 @@
 import { type MetaFunction } from "@remix-run/node";
-import ClientCard from "~/components/client-card";
+import ClientCard from "~/components/client-page/client-card";
+import ClientHeader from "~/components/client-page/client-header";
 
 export const meta: MetaFunction = () => {
   return [
@@ -64,15 +65,16 @@ const exClientsListPast = [
 
 export default function Clients() {
   return (
-    <div>
-      <h3 className="text-xl font-semibold text-left mb-2">Current Clients</h3>
+    <div className="px-40 pt-20 gap-18">
+      <ClientHeader />
+      <h3 className="text-4xl mb-8">Current Clients</h3>
       <div className="flex flex-row">
         {exClientsList.map((client, index) => (
           <ClientCard {...client} key={index} />
         ))}
       </div>
       <div>
-        <h3 className="text-xl font-semibold text-left mb-2">Past Clients</h3>
+        <h3 className="text-4xl mb-8">Past Clients</h3>
         <div className="flex flex-row">
           {exClientsListPast.map((client, index) => (
             <ClientCard {...client} key={index} />

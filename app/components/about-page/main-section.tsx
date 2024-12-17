@@ -5,16 +5,12 @@ const MainSection = () => {
         About <span className="text-indigo-600">Code4Community</span>
       </h1>
       <div className="flex justify-center">
-        <div className="relative">
-          <img
-            className="w-screen"
-            src={"app/images/main.png"}
-            alt="About Main Section"
-          />
-          <div className="text-4xl absolute left-24 bottom-36">
-            Empowering through tech, fostering diversity, and leaving a lasting
-            impact.
-          </div>
+        <div
+          className="bg-[linear-gradient(to_right_bottom,rgba(243,235,249,0.75),rgba(243,235,249,0.75)),url('app/images/main.png')]
+                        bg-cover bg-no-repeat border border-black shadow-default text-4xl px-20 py-28"
+        >
+          Empowering through tech, fostering diversity, and leaving a lasting
+          impact.
         </div>
       </div>
 

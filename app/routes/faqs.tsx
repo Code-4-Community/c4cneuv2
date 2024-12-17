@@ -36,7 +36,7 @@ export default function FAQs() {
         <Accordion type="multiple" key={key}>
           <AccordionItem
             value="item-1"
-            className="shadow-small mx-6 md:mx-[192px] mb-5 md: border border-black px-2.5 py-2.5 md:py-10 md:px-10"
+            className="shadow-small mx-6 md:mx-[192px] mb-5 md:mb-8 border border-black px-2.5 py-2.5 md:py-10 md:px-10"
           >
             <AccordionTrigger className="font-medium text-xs md:text-2xl">
               {item.title}
@@ -48,7 +48,7 @@ export default function FAQs() {
               {item.link && item.link_text && (
                 <Link
                   to={item.link}
-                  className="underline underline-offset-2 md:underline-offset-4 justify-center font-bold"
+                  className="underline underline-offset-2 md:underline-offset-4 font-bold"
                 >
                   {item.link_text}
                 </Link>

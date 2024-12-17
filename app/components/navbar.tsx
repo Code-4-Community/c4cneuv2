@@ -8,7 +8,7 @@ export default function Navbar(): React.ReactElement {
   const isActive = (path: string): boolean => location.pathname === path;
 
   return (
-    <nav className="flex justify-between items-center bg-white shadow-default p-4 m-4 border-2 border-black h-24">
+    <nav className="flex justify-between items-center bg-white shadow p-4 m-4 border-2 border-black h-24">
       <div className="flex items-center w-12 ml-14">
         <a href="/">
           <C4C />

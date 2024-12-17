@@ -30,7 +30,7 @@ export default function FAQs() {
   return (
     <div>
       <h1 className="mt-12 mb-9 ml-8 md:ml-[192px] md:mt-[120px] md:mb-[72px] text-2xl md:text-5xl font-medium shrink-0">
-        Frequently asked <span className="text-indigo-600">Questions</span>
+        Frequently Asked <span className="text-indigo-600">Questions</span>
       </h1>
       {exFAQ.map((item, key) => (
         <Accordion type="multiple" key={key}>

@@ -24,18 +24,20 @@ export default function EventsSection({ cde, pde }: EventsSectionProps) {
 
   return (
     <div>
-      <h2 className="text-3xl py-16">Events</h2>
-      <h3 className="pb-16 text-2xl">
+      <h2 className="text-lg mt-12 mb-4 md:text-3xl md:my-16 font-medium">
+        Events
+      </h2>
+      <h3 className="text-xs mb-12 md:text-2xl md:mb-16 font-medium">
         Throughout the school year, C4C hosts a variety of professional
         development and community development events, both for its internal
         members and the greater Northeastern community. See below for some of
         our past mixers, workshops, and more!
       </h3>
-      <h2 className="text-3xl text-indigo-600 pb-10">
+      <h2 className="text-lg md:text-3xl text-indigo-600 mb-4 md:mb-10 font-medium">
         Community Development Events
       </h2>
       <EventsCarousel events={cdEvents} />
-      <h2 className="text-3xl text-indigo-600 pb-10">
+      <h2 className="text-lg md:text-3xl text-indigo-600 mb-4 md:mb-10 font-medium">
         Professional Development Events
       </h2>
       <EventsCarousel events={pdEvents} />

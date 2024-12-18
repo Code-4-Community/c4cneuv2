@@ -11,12 +11,14 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        default: "8px 8px 0px 0px #4A4A51",
-        mini: "4px 4px 0px 0px #4A4A51",
+        DEFAULT: "8px 8px #4A4A51",
+        small: "4px 4px #4A4A51",
+        mobile: "1.5px 1.5px #4A4A51",
       },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        gray: "#333333",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",

@@ -11,13 +11,13 @@ interface EventsSectionProps {
 
 export default function EventsSection({ cde, pde }: EventsSectionProps) {
   const cdEvents: EventProps[] = cde.data.events.map((event) => ({
-    image: event.image.url ?? "app/icons/leaders.png",
+    image: event.image.url ?? "app/icons/leaders.jpeg",
     title: asText(event.title),
     description: asText(event.description),
   }));
 
   const pdEvents: EventProps[] = pde.data.events.map((event) => ({
-    image: event.image.url ?? "app/icons/leaders.png",
+    image: event.image.url ?? "app/icons/leaders.jpeg",
     title: asText(event.title),
     description: asText(event.description),
   }));

@@ -13,6 +13,7 @@ export default {
       boxShadow: {
         DEFAULT: "8px 8px #4A4A51",
         small: "4px 4px #4A4A51",
+        mini: "4px 4px #4A4A51",
       },
       colors: {
         background: "hsl(var(--background))",

@@ -31,11 +31,11 @@ const NumbersSection = () => {
             nonprofit partners
           </h2>
         </div>
-        <div className="flex justify-center absolute md:static z-0">
+        <div className="flex justify-center md:static z-0 relative w-52 md:w-80">
           <img
             src="app/images/numbers.png"
             alt="Illustration"
-            className="w-52 md:w-80 h-auto"
+            className="h-full w-full object-contain"
           />
         </div>
         <div className="md:text-right">

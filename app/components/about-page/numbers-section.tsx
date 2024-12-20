@@ -1,6 +1,6 @@
 const NumbersSection = () => {
   return (
-    <div className="mb-72 md:mb-28">
+    <div className="mb-20 md:mb-28">
       <h2 className="text-lg mb-4 md:text-3xl md:mb-16 font-medium">
         By the Numbers
       </h2>

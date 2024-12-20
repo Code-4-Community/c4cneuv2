@@ -1,4 +1,6 @@
-interface ClientProps {
+import { NewWindow } from "../icons";
+
+export interface ClientProps {
   image?: string;
   title?: string;
   description?: string;
@@ -14,29 +16,35 @@ const ClientCard = ({
   websiteLink,
 }: ClientProps) => {
   return (
-    <div className="max-w-lg mx-auto">
-      <div className="border-2 border-gray-300 shadow-lg p-8 mb-4">
+    <div className="flex flex-col items-start md:mb-14">
+      <div className="w-full h-72 md:h-[400px] border-[1px] md:border-2 border-black shadow-small md:shadow p-4 md:p-8 mb-3.5 md:mb-11">
         <div className="flex justify-center mb-4">
           <img
             src={image ?? "app/icons/community.png"}
             alt={title ?? "Title"}
-            className="h-40 w-40 object-cover"
+            className="h-16 w-16 md:h-[100px] md:w-[100px] object-cover"
           />
         </div>
-        <h3 className="text-xl font-semibold text-center mb-2">
+        <h3 className="text-sm md:text-xl font-medium text-center mb-4 md:mb-9">
           {title ?? "Title"}
         </h3>
-        <p className="text-gray-700 text-center mb-6">
+        <p className="text-[10px] leading-none md:text-base text-gray mb-6">
           {description ?? "lorem ipsum"}
         </p>
       </div>
-      <div className="flex flex-col w-full space-y-4">
-        <div className="block w-full bg-purple-200 text-purple-700 font-semibold py-2 text-center border-2 border-gray-300">
+      <div className="flex flex-col w-full space-y-1.5 md:space-y-3">
+        <div className="text-sm md:text-base block w-full bg-[rgb(248,237,255)] font-bold border-[1px] md:border-[1.5px] border-black shadow-mobile md:shadow-small py-2.5 text-center">
           <a href={caseStudyLink}>Project Case Study</a>
         </div>
 
-        <div className="border-2 border-gray-300 shadow-lg block w-full bg-white-200 text-white-700 font-semibold py-2 text-center">
-          <a href={websiteLink}>Client Website</a>
+        <div className="text-sm md:text-base block w-full bg-white-200 font-bold border-[1px] md:border-[1.5px] border-black shadow-mobile md:shadow-small py-2.5 text-center">
+          <a
+            href={websiteLink}
+            className="flex justify-center items-center gap-1 md:gap-2"
+          >
+            Client Website
+            <NewWindow className="w-2.5 h-2.5 md:w-3.5 md:h-3.5" />
+          </a>
         </div>
       </div>
     </div>

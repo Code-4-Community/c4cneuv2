@@ -1,7 +1,7 @@
 const MainSection = () => {
   return (
     <div>
-      <h1 className="text-2xl mb-8 font-medium md:text-5xl md:mb-16">
+      <h1 className="text-2xl mb-8 font-medium md:text-5xl md:mb-16 mt-14 md:mt-0">
         About <span className="text-indigo-600">Code4Community</span>
       </h1>
       <div className="flex justify-center">

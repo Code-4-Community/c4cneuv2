@@ -8,3 +8,4 @@ export { default as SoftwareEngineer } from "./SoftwareEngineer";
 export { default as WebsiteGear } from "./WebsiteGear";
 export { default as LQuote } from "./LeftQuote";
 export { default as RQuote } from "./RightQuote";
+export { default as Linkedin } from "./Linkedin";

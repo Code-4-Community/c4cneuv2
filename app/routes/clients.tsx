@@ -1,12 +1,13 @@
 import { type MetaFunction } from "@remix-run/node";
 import ClientCard from "~/components/clients-page/client-card";
 import ClientHeader from "~/components/clients-page/client-header";
-import { CurrclientDocument } from "types.generated";
+import { ClientquoteDocument, CurrclientDocument } from "types.generated";
 import { PastclientDocument } from "types.generated";
 import { getPrismicClient } from "~/utils/prismicio";
 import { ClientProps } from "~/components/clients-page/client-card";
 import { useLoaderData } from "@remix-run/react";
 import { asText, asLink } from "@prismicio/client";
+import { QuoteProps } from "~/components/clients-page/client-header";
 
 export const meta: MetaFunction = () => {
   return [
@@ -18,17 +19,19 @@ export const meta: MetaFunction = () => {
 export const loader = async () => {
   const client = await getPrismicClient();
 
-  const [curr, past] = await Promise.all([
+  const [curr, past, quote] = await Promise.all([
     client.getSingle<CurrclientDocument>("currclient"),
     client.getSingle<PastclientDocument>("pastclient"),
+    client.getSingle<ClientquoteDocument>("clientquote"),
   ]);
-  return { curr, past };
+  return { curr, past, quote };
 };
 
 export default function Clients() {
-  const { curr, past } = useLoaderData<{
+  const { curr, past, quote } = useLoaderData<{
     curr: CurrclientDocument;
     past: PastclientDocument;
+    quote: ClientquoteDocument;
   }>();
 
   const currClients: ClientProps[] = curr.data.currclient.map((client) => ({
@@ -51,9 +54,15 @@ export default function Clients() {
       asLink(client.websitelink) ?? "https://github.com/Code-4-Community",
   }));
 
+  const clientQuote: QuoteProps = {
+    client: asText(quote.data.name),
+    title: asText(quote.data.title),
+    quote: asText(quote.data.quote),
+  };
+
   return (
     <div className="px-8 md:px-40 pt-28 md:pt-20">
-      <ClientHeader />
+      <ClientHeader {...clientQuote} />
       <h3 className="text-2xl md:text-4xl mb-4 md:mb-8 font-medium">
         Current Clients
       </h3>

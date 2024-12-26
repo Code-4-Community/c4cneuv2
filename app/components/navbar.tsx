@@ -6,7 +6,6 @@ import { useState } from "react";
 export default function Navbar(): React.ReactElement {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
-  console.log(location);
   const isActive = (path: string): boolean => location.pathname === path;
 
   return (

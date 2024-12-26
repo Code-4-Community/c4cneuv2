@@ -1,6 +1,12 @@
 import { SoftwareEngineer, LQuote, RQuote } from "../icons";
 
-const ClientHeader = () => {
+export interface QuoteProps {
+  client?: string;
+  title?: string;
+  quote?: string;
+}
+
+const ClientHeader = ({ client, title, quote }: QuoteProps) => {
   return (
     <div className="pb-12 md:pb-20">
       <h1 className="text-2xl md:text-5xl pb-8 md:pb-16 font-medium">
@@ -14,13 +20,7 @@ const ClientHeader = () => {
             </div>
 
             <h3 className="text-[8px] md:text-xl leading-tight md:leading-7 px-2 md:px-11 font-medium">
-              If the members of C4C are any indication of our future movers and
-              shakers, we are in good hands. We were given frequent updates and
-              they paid attention to every single detail, ensuring that the user
-              experience was seamless and easy to follow. 2020 has been
-              challenging on many fronts and our organization has been truly
-              touched that the team remains so attentive and driven to complete
-              the project in the midst of a global pandemic.
+              {quote ?? "lorem ipsum"}
             </h3>
             <div className="flex justify-end">
               <RQuote className="w-3 h-3 md:w-8 md:h-8" />
@@ -29,11 +29,9 @@ const ClientHeader = () => {
 
           <div className="text-right leading-tight">
             <h3 className="text-[10px] md:text-2xl font-medium">
-              Jackie Walker
+              {client ?? "Name"}
             </h3>
-            <h3 className="text-[8px] md:text-base">
-              Director of Programs at Lucy's Love Bus
-            </h3>
+            <h3 className="text-[8px] md:text-base">{title ?? "Title"}</h3>
           </div>
         </div>
         <div className="md:w-1/3 flex justify-center">

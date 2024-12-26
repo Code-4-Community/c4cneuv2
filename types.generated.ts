@@ -256,6 +256,60 @@ export type ClientDocument<Lang extends string = string> =
   >;
 
 /**
+ * Content for ClientQuote documents
+ */
+interface ClientquoteDocumentData {
+  /**
+   * name field in *ClientQuote*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clientquote.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name: prismic.TitleField;
+
+  /**
+   * title field in *ClientQuote*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clientquote.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * quote field in *ClientQuote*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clientquote.quote
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  quote: prismic.RichTextField;
+}
+
+/**
+ * ClientQuote document from Prismic
+ *
+ * - **API ID**: `clientquote`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ClientquoteDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ClientquoteDocumentData>,
+    "clientquote",
+    Lang
+  >;
+
+/**
  * Item in *CurrClient → currclient*
  */
 export interface CurrclientDocumentDataCurrclientItem {
@@ -766,6 +820,7 @@ export type AllDocumentTypes =
   | AboutCdeDocument
   | AboutPdeDocument
   | ClientDocument
+  | ClientquoteDocument
   | CurrclientDocument
   | EventDocument
   | PastclientDocument
@@ -781,6 +836,17 @@ declare module "@prismicio/client" {
     ): prismic.Client<AllDocumentTypes>;
   }
 
+  interface CreateWriteClient {
+    (
+      repositoryNameOrEndpoint: string,
+      options: prismic.WriteClientConfig,
+    ): prismic.WriteClient<AllDocumentTypes>;
+  }
+
+  interface CreateMigration {
+    (): prismic.Migration<AllDocumentTypes>;
+  }
+
   namespace Content {
     export type {
       AboutDocument,
@@ -794,6 +860,8 @@ declare module "@prismicio/client" {
       ClientDocument,
       ClientDocumentData,
       ClientDocumentDataCurrclientItem,
+      ClientquoteDocument,
+      ClientquoteDocumentData,
       CurrclientDocument,
       CurrclientDocumentData,
       CurrclientDocumentDataCurrclientItem,

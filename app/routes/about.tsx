@@ -31,19 +31,19 @@ export default function About() {
   }>();
   const aboutItems = [
     {
-      image: "app/images/problem-solvers.png",
+      image: "app/images/problem-solvers.jpeg",
       title: "Problem-Solvers",
       description:
         "We're a community of forward-thinkers and solution architects. Embrace challenges, spark innovation, and connect with a network of dynamic individuals.",
     },
     {
-      image: "app/images/leaders.png",
+      image: "app/images/leaders.jpeg",
       title: "Leaders",
       description:
         "We are a community dedicated to nurturing leadership potential. Explore mentorship, engage in skill-building, and connect with aspiring leaders.",
     },
     {
-      image: "app/images/community.png",
+      image: "app/images/community.jpeg",
       title: "A Tight-Knit Community",
       description:
         "We embrace the strength of togetherness. We are a tight-knit community that fosters genuine relationships and shared experiences.",
@@ -52,7 +52,7 @@ export default function About() {
 
   return (
     <div>
-      <div className="px-40 pt-20 gap-18">
+      <div className="px-8 pt-12 gap-12 md:px-40 md:pt-20 md:gap-18">
         <MainSection />
         <WeAreSection aboutItems={aboutItems} />
         <EventsSection cde={cde} pde={pde} />

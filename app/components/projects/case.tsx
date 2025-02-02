@@ -93,7 +93,7 @@ const Case = ({ case: caseData }: { case: CaseProps }) => {
           <a
             href={link}
             target="_blank"
-            className="w-full mt-6 bg-[#fcfcfc] text-[#333333] text-center border border-[#4a4951] px-6 py-2 object-cover shadow-button font-bold text-sm hover:bg-[#EDBAFF] transition flex justify-center items-center gap-2"
+            className="w-full mt-6 bg-[#fcfcfc] text-[#333333] text-center border border-[#4a4951] px-6 py-2 object-cover shadow-small font-bold text-sm hover:bg-[#EDBAFF] transition flex justify-center items-center gap-2"
             rel="noreferrer"
           >
             Launch Live Website <OpenLink />

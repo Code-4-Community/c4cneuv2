@@ -27,7 +27,7 @@ export default function Projects() {
     subtitle: asText(project.subtitle),
     description: asText(project.description),
     has_case: project.has_case_study,
-    link: `http://localhost:5173/case/${asText(project.title)}`,
+    link: `${asText(project.title).split(" ").join("_")}`,
   }));
 
   return (

@@ -1,3 +1,5 @@
+import { Link } from "@remix-run/react";
+
 export interface ProjectProps {
   logo?: string;
   title?: string;
@@ -38,8 +40,8 @@ const Project = ({
         </div>
         <div className="mt-2 w-full text-left ">
           {link && (
-            <a
-              href={has_case ? link : ""}
+            <Link
+              to={has_case ? link : ""}
               className={` object-cover shadow-small px-8 py-3 w-full mt-6 text-[#333333] text-center border border-[#4a4951] px-6 py-2 object-cover shadow-small font-bold text-sm  ${
                 has_case
                   ? "bg-[#f8ecff] border-[#4a4951] hover:bg-[#EDBAFF] transition"
@@ -47,7 +49,7 @@ const Project = ({
               } flex justify-center items-center`}
             >
               View Case Study
-            </a>
+            </Link>
           )}
         </div>
       </div>

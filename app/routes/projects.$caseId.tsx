@@ -13,7 +13,7 @@ export const meta: MetaFunction = () => {
 };
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
-  const caseId = params.caseId;
+  const caseId = params.caseId?.split("_").join(" ");
   const client = await getPrismicClient();
   const document = await client.getSingle<ProjectDocument>("project");
   return { document, caseId };
@@ -29,10 +29,10 @@ export default function Projects() {
   );
   const caseDetails = {
     logo: asImageSrc(project?.logo_image) ?? undefined,
-    title: asText(project?.title),
-    introduction: asText(project?.description),
-    problem_statement: asText(project?.case_problem),
-    solution: asText(project?.case_problem),
+    title: asText(project?.title) ?? undefined,
+    introduction: asText(project?.description) ?? undefined,
+    problem_statement: asText(project?.case_problem) ?? undefined,
+    solution: asText(project?.case_problem) ?? undefined,
     website_image: asImageSrc(project?.website_image) ?? undefined,
     link: asLink(project?.live_website) ?? undefined,
   };

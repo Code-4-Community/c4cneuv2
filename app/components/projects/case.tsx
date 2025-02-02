@@ -2,13 +2,13 @@ import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import { OpenLink } from "../icons";
 
 export interface CaseProps {
-  logo?: string | null;
-  title?: string | null;
-  introduction?: string | null;
-  problem_statement?: string | null;
-  solution?: string | null;
-  website_image?: string | undefined;
-  link?: string | undefined;
+  logo?: string;
+  title?: string;
+  introduction?: string;
+  problem_statement?: string;
+  solution?: string;
+  website_image?: string;
+  link?: string;
 }
 
 const Case = ({ case: caseData }: { case: CaseProps }) => {

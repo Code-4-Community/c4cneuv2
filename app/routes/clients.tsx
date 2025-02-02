@@ -27,6 +27,7 @@ export const loader = async () => {
   return { curr, past, quote };
 };
 
+//TODO: case study link should point to projects case study if its available
 export default function Clients() {
   const { curr, past, quote } = useLoaderData<{
     curr: CurrclientDocument;

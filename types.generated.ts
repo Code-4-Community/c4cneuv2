@@ -588,6 +588,16 @@ export interface PeopleDocumentDataPeopleItem {
    * - **Documentation**: https://prismic.io/docs/field#embed
    */
   website: prismic.EmbedField;
+
+  /**
+   * role_type field in *People → people*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people.people[].role_type
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  role_type: prismic.KeyTextField;
 }
 
 /**
@@ -610,7 +620,7 @@ interface PeopleDocumentData {
  * People document from Prismic
  *
  * - **API ID**: `people`
- * - **Repeatable**: `false`
+ * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
@@ -834,17 +844,6 @@ declare module "@prismicio/client" {
       repositoryNameOrEndpoint: string,
       options?: prismic.ClientConfig,
     ): prismic.Client<AllDocumentTypes>;
-  }
-
-  interface CreateWriteClient {
-    (
-      repositoryNameOrEndpoint: string,
-      options: prismic.WriteClientConfig,
-    ): prismic.WriteClient<AllDocumentTypes>;
-  }
-
-  interface CreateMigration {
-    (): prismic.Migration<AllDocumentTypes>;
   }
 
   namespace Content {

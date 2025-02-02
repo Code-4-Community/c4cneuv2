@@ -17,7 +17,7 @@ export default function MailingList() {
           id="mailing-list-input"
           type="email"
           placeholder="Email"
-          className="flex-1 h-12 px-4 border border-r-0 border-[#4a4951] focus:outline-none"
+          className="flex-1 h-12 px-4 border border-r-0 border-[#4a4951] focus:outline-none object-cover shadow-small"
         />
         <button
           type="submit"

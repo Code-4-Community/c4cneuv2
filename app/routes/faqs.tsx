@@ -28,15 +28,15 @@ const exFAQ = [
 
 export default function FAQs() {
   return (
-    <div>
-      <h1 className="mt-12 mb-9 ml-8 md:ml-[192px] md:mt-[120px] md:mb-[72px] text-2xl md:text-5xl font-medium shrink-0">
+    <div className="mx-14 md:mx-[192px] pt-28 md:pt-20">
+      <h1 className="mb-9 md:mb-[72px] text-2xl md:text-5xl font-medium shrink-0">
         Frequently Asked <span className="text-indigo-600">Questions</span>
       </h1>
       {exFAQ.map((item, key) => (
         <Accordion type="multiple" key={key}>
           <AccordionItem
             value="item-1"
-            className="shadow-small mx-6 md:mx-[192px] mb-5 md:mb-8 border border-black px-2.5 py-2.5 md:py-10 md:px-10"
+            className="shadow-small mb-5 md:mb-8 border border-black px-2.5 py-2.5 md:py-10 md:px-10"
           >
             <AccordionTrigger className="font-medium text-xs md:text-2xl">
               {item.title}

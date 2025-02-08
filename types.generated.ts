@@ -399,6 +399,45 @@ export type CurrclientDocument<Lang extends string = string> =
   >;
 
 /**
+ * Content for team documents
+ */
+interface DDocumentData {
+  /**
+   * description field in *team*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: d.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * people field in *team*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: d.people
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  people: prismic.ContentRelationshipField<"people">;
+}
+
+/**
+ * team document from Prismic
+ *
+ * - **API ID**: `d`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type DDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<DDocumentData>, "d", Lang>;
+
+/**
  * Content for event documents
  */
 interface EventDocumentData {
@@ -825,6 +864,56 @@ export type ProjectDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for Team documents
+ */
+interface TeamDocumentData {
+  /**
+   * description field in *Team*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * people field in *Team*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team.people
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  people: prismic.ContentRelationshipField<"people">;
+
+  /**
+   * team_name field in *Team*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team.team_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  team_name: prismic.KeyTextField;
+}
+
+/**
+ * Team document from Prismic
+ *
+ * - **API ID**: `team`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TeamDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<TeamDocumentData>, "team", Lang>;
+
 export type AllDocumentTypes =
   | AboutDocument
   | AboutCdeDocument
@@ -832,11 +921,13 @@ export type AllDocumentTypes =
   | ClientDocument
   | ClientquoteDocument
   | CurrclientDocument
+  | DDocument
   | EventDocument
   | PastclientDocument
   | PeopleDocument
   | PersonDocument
-  | ProjectDocument;
+  | ProjectDocument
+  | TeamDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -844,6 +935,17 @@ declare module "@prismicio/client" {
       repositoryNameOrEndpoint: string,
       options?: prismic.ClientConfig,
     ): prismic.Client<AllDocumentTypes>;
+  }
+
+  interface CreateWriteClient {
+    (
+      repositoryNameOrEndpoint: string,
+      options: prismic.WriteClientConfig,
+    ): prismic.WriteClient<AllDocumentTypes>;
+  }
+
+  interface CreateMigration {
+    (): prismic.Migration<AllDocumentTypes>;
   }
 
   namespace Content {
@@ -864,6 +966,8 @@ declare module "@prismicio/client" {
       CurrclientDocument,
       CurrclientDocumentData,
       CurrclientDocumentDataCurrclientItem,
+      DDocument,
+      DDocumentData,
       EventDocument,
       EventDocumentData,
       PastclientDocument,
@@ -877,6 +981,8 @@ declare module "@prismicio/client" {
       ProjectDocument,
       ProjectDocumentData,
       ProjectDocumentDataProjectItem,
+      TeamDocument,
+      TeamDocumentData,
       AllDocumentTypes,
     };
   }

@@ -11,6 +11,8 @@ interface AppTimelineProps {
   periods: [Period, Period, Period];
 }
 
+const labels = ["Applications Open", "Interviews", "Application Decisions"];
+
 const AppTimeline = ({ periods }: AppTimelineProps) => {
   const [progress, setProgress] = useState<number>(0);
 
@@ -43,8 +45,6 @@ const AppTimeline = ({ periods }: AppTimelineProps) => {
     return () => clearInterval(timer);
   }, [calculateProgress]);
 
-  const labels = ["Applications Open", "Interviews", "Application Decisions"];
-
   return (
     <div className="w-full">
       <div className="relative">
@@ -52,11 +52,11 @@ const AppTimeline = ({ periods }: AppTimelineProps) => {
           <Progress value={progress} className="absolute w-full h-4" />
 
           {periods.map((period, index) => {
-            const position = `${(index / 2) * 100}%`;
+            const position = `${(index / (periods.length - 1)) * 100}%`;
             return (
               <div
                 key={index}
-                className="absolute top-0 transform -translate-x-1/2"
+                className="absolute transform -translate-x-1/2"
                 style={{ left: position }}
               >
                 <div className="w-4 h-4 border-2 bg-purple-200 border-black rounded-full" />
@@ -67,7 +67,7 @@ const AppTimeline = ({ periods }: AppTimelineProps) => {
 
         <div className="relative mt-4">
           {periods.map((period, index) => {
-            const position = `${(index / 2) * 100}%`;
+            const position = `${(index / (periods.length - 1)) * 100}%`;
             return (
               <div
                 key={index}
@@ -77,7 +77,7 @@ const AppTimeline = ({ periods }: AppTimelineProps) => {
                 <div className="text-center mb-1 text-sm font-medium text-gray-700">
                   {labels[index]}
                 </div>
-                <div className="font-IBM Plex Sans text-20px text-indigo-600 text-nowrap">
+                <div className="text-20px text-indigo-600 text-nowrap">
                   {formatDate(period.start)} - {formatDate(period.end)}
                 </div>
               </div>

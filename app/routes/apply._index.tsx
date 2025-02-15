@@ -2,6 +2,8 @@ import { type MetaFunction } from "@remix-run/node";
 import PositionCard from "~/components/apply-page/position-apply-card";
 import JoinTeamSection from "~/components/apply-page/join-team";
 import ApplyClient from "~/components/apply-page/apply-client";
+import AppTimeline from "~/components/apply-page/app-timeline";
+import { Period } from "~/components/apply-page/app-timeline";
 
 export const meta: MetaFunction = () => {
   return [{ title: "Apply" }, { name: "apply", content: "Welcome to Remix!" }];
@@ -34,6 +36,21 @@ const exPositionList = [
   },
 ];
 
+const DateList = [
+  {
+    start: new Date("2023-10-29"),
+    end: new Date("2023-11-18"),
+  },
+  {
+    start: new Date("2023-11-20"),
+    end: new Date("2023-11-29"),
+  },
+  {
+    start: new Date("2023-12-01"),
+    end: new Date("2023-12-08"),
+  },
+];
+
 export default function Apply() {
   return (
     <div>
@@ -46,6 +63,13 @@ export default function Apply() {
               <PositionCard {...position} key={index} />
             ))}
           </div>
+        </div>
+      </div>
+
+      <h3 className="text-xl text-left mb-2 pb-8 pl-8">Application Timeline</h3>
+      <div className="pl-40 pr-40">
+        <div className="flex justify-center w-full pb-20">
+          <AppTimeline periods={DateList as [Period, Period, Period]} />
         </div>
       </div>
       <ApplyClient />

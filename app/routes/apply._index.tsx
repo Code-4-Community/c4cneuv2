@@ -1,5 +1,5 @@
 import { type MetaFunction } from "@remix-run/node";
-import PositionCard from "~/components/apply-page/position";
+import PositionCard from "~/components/apply-page/position-apply-card";
 import JoinTeamSection from "~/components/apply-page/join-team";
 import ApplyClient from "~/components/apply-page/apply-client";
 import AppTimeline from "~/components/apply-page/app-timeline";

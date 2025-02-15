@@ -1,7 +1,10 @@
+import { ArrowLeftIcon } from "@radix-ui/react-icons";
+import { OpenLink } from "../icons";
+
 export interface CaseProps {
   logo?: string;
   title?: string;
-  description?: string;
+  introduction?: string;
   problem_statement?: string;
   solution?: string;
   website_image?: string;
@@ -12,94 +15,90 @@ const Case = ({ case: caseData }: { case: CaseProps }) => {
   const {
     logo,
     title,
-    description,
+    introduction,
     problem_statement,
     solution,
     website_image,
     link,
   } = caseData;
+
   return (
-    <div className="flex flex-col items-center">
-      <div className="h-[1740.88px] flex-col justify-center items-center gap-[72px] inline-flex">
-        <div className="w-[1128px] justify-start items-center gap-6 inline-flex">
-          <div className="text-[#333333] text-5xl font-medium  leading-[57.60px]">
-            {title ?? "Title"}
-          </div>
+    <div className="flex flex-col items-center px-4 md:px-8 lg:px-16">
+      <div className="w-full max-w-5xl text-left my-8 flex">
+        <a
+          className="relative flex items-center justify-center ms-2 me-14"
+          href={"/projects"}
+        >
+          <div
+            className="absolute inset-0 h-20 w-20 rounded-full 
+               bg-[radial-gradient(circle,_rgba(238,210,255,0.5)_30%,_transparent_70%)] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          ></div>
+          <ArrowLeftIcon className="relative z-10 h-8 w-8 text-gray-800" />
+        </a>
+        <h1 className="text-3xl md:text-5xl font-medium text-[#333333]">
+          {title ?? "Title"}
+        </h1>
+      </div>
+      <div className="flex flex-col lg:flex-row w-full max-w-5xl gap-8 my-8">
+        <div className="flex-1">
+          <h2 className="text-2xl md:text-4xl font-medium text-[#333333] mb-6">
+            Introduction
+          </h2>
+          <p className="text-base leading-relaxed text-[#333333]">
+            {introduction ?? "Introduction"}
+          </p>
         </div>
-        <div className="h-40 flex-col justify-start items-start gap-[98px] flex">
-          <div className="self-stretch justify-start items-start gap-[120px] inline-flex">
-            <div className="w-[744px] relative">
-              <div className="left-0 top-0 absolute text-[#333333] text-4xl font-medium  leading-[43.20px]">
-                Introduction
-              </div>
-              <div className="w-[743px] left-[1px] top-[65px] absolute text-[#333333] text-base font-normal  leading-tight">
-                {description ?? "Description"}
-              </div>
-            </div>
-            <div className="w-[264px] h-40 pt-[21px] pb-[20.71px] bg-[#fcfcfc] shadow border-2 border-[#4a4951] justify-center items-center flex">
-              <img
-                className="w-[264px] h-[118.29px]"
-                src={logo ?? "Logo"}
-                alt={`${title} Logo`}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="h-[311px] px-24 py-[72px] bg-[#fcfcfc] shadow border-2 border-[#4a4951] flex-col justify-start items-start gap-12 flex">
-          <div className="flex-col justify-start items-start gap-12 flex">
-            <div className="text-center text-[#6059cd] text-4xl font-medium  leading-[43.20px]">
-              Problem Statement
-            </div>
-            <div className="justify-center items-center gap-2.5 inline-flex">
-              <div className="w-[936px] text-[#333333] text-base font-normal  leading-tight">
-                {problem_statement ?? "Problem Statement"}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="h-[311px] px-24 py-[72px] bg-[#fcfcfc] shadow border-2 border-[#4a4951] flex-col justify-start items-start gap-12 flex">
-          <div className="flex-col justify-start items-start gap-12 flex">
-            <div className="text-center text-[#6059cd] text-4xl font-medium  leading-[43.20px]">
-              Our Solution
-            </div>
-            <div className="justify-center items-center gap-2.5 inline-flex">
-              <div className="w-[936px] text-[#333333] text-base font-normal  leading-tight">
-                {solution ?? "Solution"}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex-col justify-start items-center gap-8 flex">
-          <div className="w-[936px] h-[500.88px] relative">
+        <div className="w-48 h-48 lg:w-auto lg:h-auto bg-[#fcfcfc] object-cover shadow-default border-2 border-[#4a4951] flex items-center justify-center">
+          {logo ? (
             <img
-              className="w-[936px] h-[14.55px] left-0 top-[486.33px] absolute opacity-60 mix-blend-multiply"
-              src="app\icons\image.png"
-              alt=""
+              className="max-w-full max-h-full"
+              src={logo}
+              alt={`${title} Logo`}
             />
-            <img
-              className="w-[852.11px] h-[493.70px] left-[43.64px] top-0 absolute"
-              src="app\icons\laptop.png"
-              alt=""
-            />
-            <div className="w-[685.09px] h-[424.88px] left-[132.25px] top-[22.11px] absolute">
-              <img
-                className="w-[685.40px] h-[459.79px] left-[-0.32px] top-[-0.53px] absolute"
-                src={website_image}
-                alt={`${title} Website`}
-              />
-            </div>
-          </div>
-          <div className="self-stretch h-[38px] bg-[#fcfcfc] flex-col justify-start items-start flex">
-            <div className="self-stretch px-[18px] py-3 bg-[#fcfcfc] shadow border border-[#4a4951] justify-center items-center gap-2 inline-flex">
-              <a
-                href={link}
-                className="text-center text-[#333333] text-sm font-bold  leading-[14px]"
-              >
-                Launch Live Website
-              </a>
-            </div>
-          </div>
+          ) : (
+            <span className="text-gray-500">Logo</span>
+          )}
         </div>
+      </div>
+
+      <div className="w-full max-w-5xl bg-[#fcfcfc] object-cover shadow-default border-2 border-[#4a4951]  p-6 md:p-16 my-8">
+        <h2 className="text-2xl md:text-4xl font-medium text-[#6059cd] mb-4 md:mb-8">
+          Problem Statement
+        </h2>
+        <p className="text-base leading-relaxed text-[#333333]">
+          {problem_statement ?? "Problem Statement"}
+        </p>
+      </div>
+
+      <div className="w-full max-w-5xl bg-[#fcfcfc] object-cover shadow-default border-2 border-[#4a4951] p-6 md:p-16 my-8">
+        <h2 className="text-2xl md:text-4xl font-medium text-[#6059cd] mb-4 md:mb-8">
+          Our Solution
+        </h2>
+        <p className="text-base leading-relaxed text-[#333333]">
+          {solution ?? "Solution"}
+        </p>
+      </div>
+
+      <div className="w-full max-w-4xl flex flex-col items-center my-8">
+        <div className="relative w-full max-w-2xl border ">
+          {website_image && (
+            <img
+              className="relative z-10 w-full rounded-lg"
+              src={website_image}
+              alt={`${title} Website`}
+            />
+          )}
+        </div>
+        {link && (
+          <a
+            href={link}
+            target="_blank"
+            className="w-full mt-6 bg-[#fcfcfc] text-[#333333] text-center border border-[#4a4951] px-6 py-2 object-cover shadow-small font-bold text-sm hover:bg-[#EDBAFF] transition flex justify-center items-center gap-2"
+            rel="noreferrer"
+          >
+            Launch Live Website <OpenLink />
+          </a>
+        )}
       </div>
     </div>
   );

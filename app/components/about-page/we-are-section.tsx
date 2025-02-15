@@ -1,17 +1,19 @@
-import AboutComponent, { AboutProps } from "./we-are-component";
+import WeAreComponent, { WeAreProps } from "./we-are-component";
 
-interface WeAreProps {
-  aboutItems: AboutProps[];
+interface Props {
+  aboutItems: WeAreProps[];
 }
 
-const WeAreSection = ({ aboutItems }: WeAreProps) => {
+const WeAreSection = ({ aboutItems }: Props) => {
   return (
     <div>
-      <h2 className="text-4xl pb-12 text-indigo-600">We are</h2>
+      <h2 className="text-lg mb-2 md:text-4xl md:mb-12 text-indigo-600 font-medium">
+        We are
+      </h2>
       <div className="flex flex-col items-center text-indigo-600">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {aboutItems.map((item, index) => (
-            <AboutComponent
+            <WeAreComponent
               key={index}
               image={item.image}
               title={item.title}

@@ -12,16 +12,16 @@ export default function MailingList() {
       >
         Never Miss an Announcement!
       </label>
-      <div className="flex w-full max-w-md shadow">
+      <div className="flex w-full max-w-md shadow-small">
         <input
           id="mailing-list-input"
           type="email"
           placeholder="Email"
-          className="flex-1 h-12 px-4 border border-r-0 border-[#4a4951] focus:outline-none"
+          className="flex-1 h-12 px-4 border border-r-0 border-[#4a4951] focus:outline-none object-cover shadow-small"
         />
         <button
           type="submit"
-          className="px-6 bg-[#f8ecff] border border-[#4a4951] text-[#333333] text-sm font-bold font-['IBM Plex Sans']"
+          className="px-6 bg-[#f8ecff] border border-[#4a4951] text-[#333333] text-sm font-bold"
         >
           Join Mailing List!
         </button>

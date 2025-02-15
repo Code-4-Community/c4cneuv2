@@ -205,17 +205,21 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute  h-8 w-8 rounded-full",
+        "absolute h-8 w-8 rounded-full",
         orientation === "horizontal"
-          ? "-left-12 top-1/2 -translate-y-1/2"
-          : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
+          ? "-left-12 top-1/2 -translate-y-1/2 -ml-8"
+          : "-top-12 left-1/2 -translate-x-1/2 rotate-90 -mt-8",
         className,
       )}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowLeftIcon className="h-4 w-4" />
+      <span
+        className="absolute inset-0 -z-10 h-20 w-20 rounded-full border-0 shadow-none
+                   bg-[radial-gradient(circle,_rgba(238,210,255,0.5)_30%,_transparent_70%)] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      ></span>
+      <ArrowLeftIcon className="h-8 w-8 relative z-10" />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -234,17 +238,21 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute h-8 w-8 rounded-full",
+        "absolute h-8 w-8 rounded-full border-0 overflow-visible shadow-none",
         orientation === "horizontal"
-          ? "-right-12 top-1/2 -translate-y-1/2"
-          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
+          ? "-right-12 top-1/2 -translate-y-1/2 -mr-8"
+          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90 -mb-8",
         className,
       )}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}
     >
-      <ArrowRightIcon className="h-4 w-4" />
+      <span
+        className="absolute inset-0 -z-10 h-20 w-20 rounded-full border-0 shadow-none
+                   bg-[radial-gradient(circle,_rgba(238,210,255,0.5)_30%,_transparent_70%)] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      ></span>
+      <ArrowRightIcon className="h-8 w-8 relative z-10" />
       <span className="sr-only">Next slide</span>
     </Button>
   );
@@ -279,14 +287,17 @@ const CarouselDots = React.forwardRef<
 
   if (numberOfSlides > 1) {
     return (
-      <div ref={ref} className={`flex justify-center ${props.className}`}>
+      <div
+        ref={ref}
+        className={`flex justify-center shadow-none p-1 ${props.className}`}
+      >
         {Array.from({ length: numberOfSlides }, (_, i) => (
           <Button
             key={i}
-            className={`mx-1 h-1.5 w-1.5 rounded-full p-0 ${
+            className={`mx-1 h-3 w-3 rounded-full p-0 m-2 shadow-none ${
               i === currentSlide
-                ? "scale-125 transform bg-gray-500 hover:bg-gray-500"
-                : "bg-gray-300 hover:bg-gray-300"
+                ? "scale-[1.5] transform bg-[#6059cd] hover:bg-gray-500"
+                : "bg-[#e6e4ee] hover:bg-gray-300"
             }`}
             aria-label={`Go to slide ${i + 1}`}
             onClick={() => api?.scrollTo(i)}

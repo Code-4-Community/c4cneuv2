@@ -8,38 +8,38 @@ type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
  * Content for About-CDE documents
  */
 interface AboutDocumentData {
-	/**
-	 * cde-title field in *About-CDE*
-	 *
-	 * - **Field Type**: Title
-	 * - **Placeholder**: Lorem
-	 * - **API ID Path**: about.title
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	title: prismic.TitleField;
-	
-	/**
-	 * image field in *About-CDE*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: about.cd-image
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#image
-	 */
-	"cd-image": prismic.ImageField<never>;
-	
-	/**
-	 * description field in *About-CDE*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: Lorem ipsum dolor sit amet consectetur. Elementum nisl proin volutpat non purus.
-	 * - **API ID Path**: about.description
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	description: prismic.RichTextField;
+  /**
+   * cde-title field in *About-CDE*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: Lorem
+   * - **API ID Path**: about.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * image field in *About-CDE*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.cd-image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  "cd-image": prismic.ImageField<never>;
+
+  /**
+   * description field in *About-CDE*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Lorem ipsum dolor sit amet consectetur. Elementum nisl proin volutpat non purus.
+   * - **API ID Path**: about.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
 }
 
 /**
@@ -51,57 +51,58 @@ interface AboutDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type AboutDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
+export type AboutDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
 
 /**
  * Item in *About-CDE → events*
  */
 export interface AboutCdeDocumentDataEventsItem {
-	/**
-	 * image field in *About-CDE → events*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: about-cde.events[].image
-	 * - **Documentation**: https://prismic.io/docs/field#image
-	 */
-	image: prismic.ImageField<never>;
-	
-	/**
-	 * title field in *About-CDE → events*
-	 *
-	 * - **Field Type**: Title
-	 * - **Placeholder**: Lorem
-	 * - **API ID Path**: about-cde.events[].title
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	title: prismic.TitleField;
-	
-	/**
-	 * description field in *About-CDE → events*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: Lorem ipsum dolor sit amet consectetur. Elementum nisl proin volutpat non purus.
-	 * - **API ID Path**: about-cde.events[].description
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	description: prismic.RichTextField;
+  /**
+   * image field in *About-CDE → events*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about-cde.events[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * title field in *About-CDE → events*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: Lorem
+   * - **API ID Path**: about-cde.events[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * description field in *About-CDE → events*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Lorem ipsum dolor sit amet consectetur. Elementum nisl proin volutpat non purus.
+   * - **API ID Path**: about-cde.events[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
 }
 
 /**
  * Content for About-CDE documents
  */
 interface AboutCdeDocumentData {
-	/**
-	 * events field in *About-CDE*
-	 *
-	 * - **Field Type**: Group
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: about-cde.events[]
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#group
-	 */
-	events: prismic.GroupField<Simplify<AboutCdeDocumentDataEventsItem>>;
+  /**
+   * events field in *About-CDE*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about-cde.events[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  events: prismic.GroupField<Simplify<AboutCdeDocumentDataEventsItem>>;
 }
 
 /**
@@ -113,57 +114,62 @@ interface AboutCdeDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type AboutCdeDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<AboutCdeDocumentData>, "about-cde", Lang>;
+export type AboutCdeDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<AboutCdeDocumentData>,
+    "about-cde",
+    Lang
+  >;
 
 /**
  * Item in *About-PDE → events*
  */
 export interface AboutPdeDocumentDataEventsItem {
-	/**
-	 * pde-title field in *About-PDE → events*
-	 *
-	 * - **Field Type**: Title
-	 * - **Placeholder**: Lorem
-	 * - **API ID Path**: about-pde.events[].title
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	title: prismic.TitleField;
-	
-	/**
-	 * image field in *About-PDE → events*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: about-pde.events[].image
-	 * - **Documentation**: https://prismic.io/docs/field#image
-	 */
-	image: prismic.ImageField<never>;
-	
-	/**
-	 * description field in *About-PDE → events*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: Lorem ipsum dolor sit amet consectetur. Elementum nisl proin volutpat non purus.
-	 * - **API ID Path**: about-pde.events[].description
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	description: prismic.RichTextField;
+  /**
+   * pde-title field in *About-PDE → events*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: Lorem
+   * - **API ID Path**: about-pde.events[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * image field in *About-PDE → events*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about-pde.events[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * description field in *About-PDE → events*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Lorem ipsum dolor sit amet consectetur. Elementum nisl proin volutpat non purus.
+   * - **API ID Path**: about-pde.events[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
 }
 
 /**
  * Content for About-PDE documents
  */
 interface AboutPdeDocumentData {
-	/**
-	 * events field in *About-PDE*
-	 *
-	 * - **Field Type**: Group
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: about-pde.events[]
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#group
-	 */
-	events: prismic.GroupField<Simplify<AboutPdeDocumentDataEventsItem>>;
+  /**
+   * events field in *About-PDE*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about-pde.events[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  events: prismic.GroupField<Simplify<AboutPdeDocumentDataEventsItem>>;
 }
 
 /**
@@ -175,22 +181,276 @@ interface AboutPdeDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type AboutPdeDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<AboutPdeDocumentData>, "about-pde", Lang>;
+export type AboutPdeDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<AboutPdeDocumentData>,
+    "about-pde",
+    Lang
+  >;
+
+/**
+ * Item in *CurrClient → currclient*
+ */
+export interface ClientDocumentDataCurrclientItem {
+  /**
+   * logo field in *CurrClient → currclient*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: client.currclient[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * title field in *CurrClient → currclient*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: client.currclient[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * description field in *CurrClient → currclient*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: client.currclient[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Content for CurrClient documents
+ */
+interface ClientDocumentData {
+  /**
+   * currclient field in *CurrClient*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: client.currclient[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  currclient: prismic.GroupField<Simplify<ClientDocumentDataCurrclientItem>>;
+}
+
+/**
+ * CurrClient document from Prismic
+ *
+ * - **API ID**: `client`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ClientDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ClientDocumentData>,
+    "client",
+    Lang
+  >;
+
+/**
+ * Content for ClientQuote documents
+ */
+interface ClientquoteDocumentData {
+  /**
+   * name field in *ClientQuote*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clientquote.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name: prismic.TitleField;
+
+  /**
+   * title field in *ClientQuote*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clientquote.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * quote field in *ClientQuote*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clientquote.quote
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  quote: prismic.RichTextField;
+}
+
+/**
+ * ClientQuote document from Prismic
+ *
+ * - **API ID**: `clientquote`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ClientquoteDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ClientquoteDocumentData>,
+    "clientquote",
+    Lang
+  >;
+
+/**
+ * Item in *CurrClient → currclient*
+ */
+export interface CurrclientDocumentDataCurrclientItem {
+  /**
+   * logo field in *CurrClient → currclient*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: currclient.currclient[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * title field in *CurrClient → currclient*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: currclient.currclient[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * description field in *CurrClient → currclient*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: currclient.currclient[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * caseStudyLink field in *CurrClient → currclient*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: currclient.currclient[].casestudylink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  casestudylink: prismic.LinkField;
+
+  /**
+   * websiteLink field in *CurrClient → currclient*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: currclient.currclient[].websitelink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  websitelink: prismic.LinkField;
+}
+
+/**
+ * Content for CurrClient documents
+ */
+interface CurrclientDocumentData {
+  /**
+   * currclient field in *CurrClient*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: currclient.currclient[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  currclient: prismic.GroupField<
+    Simplify<CurrclientDocumentDataCurrclientItem>
+  >;
+}
+
+/**
+ * CurrClient document from Prismic
+ *
+ * - **API ID**: `currclient`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CurrclientDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<CurrclientDocumentData>,
+    "currclient",
+    Lang
+  >;
+
+/**
+ * Content for team documents
+ */
+interface DDocumentData {
+  /**
+   * description field in *team*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: d.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * people field in *team*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: d.people
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  people: prismic.ContentRelationshipField<"people">;
+}
+
+/**
+ * team document from Prismic
+ *
+ * - **API ID**: `d`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type DDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<DDocumentData>, "d", Lang>;
 
 /**
  * Content for event documents
  */
 interface EventDocumentData {
-	/**
-	 * adssa field in *event*
-	 *
-	 * - **Field Type**: Title
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: event.adssa
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	adssa: prismic.TitleField;
+  /**
+   * adssa field in *event*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: event.adssa
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  adssa: prismic.TitleField;
 }
 
 /**
@@ -202,157 +462,262 @@ interface EventDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type EventDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<EventDocumentData>, "event", Lang>;
+export type EventDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<EventDocumentData>, "event", Lang>;
+
+/**
+ * Item in *PastClient → pastclient*
+ */
+export interface PastclientDocumentDataPastclientItem {
+  /**
+   * Logo field in *PastClient → pastclient*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pastclient.pastclient[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * title field in *PastClient → pastclient*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pastclient.pastclient[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * description field in *PastClient → pastclient*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pastclient.pastclient[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * caseStudyLink field in *PastClient → pastclient*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pastclient.pastclient[].casestudylink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  casestudylink: prismic.LinkField;
+
+  /**
+   * websiteLink field in *PastClient → pastclient*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pastclient.pastclient[].websitelink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  websitelink: prismic.LinkField;
+}
+
+/**
+ * Content for PastClient documents
+ */
+interface PastclientDocumentData {
+  /**
+   * pastclient field in *PastClient*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pastclient.pastclient[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  pastclient: prismic.GroupField<
+    Simplify<PastclientDocumentDataPastclientItem>
+  >;
+}
+
+/**
+ * PastClient document from Prismic
+ *
+ * - **API ID**: `pastclient`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PastclientDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<PastclientDocumentData>,
+    "pastclient",
+    Lang
+  >;
 
 /**
  * Item in *People → people*
  */
 export interface PeopleDocumentDataPeopleItem {
-	/**
-	 * headshot field in *People → people*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: people.people[].headshot
-	 * - **Documentation**: https://prismic.io/docs/field#image
-	 */
-	headshot: prismic.ImageField<never>;
-	
-	/**
-	 * name field in *People → people*
-	 *
-	 * - **Field Type**: Title
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: people.people[].name
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	name: prismic.TitleField;
-	
-	/**
-	 * role field in *People → people*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: people.people[].role
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	role: prismic.RichTextField;
-	
-	/**
-	 * email field in *People → people*
-	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: people.people[].email
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	email: prismic.RichTextField;
-	
-	/**
-	 * github field in *People → people*
-	 *
-	 * - **Field Type**: Embed
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: people.people[].github
-	 * - **Documentation**: https://prismic.io/docs/field#embed
-	 */
-	github: prismic.EmbedField
-	
-	/**
-	 * linkedin field in *People → people*
-	 *
-	 * - **Field Type**: Embed
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: people.people[].linkedin
-	 * - **Documentation**: https://prismic.io/docs/field#embed
-	 */
-	linkedin: prismic.EmbedField
-	
-	/**
-	 * website field in *People → people*
-	 *
-	 * - **Field Type**: Embed
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: people.people[].website
-	 * - **Documentation**: https://prismic.io/docs/field#embed
-	 */
-	website: prismic.EmbedField
+  /**
+   * headshot field in *People → people*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people.people[].headshot
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  headshot: prismic.ImageField<never>;
+
+  /**
+   * name field in *People → people*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people.people[].name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name: prismic.TitleField;
+
+  /**
+   * role field in *People → people*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people.people[].role
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  role: prismic.RichTextField;
+
+  /**
+   * email field in *People → people*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people.people[].email
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  email: prismic.RichTextField;
+
+  /**
+   * github field in *People → people*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people.people[].github
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  github: prismic.EmbedField;
+
+  /**
+   * linkedin field in *People → people*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people.people[].linkedin
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  linkedin: prismic.EmbedField;
+
+  /**
+   * website field in *People → people*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people.people[].website
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  website: prismic.EmbedField;
+
+  /**
+   * role_type field in *People → people*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people.people[].role_type
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  role_type: prismic.KeyTextField;
 }
 
 /**
  * Content for People documents
  */
 interface PeopleDocumentData {
-	/**
-	 * people field in *People*
-	 *
-	 * - **Field Type**: Group
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: people.people[]
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#group
-	 */
-	people: prismic.GroupField<Simplify<PeopleDocumentDataPeopleItem>>;
+  /**
+   * people field in *People*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people.people[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  people: prismic.GroupField<Simplify<PeopleDocumentDataPeopleItem>>;
 }
 
 /**
  * People document from Prismic
  *
  * - **API ID**: `people`
- * - **Repeatable**: `false`
+ * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type PeopleDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<PeopleDocumentData>, "people", Lang>;
+export type PeopleDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<PeopleDocumentData>,
+    "people",
+    Lang
+  >;
 
 /**
  * Content for Person documents
  */
 interface PersonDocumentData {
-	/**
-	 * Headshot field in *Person*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: person.headshot
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#image
-	 */
-	headshot: prismic.ImageField<never>;
-	
-	/**
-	 * Name field in *Person*
-	 *
-	 * - **Field Type**: Title
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: person.name
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	name: prismic.TitleField;
-	
-	/**
-	 * role field in *Person*
-	 *
-	 * - **Field Type**: Title
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: person.role
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-	 */
-	role: prismic.TitleField;
-	
-	/**
-	 * github field in *Person*
-	 *
-	 * - **Field Type**: Embed
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: person.github
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#embed
-	 */
-	github: prismic.EmbedField
+  /**
+   * Headshot field in *Person*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: person.headshot
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  headshot: prismic.ImageField<never>;
+
+  /**
+   * Name field in *Person*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: person.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name: prismic.TitleField;
+
+  /**
+   * role field in *Person*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: person.role
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  role: prismic.TitleField;
+
+  /**
+   * github field in *Person*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: person.github
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  github: prismic.EmbedField;
 }
 
 /**
@@ -364,9 +729,124 @@ interface PersonDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type PersonDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<PersonDocumentData>, "person", Lang>;
+export type PersonDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<PersonDocumentData>,
+    "person",
+    Lang
+  >;
 
-interface ProjectDocumentData {}
+/**
+ * Item in *Project → Project*
+ */
+export interface ProjectDocumentDataProjectItem {
+  /**
+   * Logo Image field in *Project → Project*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.project[].logo_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo_image: prismic.ImageField<never>;
+
+  /**
+   * Website Image field in *Project → Project*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.project[].website_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  website_image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *Project → Project*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: Speak For The Trees
+   * - **API ID Path**: project.project[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Subtitle field in *Project → Project*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Tree Stewardship Program
+   * - **API ID Path**: project.project[].subtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subtitle: prismic.RichTextField;
+
+  /**
+   * Description field in *Project → Project*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Speak for the Trees Boston aims to improve the size and health of the urban forest in the greater Boston area, with a focus on under-served and under-canopied neighborhoods. They work with volunteers to inventory (collect data on) trees, plant trees, and educate those about trees...
+   * - **API ID Path**: project.project[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Has Case Study field in *Project → Project*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: project.project[].has_case_study
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  has_case_study: prismic.BooleanField;
+
+  /**
+   * Case Problem field in *Project → Project*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.project[].case_problem
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  case_problem: prismic.RichTextField;
+
+  /**
+   * Case Solution field in *Project → Project*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.project[].case_solution
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  case_solution: prismic.RichTextField;
+
+  /**
+   * Live Website field in *Project → Project*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.project[].live_website
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  live_website: prismic.LinkField;
+}
+
+/**
+ * Content for Project documents
+ */
+interface ProjectDocumentData {
+  /**
+   * Project field in *Project*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.project[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  project: prismic.GroupField<Simplify<ProjectDocumentDataProjectItem>>;
+}
 
 /**
  * Project document from Prismic
@@ -377,35 +857,133 @@ interface ProjectDocumentData {}
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type ProjectDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<ProjectDocumentData>, "project", Lang>;
+export type ProjectDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ProjectDocumentData>,
+    "project",
+    Lang
+  >;
 
-export type AllDocumentTypes = AboutDocument | AboutCdeDocument | AboutPdeDocument | EventDocument | PeopleDocument | PersonDocument | ProjectDocument;
+/**
+ * Content for Team documents
+ */
+interface TeamDocumentData {
+  /**
+   * description field in *Team*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * people field in *Team*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team.people
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  people: prismic.ContentRelationshipField<"people">;
+
+  /**
+   * team_name field in *Team*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team.team_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  team_name: prismic.KeyTextField;
+}
+
+/**
+ * Team document from Prismic
+ *
+ * - **API ID**: `team`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TeamDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<TeamDocumentData>, "team", Lang>;
+
+export type AllDocumentTypes =
+  | AboutDocument
+  | AboutCdeDocument
+  | AboutPdeDocument
+  | ClientDocument
+  | ClientquoteDocument
+  | CurrclientDocument
+  | DDocument
+  | EventDocument
+  | PastclientDocument
+  | PeopleDocument
+  | PersonDocument
+  | ProjectDocument
+  | TeamDocument;
 
 declare module "@prismicio/client" {
-	interface CreateClient {
-		(repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
-	}
-	
-	namespace Content {
-		export type {
-			AboutDocument,
-			AboutDocumentData,
-			AboutCdeDocument,
-			AboutCdeDocumentData,
-			AboutCdeDocumentDataEventsItem,
-			AboutPdeDocument,
-			AboutPdeDocumentData,
-			AboutPdeDocumentDataEventsItem,
-			EventDocument,
-			EventDocumentData,
-			PeopleDocument,
-			PeopleDocumentData,
-			PeopleDocumentDataPeopleItem,
-			PersonDocument,
-			PersonDocumentData,
-			ProjectDocument,
-			ProjectDocumentData,
-			AllDocumentTypes
-		}
-	}
+  interface CreateClient {
+    (
+      repositoryNameOrEndpoint: string,
+      options?: prismic.ClientConfig,
+    ): prismic.Client<AllDocumentTypes>;
+  }
+
+  interface CreateWriteClient {
+    (
+      repositoryNameOrEndpoint: string,
+      options: prismic.WriteClientConfig,
+    ): prismic.WriteClient<AllDocumentTypes>;
+  }
+
+  interface CreateMigration {
+    (): prismic.Migration<AllDocumentTypes>;
+  }
+
+  namespace Content {
+    export type {
+      AboutDocument,
+      AboutDocumentData,
+      AboutCdeDocument,
+      AboutCdeDocumentData,
+      AboutCdeDocumentDataEventsItem,
+      AboutPdeDocument,
+      AboutPdeDocumentData,
+      AboutPdeDocumentDataEventsItem,
+      ClientDocument,
+      ClientDocumentData,
+      ClientDocumentDataCurrclientItem,
+      ClientquoteDocument,
+      ClientquoteDocumentData,
+      CurrclientDocument,
+      CurrclientDocumentData,
+      CurrclientDocumentDataCurrclientItem,
+      DDocument,
+      DDocumentData,
+      EventDocument,
+      EventDocumentData,
+      PastclientDocument,
+      PastclientDocumentData,
+      PastclientDocumentDataPastclientItem,
+      PeopleDocument,
+      PeopleDocumentData,
+      PeopleDocumentDataPeopleItem,
+      PersonDocument,
+      PersonDocumentData,
+      ProjectDocument,
+      ProjectDocumentData,
+      ProjectDocumentDataProjectItem,
+      TeamDocument,
+      TeamDocumentData,
+      AllDocumentTypes,
+    };
+  }
 }

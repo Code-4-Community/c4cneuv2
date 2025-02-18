@@ -466,6 +466,81 @@ export type EventDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<EventDocumentData>, "event", Lang>;
 
 /**
+ * Item in *FAQ → question_answer*
+ */
+export interface FaqDocumentDataQuestionAnswerItem {
+  /**
+   * question field in *FAQ → question_answer*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.question_answer[].question
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  question: prismic.TitleField;
+
+  /**
+   * answer field in *FAQ → question_answer*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.question_answer[].answer
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  answer: prismic.RichTextField;
+
+  /**
+   * link_text field in *FAQ → question_answer*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.question_answer[].link_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  link_text: prismic.RichTextField;
+
+  /**
+   * link field in *FAQ → question_answer*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.question_answer[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Content for FAQ documents
+ */
+interface FaqDocumentData {
+  /**
+   * question_answer field in *FAQ*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.question_answer[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  question_answer: prismic.GroupField<
+    Simplify<FaqDocumentDataQuestionAnswerItem>
+  >;
+}
+
+/**
+ * FAQ document from Prismic
+ *
+ * - **API ID**: `faq`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FaqDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<FaqDocumentData>, "faq", Lang>;
+
+/**
  * Item in *PastClient → pastclient*
  */
 export interface PastclientDocumentDataPastclientItem {
@@ -923,6 +998,7 @@ export type AllDocumentTypes =
   | CurrclientDocument
   | DDocument
   | EventDocument
+  | FaqDocument
   | PastclientDocument
   | PeopleDocument
   | PersonDocument
@@ -970,6 +1046,9 @@ declare module "@prismicio/client" {
       DDocumentData,
       EventDocument,
       EventDocumentData,
+      FaqDocument,
+      FaqDocumentData,
+      FaqDocumentDataQuestionAnswerItem,
       PastclientDocument,
       PastclientDocumentData,
       PastclientDocumentDataPastclientItem,

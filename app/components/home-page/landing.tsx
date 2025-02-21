@@ -11,20 +11,31 @@ const MissionStatement = ({
 }: MissionStatementProps) => {
   const c4cPurple = "#605ACD";
   return (
-    <div className="flex flex-col mb-20">
-      <p className="text-4xl font-bold mb-2">
+    <div className="flex flex-col mb-20 h-[90vh] justify-center">
+      <p className="text-5xl text-[#333333] mb-3 font-medium">
         Code4Community designs software solutions for
       </p>
-      <p className="text-4xl font-bold mb-2" style={{ color: c4cPurple }}>
+      <p className="text-5xl font-medium mb-3" style={{ color: c4cPurple }}>
         {weLove ?? "default text"}
       </p>
-      <p className="text-lg mb-4">{subtitle}</p>
+      <p className="text-4xl text-[#333333] font-medium mb-4 mt-8">
+        {subtitle}
+      </p>
       <br />
       <br />
 
-      <div className="grid grid-cols-4 gap-4 content-start">
+      <div className="grid grid-cols-4 gap-6">
         {images?.map((image, i) => (
-          <img src={image} alt="" key={i} width={"264px"} height={"264px"} />
+          <div
+            key={i}
+            className="w-full h-full shadow-small border-[2px] border-[#4A4A51]"
+          >
+            <img
+              src={image}
+              alt=""
+              className="w-full aspect-square object-cover"
+            />
+          </div>
         ))}
       </div>
     </div>

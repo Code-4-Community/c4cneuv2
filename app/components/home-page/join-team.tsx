@@ -1,5 +1,7 @@
-import { Link } from "@remix-run/react";
 import PositionBaseCard from "../shared/position-card";
+import WeAreBlock from "./we-are-block";
+
+const c4cPurple = "#605ACD";
 
 const exPositionList = [
   {
@@ -31,44 +33,23 @@ const exPositionList = [
 const JoinTeamSection = () => {
   return (
     <div className="pt-8">
-      <h1 className="text-3xl font-semibold  pb-8">
-        <span className="text-indigo-600">Join Our Team!</span>
-      </h1>
-      <div className="grid grid-cols-2 flex-row  justify-center  mb-10 ">
-        <div>
-          <h3 className="pb-8">
-            Are you passionate about making a positive impact through
-            technology? Do you have a knack for coding, designing, or managing
-            projects?{" "}
-            <Link to="/apply">
-              <span className="text-indigo-600">Join us!</span>
-            </Link>
-          </h3>
-          <p>
-            C4C recruits talented individuals like you to join our team prior to
-            the start of each semester. Check out our open positions below!
-          </p>
-          <div className="flex flex-col w-full space-y-4 shadow">
-            <div className="block w-full bg-purple-200 text-black-700 font-semibold py-2 text-center border-2 border-gray-300">
-              <Link to="/apply">Apply Now</Link>
-            </div>
-          </div>
-        </div>
-        <div className="pl-10">
-          <img
-            src={
-              "https://images.unsplash.com/photo-1499796683658-b659bc751db1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            }
-            alt="Team working together"
-            className="mr-40 shadow border-2 border-gray-300"
-            width={"300px"}
-            height={"300px"}
-          />
-        </div>
-      </div>
-      <div className="flex flex-row basis-full items-stretch">
+      <p className="text-5xl font-medium" style={{ color: c4cPurple }}>
+        Join Our Team!
+      </p>
+
+      <WeAreBlock
+        title="Are you passionate about making a positive impact with technology? Do you have a knack for coding, designing, or managing projects?"
+        description="C4C recruits talented individuals like you to join our team prior to the start of each semester. Check out our open positions below!"
+        image="https://images.unsplash.com/photo-1499796683658-b659bc751db1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        buttonText="Apply"
+        left={true}
+      />
+
+      <div className="flex flex-row basis-full items-stretch gap-6">
         {exPositionList.map((position, index) => (
-          <PositionBaseCard {...position} key={index} />
+          <div key={index} className="w-full md:w-1/3">
+            <PositionBaseCard {...position} />
+          </div>
         ))}
       </div>
     </div>

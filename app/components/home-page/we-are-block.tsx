@@ -13,29 +13,28 @@ const WeAreBlock = ({
   buttonText,
   left,
 }: WeAreBlockProps) => {
-  const imageBlock = (
-    <div className="flex-1">
-      <img
-        src={image}
-        alt="Team working together"
-        className="max-w-full h-auto rounded-lg mr-40"
-        width={"458px"}
-        height={"286px"}
-      />
-    </div>
-  );
   return (
-    <div className="flex justify-between items-center mt-10">
-      {!left && imageBlock}
-      <div className="flex-1 mr-40 w-half">
-        <h1 className="text-2xl font-bold mb-2">{title}</h1>
-        <p className="text-base mb-4">{description}</p>
-        <button className="bg-purple-100 hover:bg-purple-200 text-black font-bold py-2 px-4 rounded shadow-md w-full">
+    <div className="flex mt-12 w-full h-72 mb-24">
+      <div
+        className={`flex ${left ? "order-last ml-32" : "mr-32"} justify-center items-center w-1/2`}
+      >
+        <img
+          src={image}
+          alt="Team working together"
+          className="w-full h-full object-cover shadow-small border-[2px] border-[#4A4A51]"
+        />
+      </div>
+
+      <div className="flex flex-col justify-between items-start w-3/5">
+        <div>
+          <h1 className="text-2xl font-medium text-[#333333] mb-3">{title}</h1>
+          <p className="text-base text-[#333333]">{description}</p>
+        </div>
+
+        <button className="bg-[#F8EDFF] hover:bg-[#EED2FF] text-[#333333] font-semibold py-2 px-4 w-full mt-auto shadow-small border-[2px] border-[#4A4A51]">
           {buttonText}
         </button>
       </div>
-
-      {left && imageBlock}
     </div>
   );
 };

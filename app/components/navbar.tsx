@@ -12,8 +12,8 @@ export default function Navbar(): React.ReactElement {
     <header>
       <div
         className="fixed md:relative w-[90%] md:w-[98%] flex justify-between items-center bg-white
-                      shadow-small md:shadow m-5 md:p-4 md:m-4
-                      border-[1px] md:border-2 border-black
+                      shadow-small md:shadow-small m-5 md:p-4 md:m-4
+                      border-[1px] md:border-2 border-[#4A4A51]
                       h-11 md:h-24 z-40"
       >
         <div className="flex items-center ml-4 md:ml-14">
@@ -71,7 +71,7 @@ export default function Navbar(): React.ReactElement {
               className={`text-xl md:text-2xl mb-4 md:mb-0 text-white ${
                 isActive(link.href)
                   ? "font-bold md:font-medium md:text-indigo-600"
-                  : "md:font-medium md:text-black"
+                  : "md:font-medium md:text-[#333333]"
               }`}
               onClick={() => setIsOpen(false)}
             >
@@ -83,7 +83,7 @@ export default function Navbar(): React.ReactElement {
           className={`text-xl md:text-2xl ml-11 md:mr-20 ${
             isActive("/about")
               ? "font-bold text-white md:font-medium md:text-indigo-600"
-              : "md:font-medium text-white md:text-black"
+              : "md:font-medium text-white md:text-[#333333]"
           } ${isOpen ? "block" : "hidden md:block"}`}
           to="/about"
           onClick={() => setIsOpen(false)}

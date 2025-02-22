@@ -1,6 +1,9 @@
 // app/utils/prismicio.ts
 import { createClient, getRepositoryEndpoint } from "@prismicio/client";
 import { AllDocumentTypes } from "types.generated";
+import * as dotenv from "dotenv";
+
+dotenv.config();
 
 export const repoName = "c4cneu";
 export const accessToken = process.env.PRISMIC_ACCESS_TOKEN;

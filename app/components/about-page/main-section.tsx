@@ -1,7 +1,7 @@
 const MainSection = () => {
   return (
     <div>
-      <h1 className="text-2xl mb-8 font-medium md:text-5xl md:mb-16 mt-14 md:mt-0">
+      <h1 className="mt-12 mb-9 md:mt-[120px] md:mb-[72px] text-2xl md:text-5xl font-medium shrink-0">
         About <span className="text-indigo-600">Code4Community</span>
       </h1>
       <div className="flex justify-center">
@@ -9,7 +9,7 @@ const MainSection = () => {
           className="bg-[linear-gradient(to_right_bottom,rgba(243,235,249,0.75),rgba(243,235,249,0.75)),url('app/images/main.png')]
                         bg-cover bg-no-repeat border border-black shadow
                         text-xs px-6 py-10
-                        md:text-4xl md:px-20 md:py-28
+                        md:text-3xl md:px-48 md:py-32
                         font-medium"
         >
           Empowering through tech, fostering diversity, and leaving a lasting
@@ -17,10 +17,10 @@ const MainSection = () => {
         </div>
       </div>
 
-      <h2 className="text-lg mt-10 font-medium md:text-4xl md:mt-16">
+      <h2 className="text-lg mt-16 font-medium md:text-4xl md:mt-20">
         Our Culture
       </h2>
-      <h3 className="text-xs my-6 md:text-2xl md:my-16 font-medium">
+      <h3 className="text-xs my-6 md:text-xl md:my-16">
         At C4C, we embody a culture of purposeful innovation, where impactful,
         deliberate, and inclusive software development is not just a goal but a
         way of life. As Northeastern University’s sole student-led collective

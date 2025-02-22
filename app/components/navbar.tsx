@@ -11,7 +11,7 @@ export default function Navbar(): React.ReactElement {
   return (
     <header>
       <div
-        className="fixed md:relative w-[90%] md:w-[98%] flex justify-between items-center bg-white
+        className="fixed md:relative w-full md:w-[98%] flex justify-between items-center bg-white
                       shadow-small md:shadow-small m-5 md:p-4 md:m-4
                       border-[1px] md:border-2 border-[#4A4A51]
                       h-11 md:h-24 z-40"
@@ -61,7 +61,7 @@ export default function Navbar(): React.ReactElement {
           {[
             { name: "People", href: "/people" },
             { name: "Projects", href: "/projects" },
-            { name: "Clients", href: "/clients" },
+            { name: "Partners", href: "/partners" },
             { name: "Apply", href: "/apply" },
             { name: "FAQs", href: "/faqs" },
           ].map((link) => (

@@ -10,8 +10,8 @@ const PositionBaseCard = ({
   linkLearnMore,
 }: PositionProps) => {
   return (
-    <div className=" mx-auto">
-      <div className="border-2 border-gray-300 shadow-lg p-8 mb-4">
+    <div className="mx-auto ">
+      <div className="shadow-small border-2 border-[#4a4951] p-8 mb-4">
         <div className="flex justify-left mb-4"></div>
         <h3 className="text-xl font-semibold text-left mb-2">
           {title ?? "Position Description"}

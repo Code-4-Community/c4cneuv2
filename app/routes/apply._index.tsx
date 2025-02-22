@@ -38,41 +38,38 @@ const exPositionList = [
 
 const DateList = [
   {
-    start: new Date("2023-10-29"),
-    end: new Date("2023-11-18"),
+    start: new Date("2025-02-29"),
+    end: new Date("2025-03-16"),
   },
   {
-    start: new Date("2023-11-20"),
-    end: new Date("2023-11-29"),
+    start: new Date("2025-03-23"),
+    end: new Date("2025-04-02"),
   },
   {
-    start: new Date("2023-12-01"),
-    end: new Date("2023-12-08"),
+    start: new Date("2025-04-03"),
+    end: new Date("2025-04-05"),
   },
 ];
 
 export default function Apply() {
   return (
-    <div>
-      <div className="pl-8 pb-8">
+    <div className="flex justify-center">
+      <div className="w-full max-w-[1100px]">
         <JoinTeamSection />
-        <div className="pb-18">
-          <h3 className="text-xl text-left mb-2 pb-8">Positions</h3>
-          <div className="flex flex-row">
+        <div className="mb-20">
+          <h3 className="text-2xl text-left font-medium text-[#4A4A51] mb-2 pb-8">
+            Positions
+          </h3>
+          <div className="flex flex-row gap-x-6">
             {exPositionList.map((position, index) => (
               <PositionCard {...position} key={index} />
             ))}
           </div>
         </div>
-      </div>
 
-      <h3 className="text-xl text-left mb-2 pb-8 pl-8">Application Timeline</h3>
-      <div className="pl-40 pr-40">
-        <div className="flex justify-center w-full pb-20">
-          <AppTimeline periods={DateList as [Period, Period, Period]} />
-        </div>
+        <AppTimeline periods={DateList as [Period, Period, Period]} />
+        <ApplyClient />
       </div>
-      <ApplyClient />
     </div>
   );
 }

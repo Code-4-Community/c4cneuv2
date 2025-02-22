@@ -17,11 +17,11 @@ const PositionApplyCard = ({
         description={description}
         linkLearnMore={linkLearnMore}
       />
-      <div className="flex flex-col w-full space-y-4">
-        <div className="block w-full bg-purple-200 text-black-700 font-semibold py-2 text-center border-2 border-gray-300">
-          <a href={linkApply}>Apply Now</a>
-        </div>
-      </div>
+      <a href={linkApply} className="w-full">
+        <button className="bg-[#F8EDFF] hover:bg-[#EED2FF] text-[#333333] font-semibold py-2 px-4 w-full mt-auto shadow-small border-[2px] border-[#4A4A51]">
+          Apply Now
+        </button>
+      </a>
     </div>
   );
 };

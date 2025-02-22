@@ -32,20 +32,23 @@ const exPositionList = [
 
 const JoinTeamSection = () => {
   return (
-    <div className="pt-8">
-      <p className="text-5xl font-medium" style={{ color: c4cPurple }}>
+    <div className="md:pt-8">
+      <p
+        className="text-3xl md:text-5xl font-medium mb-10 md:mb-2"
+        style={{ color: c4cPurple }}
+      >
         Join Our Team!
       </p>
 
       <WeAreBlock
         title="Are you passionate about making a positive impact with technology? Do you have a knack for coding, designing, or managing projects?"
         description="C4C recruits talented individuals like you to join our team prior to the start of each semester. Check out our open positions below!"
-        image="https://images.unsplash.com/photo-1499796683658-b659bc751db1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        image="https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//IMG_7712.jpg"
         buttonText="Apply"
-        left={true}
+        left={false}
       />
 
-      <div className="flex flex-row basis-full items-stretch gap-6">
+      <div className="flex flex-col -mt-12 md:mt-0 md:flex-row basis-full items-stretch md:gap-6">
         {exPositionList.map((position, index) => (
           <div key={index} className="w-full md:w-1/3">
             <PositionBaseCard {...position} />

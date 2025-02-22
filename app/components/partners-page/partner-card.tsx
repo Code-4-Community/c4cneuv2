@@ -8,7 +8,7 @@ export interface ClientProps {
   websiteLink: string;
 }
 
-const ClientCard = ({
+const PartnerCard = ({
   image,
   title,
   description,
@@ -17,7 +17,7 @@ const ClientCard = ({
 }: ClientProps) => {
   return (
     <div className="flex flex-col items-start md:mb-14">
-      <div className="w-full h-72 md:h-[400px] border-[1px] md:border-2 border-black shadow-small md:shadow p-4 md:p-8 mb-3.5 md:mb-11">
+      <div className="w-full flex-grow min-h-[100px] shadow-small border-[2px] border-[#4A4A51] p-8 mb-11">
         <div className="flex justify-center mb-4">
           <img
             src={image ?? "app/icons/community.png"}
@@ -51,4 +51,4 @@ const ClientCard = ({
   );
 };
 
-export default ClientCard;
+export default PartnerCard;

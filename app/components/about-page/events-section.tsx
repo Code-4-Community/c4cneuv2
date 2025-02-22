@@ -27,11 +27,11 @@ export default function EventsSection({ cde, pde }: EventsSectionProps) {
       <h2 className="text-lg mt-12 mb-4 md:text-3xl md:my-16 font-medium">
         Events
       </h2>
-      <h3 className="text-xs mb-12 md:text-2xl md:mb-16 font-medium">
+      <h3 className="text-xs mb-12 md:text-xl md:mb-16">
         Throughout the school year, C4C hosts a variety of professional
-        development and community development events, both for its internal
-        members and the greater Northeastern community. See below for some of
-        our past mixers, workshops, and more!
+        development and community development events, both for its club members
+        and the greater Northeastern community. See below for some of our past
+        mixers, workshops, and more!
       </h3>
       <h2 className="text-lg md:text-3xl text-indigo-600 mb-4 md:mb-10 font-medium">
         Community Development Events

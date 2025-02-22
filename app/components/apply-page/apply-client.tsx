@@ -3,9 +3,11 @@ import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
 const ApplyClient = () => {
   return (
-    <div className="p-8 max-w-3xl mx-auto">
+    <div className="w-full mb-20">
       <div className="pb-8">
-        <h1 className="text-2xl font-semibold text-indigo-600 pb-2">Clients</h1>
+        <h2 className="text-indigo-600 text-4xl font-medium mb-8">
+          Partner Organizations
+        </h2>
         <p>
           Are you a nonprofit organization in the greater Boston area? If you
           would like further information about Code4Community or wish to discuss
@@ -50,7 +52,7 @@ const ApplyClient = () => {
       <div className="flex justify-center">
         <button
           type="submit"
-          className="w-24 bg-purple-200 text-black-700 font-semibold py-2 text-top border-2 border-gray-400"
+          className="bg-[#F8EDFF] hover:bg-[#EED2FF] text-[#333333] w-32 font-semibold py-2 shadow-small border-[2px] border-[#4A4A51]"
         >
           Submit
         </button>

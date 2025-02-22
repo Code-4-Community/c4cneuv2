@@ -6,11 +6,11 @@ export interface QuoteProps {
   quote?: string;
 }
 
-const ClientHeader = ({ client, title, quote }: QuoteProps) => {
+const PartnerHeader = ({ client, title, quote }: QuoteProps) => {
   return (
     <div className="pb-12 md:pb-20">
-      <h1 className="text-2xl md:text-5xl pb-8 md:pb-16 font-medium">
-        Meet the <span className="text-indigo-600">Clients</span>
+      <h1 className="mt-12 mb-9 md:mt-[120px] md:mb-[72px] text-2xl md:text-5xl font-medium shrink-0">
+        Meet our <span className="text-indigo-600">Partner Orgnizations</span>
       </h1>
       <div className="flex flex-row items-center md:shadow border-[1px] md:border-2 border-black relative p-3 gap-1 md:p-14 md:gap-12">
         <div className="md:w-2/3 flex flex-col">
@@ -42,4 +42,4 @@ const ClientHeader = ({ client, title, quote }: QuoteProps) => {
   );
 };
 
-export default ClientHeader;
+export default PartnerHeader;

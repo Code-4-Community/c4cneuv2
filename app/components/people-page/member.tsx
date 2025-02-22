@@ -20,7 +20,7 @@ const Member = ({
   site,
 }: MemberProps) => {
   return (
-    <div className="flex flex-col items-center text-center">
+    <div className="">
       <img
         src={image}
         alt={name}
@@ -28,7 +28,7 @@ const Member = ({
       />
       <p className="text-lg font-semibold">{name}</p>
       <p className="text-sm text-gray-500 mb-4">{role}</p>
-      <div className="flex space-x-4">
+      <div>
         {linkedin && (
           <a href={linkedin} className="text-blue-600">
             <Linkedin />

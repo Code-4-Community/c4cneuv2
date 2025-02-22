@@ -1,11 +1,11 @@
 const JoinTeamSection = () => {
   return (
-    <div>
-      <h1 className="text-3xl font-semibold  pb-8">
+    <div className="mb-10">
+      <h1 className="mt-12 mb-9 md:mt-[120px] md:mb-[72px] text-2xl md:text-5xl font-medium shrink-0">
         Join Our <span className="text-indigo-600"> Team</span>
       </h1>
-      <h2 className="text-2xl font-semibold text-indigo-600 pb-8"> Members</h2>
-      <h3 className="pb-8">
+      <h2 className="text-indigo-600 text-4xl font-medium mb-8">Members</h2>
+      <h3 className="pb-8 text-lg">
         We are a community-driven organization dedicated to creating impactful
         websites for nonprofits. Our mission is to harness the power of
         technology to amplify the voices of organizations working towards
@@ -13,14 +13,10 @@ const JoinTeamSection = () => {
         and creative environment where your skills will be put to meaningful
         use.
       </h3>
-      <h2 className="text-normal text-indigo-600 pb-8">
+      <h2 className="text-lg text-indigo-600 pb-8">
         We recruit new member prior to the start of each semester. Please learn
         more about our application process below!
       </h2>
-      <h3 className="font-semibold text-left mb-2 pb-8">
-        Our application process for Spring 2025 has closed. Stay in touch for
-        updates about applications for the Fall 2025 semester!
-      </h3>
     </div>
   );
 };

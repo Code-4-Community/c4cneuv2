@@ -1445,13 +1445,13 @@ export type ProDocument<Lang extends string = string> =
 /**
  * Item in *Project → Project*
  */
-export interface ProjectDocumentDataProjectItem {
+export interface ProjectDocumentDataProject2Item {
   /**
    * Logo Image field in *Project → Project*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: project.project[].logo_image
+   * - **API ID Path**: project.project2[].logo_image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   logo_image: prismic.ImageField<never>;
@@ -1461,7 +1461,7 @@ export interface ProjectDocumentDataProjectItem {
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: project.project[].website_image
+   * - **API ID Path**: project.project2[].website_image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   website_image: prismic.ImageField<never>;
@@ -1471,7 +1471,7 @@ export interface ProjectDocumentDataProjectItem {
    *
    * - **Field Type**: Title
    * - **Placeholder**: Speak For The Trees
-   * - **API ID Path**: project.project[].title
+   * - **API ID Path**: project.project2[].title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.TitleField;
@@ -1481,7 +1481,7 @@ export interface ProjectDocumentDataProjectItem {
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Tree Stewardship Program
-   * - **API ID Path**: project.project[].subtitle
+   * - **API ID Path**: project.project2[].subtitle
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   subtitle: prismic.RichTextField;
@@ -1491,7 +1491,7 @@ export interface ProjectDocumentDataProjectItem {
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Speak for the Trees Boston aims to improve the size and health of the urban forest in the greater Boston area, with a focus on under-served and under-canopied neighborhoods. They work with volunteers to inventory (collect data on) trees, plant trees, and educate those about trees...
-   * - **API ID Path**: project.project[].description
+   * - **API ID Path**: project.project2[].description
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description: prismic.RichTextField;
@@ -1502,7 +1502,7 @@ export interface ProjectDocumentDataProjectItem {
    * - **Field Type**: Boolean
    * - **Placeholder**: *None*
    * - **Default Value**: false
-   * - **API ID Path**: project.project[].has_case_study
+   * - **API ID Path**: project.project2[].has_case_study
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   has_case_study: prismic.BooleanField;
@@ -1512,7 +1512,7 @@ export interface ProjectDocumentDataProjectItem {
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: project.project[].case_problem
+   * - **API ID Path**: project.project2[].case_problem
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   case_problem: prismic.RichTextField;
@@ -1522,7 +1522,7 @@ export interface ProjectDocumentDataProjectItem {
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: project.project[].case_solution
+   * - **API ID Path**: project.project2[].case_solution
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   case_solution: prismic.RichTextField;
@@ -1532,7 +1532,7 @@ export interface ProjectDocumentDataProjectItem {
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: project.project[].live_website
+   * - **API ID Path**: project.project2[].live_website
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   live_website: prismic.LinkField;
@@ -1547,11 +1547,11 @@ interface ProjectDocumentData {
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: project.project[]
+   * - **API ID Path**: project.project2[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  project: prismic.GroupField<Simplify<ProjectDocumentDataProjectItem>>;
+  project2: prismic.GroupField<Simplify<ProjectDocumentDataProject2Item>>;
 }
 
 /**

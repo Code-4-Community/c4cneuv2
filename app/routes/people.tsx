@@ -115,6 +115,9 @@ export const loader = async () => {
             people {
             ...peopleFields
             }
+            case_study {
+            ...case_studyFields
+            }
           }
         }`,
   });

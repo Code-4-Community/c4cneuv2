@@ -447,6 +447,17 @@ interface CaseStudyDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   name: prismic.TitleField;
+
+  /**
+   * description field in *Case Study*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_study.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
 }
 
 /**
@@ -533,11 +544,11 @@ export type ClientDocument<Lang extends string = string> =
   >;
 
 /**
- * Content for ClientQuote documents
+ * Content for PartnerQuote documents
  */
 interface ClientquoteDocumentData {
   /**
-   * name field in *ClientQuote*
+   * name field in *PartnerQuote*
    *
    * - **Field Type**: Title
    * - **Placeholder**: *None*
@@ -548,7 +559,7 @@ interface ClientquoteDocumentData {
   name: prismic.TitleField;
 
   /**
-   * title field in *ClientQuote*
+   * title field in *PartnerQuote*
    *
    * - **Field Type**: Title
    * - **Placeholder**: *None*
@@ -559,7 +570,7 @@ interface ClientquoteDocumentData {
   title: prismic.TitleField;
 
   /**
-   * quote field in *ClientQuote*
+   * quote field in *PartnerQuote*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -571,7 +582,7 @@ interface ClientquoteDocumentData {
 }
 
 /**
- * ClientQuote document from Prismic
+ * PartnerQuote document from Prismic
  *
  * - **API ID**: `clientquote`
  * - **Repeatable**: `false`
@@ -1560,6 +1571,93 @@ export type ProjectDocument<Lang extends string = string> =
   >;
 
 /**
+ * Item in *Project2 → projects*
+ */
+export interface Project2DocumentDataProjectsItem {
+  /**
+   * logo field in *Project2 → projects*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project2.projects[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * title field in *Project2 → projects*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project2.projects[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * subtitle field in *Project2 → projects*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project2.projects[].subtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subtitle: prismic.RichTextField;
+
+  /**
+   * description field in *Project2 → projects*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project2.projects[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * case_study field in *Project2 → projects*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project2.projects[].case_study
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  case_study: prismic.ContentRelationshipField<"case_study">;
+}
+
+/**
+ * Content for Project2 documents
+ */
+interface Project2DocumentData {
+  /**
+   * projects field in *Project2*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project2.projects[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  projects: prismic.GroupField<Simplify<Project2DocumentDataProjectsItem>>;
+}
+
+/**
+ * Project2 document from Prismic
+ *
+ * - **API ID**: `project2`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type Project2Document<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<Project2DocumentData>,
+    "project2",
+    Lang
+  >;
+
+/**
  * Content for Team documents
  */
 interface TeamDocumentData {
@@ -1639,6 +1737,7 @@ export type AllDocumentTypes =
   | PositionDocument
   | ProDocument
   | ProjectDocument
+  | Project2Document
   | TeamDocument;
 
 declare module "@prismicio/client" {
@@ -1712,7 +1811,10 @@ declare module "@prismicio/client" {
       ProDocumentData,
       ProjectDocument,
       ProjectDocumentData,
-      ProjectDocumentDataProject2Item,
+      ProjectDocumentDataProjectItem,
+      Project2Document,
+      Project2DocumentData,
+      Project2DocumentDataProjectsItem,
       TeamDocument,
       TeamDocumentData,
       AllDocumentTypes,

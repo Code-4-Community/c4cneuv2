@@ -115,6 +115,9 @@ export const loader = async () => {
             people {
             ...peopleFields
             }
+            case_study {
+            ...case_studyFields
+            }
           }
         }`,
   });
@@ -164,9 +167,9 @@ export default function People() {
               name={asText(person.name)}
               role={asText(person.role)}
               email={asText(person.email)}
-              linkedin={person.linkedin.embed_url}
-              github={person.github.embed_url}
-              site={person.website.embed_url}
+              // linkedin={person.linkedin.embed_url}
+              // github={person.github.embed_url}
+              // site={person.website.embed_url}
             />
           </div>
         ))}
@@ -218,9 +221,9 @@ export default function People() {
                                     showRole ? asText(person.role) : undefined
                                   }
                                   email={asText(person.email)}
-                                  linkedin={person.linkedin?.embed_url}
-                                  github={person.github?.embed_url}
-                                  site={person.website?.embed_url}
+                                  // linkedin={person.linkedin?.embed_url}
+                                  // github={person.github?.embed_url}
+                                  // site={person.website?.embed_url}
                                 />
                               );
                             })}

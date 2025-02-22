@@ -1,8 +1,29 @@
-import { asImageSrc, asText } from "@prismicio/client";
+import {
+  asImageSrc,
+  asText,
+  ImageField,
+  RichTextField,
+  TitleField,
+} from "@prismicio/client";
 import { MetaFunction, useLoaderData } from "@remix-run/react";
-import { ProjectDocument } from "types.generated";
+import { CaseStudyDocument, Project2Document } from "types.generated";
 import ProjectsCarousel from "~/components/projects/projects-carousel";
 import { getPrismicClient } from "~/utils/prismicio";
+
+// needed since some of linked document type is lacking
+interface Project2Data {
+  data: {
+    projects: {
+      logo: ImageField<never>;
+      title: TitleField;
+      subtitle: RichTextField;
+      description: RichTextField;
+      case_study: {
+        data: CaseStudyDocument;
+      };
+    }[];
+  };
+}
 
 export const meta: MetaFunction = () => {
   return [
@@ -14,19 +35,30 @@ export const meta: MetaFunction = () => {
 export const loader = async () => {
   const client = await getPrismicClient();
 
-  return await client.getSingle<ProjectDocument>("project");
+  return await client.getSingle<Project2Document>("project2", {
+    graphQuery: `{
+          project2 {
+            projects {
+            ...projectsFields
+              case_study {
+                ...case_studyFields
+              }
+            }
+          }
+        }`,
+  });
 };
 
 export default function Projects() {
-  const document = useLoaderData<ProjectDocument>();
-  const projects = document.data.project;
+  const document = useLoaderData<Project2Data>();
+  const projects = document.data.projects;
 
   const projectsList = projects.map((project) => ({
-    logo: asImageSrc(project.logo_image) ?? undefined,
+    logo: asImageSrc(project.logo) ?? undefined,
     title: asText(project.title),
     subtitle: asText(project.subtitle),
     description: asText(project.description),
-    has_case: project.has_case_study,
+    has_case: !!project.case_study.data, // !! exists to force into a boolean value
     link: `${asText(project.title).split(" ").join("_")}`,
   }));
 

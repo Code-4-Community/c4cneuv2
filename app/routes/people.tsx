@@ -54,7 +54,7 @@ interface TeamData {
   data: {
     team_name: string;
     description: RichTextField;
-    people?: {
+    people: {
       data: {
         people: PeopleDocumentDataPeopleItem[];
       };

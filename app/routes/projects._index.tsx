@@ -58,7 +58,7 @@ export default function Projects() {
     title: asText(project.title),
     subtitle: asText(project.subtitle),
     description: asText(project.description),
-    has_case: project.case_study.data,
+    has_case: !!project.case_study.data, // !! exists to force into a boolean value
     link: `${asText(project.title).split(" ").join("_")}`,
   }));
 

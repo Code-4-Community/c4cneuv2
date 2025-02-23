@@ -1,3 +1,5 @@
+import { Link } from "@remix-run/react";
+
 export interface PositionProps {
   title?: string;
   description?: string;
@@ -21,9 +23,9 @@ const PositionBaseCard = ({
         </p>
         <div className="flex space-x-4">
           {linkLearnMore && (
-            <a href={linkLearnMore}>
+            <Link to={linkLearnMore}>
               <p className="text-lg font-bold underline"> Learn more </p>
-            </a>
+            </Link>
           )}
         </div>
       </div>

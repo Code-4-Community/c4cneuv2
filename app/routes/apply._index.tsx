@@ -4,54 +4,58 @@ import JoinTeamSection from "~/components/apply-page/join-team";
 import ApplyClient from "~/components/apply-page/apply-client";
 import AppTimeline from "~/components/apply-page/app-timeline";
 import { Period } from "~/components/apply-page/app-timeline";
+import { getPrismicClient } from "~/utils/prismicio";
+import {
+  ApplyDocument,
+  PositionDocumentDataPositionItem,
+} from "types.generated";
+import { useLoaderData } from "@remix-run/react";
+import { asLink, asText, DateField, asDate } from "@prismicio/client";
+import { RichTextField } from "@prismicio/types";
 
+// needed since some of linked document type is lacking
+interface ApplyData {
+  data: {
+    member_description: RichTextField;
+    application_open: DateField;
+    application_close: DateField;
+    interview_start: DateField;
+    interview_end: DateField;
+    application_decision_start: DateField;
+    application_decision_end: DateField;
+    client_reach_out_description: RichTextField;
+    positions: {
+      data: {
+        position: PositionDocumentDataPositionItem[];
+      };
+    };
+  };
+}
 export const meta: MetaFunction = () => {
   return [{ title: "Apply" }, { name: "apply", content: "Welcome to Remix!" }];
 };
 
-const exPositionList = [
-  {
-    title: "Software Developer",
-    description:
-      "Developers write the code that make our projects a reality. " +
-      "Help us tackle tough technical problems while creating the code that powers C4C!",
-    linkLearnMore: "https://www.c4cneu.com",
-    linkApply: "https://www.c4cneu.com",
-  },
-  {
-    title: "Product Manager",
-    description:
-      "Product Managers scope out our products and prioritize the team's work. " +
-      "Help us take the vision of our clients and turn it into a reality!",
-    linkLearnMore: "https://www.c4cneu.com",
-    linkApply: "https://www.c4cneu.com",
-  },
-  {
-    title: "Product Designer",
-    description:
-      "Designers create the look and feel of our products. " +
-      "Take an idea from conception to delivery while defining our user's experience.",
-    linkLearnMore: "https://www.c4cneu.com",
-    linkApply: "https://www.c4cneu.com",
-  },
-];
+export const loader = async () => {
+  const client = await getPrismicClient();
 
-const DateList = [
-  {
-    start: new Date("2025-02-29"),
-    end: new Date("2025-03-16"),
-  },
-  {
-    start: new Date("2025-03-23"),
-    end: new Date("2025-04-02"),
-  },
-  {
-    start: new Date("2025-04-03"),
-    end: new Date("2025-04-05"),
-  },
-];
+  return await client.getSingle<ApplyDocument>("apply", {
+    graphQuery: `{
+        apply {
+          ...applyFields
+          positions {
+            ...positionsFields
+          }
+        }
+      }`,
+  });
+};
 
 export default function Apply() {
+  const document = useLoaderData<ApplyData>();
+
+  const applyPage = document.data;
+  const positions = document.data.positions.data.position;
+
   return (
     <div className="flex justify-center">
       <div className="w-full max-w-[1100px]">
@@ -61,13 +65,36 @@ export default function Apply() {
             Positions
           </h3>
           <div className="flex flex-row gap-x-6">
-            {exPositionList.map((position, index) => (
-              <PositionCard {...position} key={index} />
+            {positions.map((position, index) => (
+              <PositionCard
+                key={index}
+                title={asText(position.name)}
+                description={asText(position.short_description)}
+                linkLearnMore={asText(position.name).split(" ").join("_")}
+                linkApply={asLink(position.application) ?? ""}
+              />
             ))}
           </div>
         </div>
 
-        <AppTimeline periods={DateList as [Period, Period, Period]} />
+        <AppTimeline
+          periods={
+            [
+              {
+                start: asDate(applyPage.application_open),
+                end: asDate(applyPage.application_close),
+              },
+              {
+                start: asDate(applyPage.interview_start),
+                end: asDate(applyPage.interview_end),
+              },
+              {
+                start: asDate(applyPage.application_decision_start),
+                end: asDate(applyPage.application_decision_end),
+              },
+            ] as [Period, Period, Period]
+          }
+        />
         <ApplyClient />
       </div>
     </div>

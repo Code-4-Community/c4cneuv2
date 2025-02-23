@@ -24,9 +24,11 @@ export default function Projects() {
     document: ProjectDocument;
     caseId: string;
   }>();
+
   const project = document.data.project.find(
     (project) => asText(project.title) === caseId,
   );
+
   const caseDetails = {
     logo: asImageSrc(project?.logo_image) ?? undefined,
     title: asText(project?.title) ?? undefined,
@@ -36,5 +38,6 @@ export default function Projects() {
     website_image: asImageSrc(project?.website_image) ?? undefined,
     link: asLink(project?.live_website) ?? undefined,
   };
+
   return <div className="p-16">{<Case case={caseDetails} />}</div>;
 }

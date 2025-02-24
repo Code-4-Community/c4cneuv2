@@ -132,8 +132,6 @@ export default function People() {
 
   const teams: Map<string, TeamInfo> = transformTeams(document);
 
-  console.log(teams);
-
   const teamNames = Array.from(teams.keys());
 
   const [selectedTeam, setSelectedTeam] = useState<string>(

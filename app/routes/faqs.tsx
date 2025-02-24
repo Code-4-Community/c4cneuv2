@@ -25,7 +25,7 @@ export const loader = async () => {
 
 export default function FAQs() {
   const faqs = useLoaderData<FaqDocument>();
-  console.log("faqs", faqs.data);
+
   return (
     <div className="flex justify-center">
       <div className="mt-24 w-[90%] md:max-w-[1100px]">

@@ -3,7 +3,7 @@ import MailingList from "./mailing-list";
 
 export default function Footer() {
   return (
-    <footer className="bg-white py-8 px-6 md:px-12 border">
+    <footer className="bg-white py-8 px-6 md:px-12 border-top w-full">
       <div className="mb-8">
         <MailingList />
       </div>
@@ -23,14 +23,14 @@ export default function Footer() {
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-[#4a4951] text-sm font-bold underline"
+                className="text-[#4a4951] text-m font-medium underline"
               >
                 {link.name}
               </Link>
             ))}
           </nav>
 
-          <div className="text-[#4a4951] text-sm font-bold">
+          <div className="text-[#4a4951] text-m font-medium">
             Contact us at{" "}
             <a href="mailto:c4cneu@gmail.com" className="underline">
               c4cneu@gmail.com
@@ -47,7 +47,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-3">
           {[
             { name: "Facebook", href: "https://www.facebook.com/c4cneu/" },
             { name: "Instagram", href: "http://instagram.com/c4cneu" },
@@ -67,7 +67,7 @@ export default function Footer() {
               to={social.href}
               target="_blank"
               rel="noreferrer"
-              className="text-[#4a4951] text-sm font-bold underline "
+              className="text-[#4a4951] text-m font-medium underline "
             >
               {social.name}
             </Link>

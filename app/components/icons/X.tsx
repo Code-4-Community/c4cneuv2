@@ -10,13 +10,13 @@ const SvgX = (props: SVGProps<SVGSVGElement>) => (
   >
     <path
       d="M1 11.6067L11.6066 1.00009"
-      stroke="white"
+      stroke="black"
       strokeWidth="2"
       strokeLinecap="round"
     />
     <path
       d="M1 1L11.6066 11.6066"
-      stroke="white"
+      stroke="black"
       strokeWidth="2"
       strokeLinecap="round"
     />

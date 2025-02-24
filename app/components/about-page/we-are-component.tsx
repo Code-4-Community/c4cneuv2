@@ -14,7 +14,7 @@ const WeAreComponent = ({ image, title, description }: WeAreProps) => {
           className="object-contain w-full h-full border border-black"
         />
       </div>
-      <div className="md:ml-4 md:ml-0 w-full">
+      <div className="md:ml-0 w-full">
         <p
           className="text-lg md:text-2xl font-medium text-indigo-600 
                       mb-2 md:mt-9 md:mb-3 w-full"

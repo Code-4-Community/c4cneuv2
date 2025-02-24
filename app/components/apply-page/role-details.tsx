@@ -47,11 +47,16 @@ const RoleDetailsCard = ({
           </h2>
           <div className="flex align-center">
             <div className="text-gray-700 text-left mb-6 w-1/2 pr-10	">
-              {roleParagraph?.map((par, index) => (
-                <p className="mb-4" key={index}>
-                  {par}
-                </p>
-              ))}
+              {roleParagraph?.map(
+                (
+                  par,
+                  index, // TODO: change in prismic because this is a hack
+                ) => (
+                  <p className="mb-4" key={index}>
+                    {par}
+                  </p>
+                ),
+              )}
             </div>
             <div className="w-1/2 flex justify-center">
               <img
@@ -82,9 +87,14 @@ const RoleDetailsCard = ({
                 Our ideal candidate is someone who is..
               </p>
               <ul className="text-gray-700 text-left mb-6 list-disc pl-5">
-                {qualityList.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
+                {qualityList.map(
+                  (
+                    item,
+                    index, // TODO: update prismic because this is a hack
+                  ) => (
+                    <li key={index}>{item}</li>
+                  ),
+                )}
               </ul>
             </div>
           </div>

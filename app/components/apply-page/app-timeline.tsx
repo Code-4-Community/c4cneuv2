@@ -72,7 +72,7 @@ const AppTimeline = ({ periods }: AppTimelineProps) => {
             index === 0
               ? "0%"
               : index === periods.length - 1
-                ? "calc(100% - 1.5rem)"
+                ? "calc(100% - 1rem)"
                 : `${(index / (periods.length - 1)) * 100}%`;
 
           return (
@@ -85,7 +85,7 @@ const AppTimeline = ({ periods }: AppTimelineProps) => {
               }}
             >
               <div
-                className={`w-6 h-6 border rounded-full ${
+                className={`w-4 h-4 md:w-6 md:h-6 border rounded-full ${
                   isUpcoming
                     ? "bg-[#E7E5EE] border-[#4A4A51]"
                     : "bg-[#EDBAFF] border-[#4A4A51]"
@@ -102,24 +102,24 @@ const AppTimeline = ({ periods }: AppTimelineProps) => {
                 }`}
               >
                 <div
-                  className={`text-base font-medium text-gray-700 ${
+                  className={`text:sm md:text-base font-medium text-gray-700 ${
                     index === 0
                       ? "text-left"
                       : index === 1
                         ? "text-center"
                         : "text-right"
-                  } whitespace-nowrap`}
+                  } md:whitespace-nowrap`}
                 >
                   {labels[index]}
                 </div>
                 <div
-                  className={`text-sm font-normal text-indigo-600 ${
+                  className={`text-sm md:text-m font-normal text-indigo-600 ${
                     index === 0
                       ? "text-left"
                       : index === 1
                         ? "text-center"
                         : "text-right"
-                  } whitespace-nowrap`}
+                  } md:whitespace-nowrap`}
                 >
                   {formatDate(period.start)} - {formatDate(period.end)}
                 </div>

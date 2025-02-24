@@ -28,7 +28,7 @@ const Member = ({
         className="w-full aspect-[1] object-cover shadow-small mb-4 border border-[#4a4951]"
       />
 
-      <p className="text-lg font-medium">{name}</p>
+      <p className="text-lg font-medium text-center w-full">{name}</p>
       <p className="text-base text-center text-gray-500 mb-2">
         {splitRole?.[0]}
         {splitRole?.[1] && <br />} {splitRole?.[1] && `(${splitRole[1]})`}{" "}

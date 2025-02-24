@@ -58,13 +58,13 @@ export default function Apply() {
 
   return (
     <div className="flex justify-center">
-      <div className="w-full max-w-[1100px]">
+      <div className="mt-24 w-[90%] md:max-w-[1100px]">
         <JoinTeamSection />
         <div className="mb-20">
-          <h3 className="text-2xl text-left font-medium text-[#4A4A51] mb-2 pb-8">
+          <h3 className="text-xl text-left font-medium text-[#4A4A51] mb-4 md:mb-2 md:pb-8">
             Positions
           </h3>
-          <div className="flex flex-row gap-x-6">
+          <div className="flex flex-col md:flex-row gap-y-14 md:gap-x-6">
             {positions.map((position, index) => (
               <PositionCard
                 key={index}

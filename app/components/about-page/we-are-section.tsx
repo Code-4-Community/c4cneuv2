@@ -7,7 +7,7 @@ interface Props {
 const WeAreSection = ({ aboutItems }: Props) => {
   return (
     <div>
-      <h2 className="text-lg mb-2 md:text-4xl md:mb-12 text-indigo-600 font-medium">
+      <h2 className="text-xl mb-10 md:text-4xl md:mb-12 text-indigo-600 font-medium">
         We are
       </h2>
       <div className="flex flex-col items-center text-indigo-600">
@@ -20,6 +20,13 @@ const WeAreSection = ({ aboutItems }: Props) => {
               description={item.description}
             />
           ))}
+          <div>
+            <img
+              src={"app/images/community.jpeg"}
+              alt={"About component"}
+              className="object-contain w-full border border-black md:hidden"
+            />
+          </div>
         </div>
       </div>
     </div>

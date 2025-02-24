@@ -132,8 +132,6 @@ export default function People() {
 
   const teams: Map<string, TeamInfo> = transformTeams(document);
 
-  console.log(teams);
-
   const teamNames = Array.from(teams.keys());
 
   const [selectedTeam, setSelectedTeam] = useState<string>(
@@ -150,16 +148,20 @@ export default function People() {
 
   return (
     <div className="flex justify-center">
-      <div className="w-full max-w-[1100px]">
-        <h1 className="mt-12 mb-9 md:mt-[120px] md:mb-[72px] text-2xl md:text-5xl font-medium shrink-0">
-          Meet the {month} {year} <span className="text-indigo-600">Team</span>
+      <div className="mt-24 w-[90%] md:max-w-[1100px]">
+        <h1 className="mt-12 mb-9 md:mt-[120px] md:mb-[72px] text-4xl md:text-5xl font-medium shrink-0 text-left">
+          Meet the <br className="block md:hidden" />
+          <span className="text-indigo-600">
+            {month} {year}
+          </span>{" "}
+          Team
         </h1>
 
-        <div className="mb-24">
-          <h2 className="text-base md:text-4xl font-medium mb-6 md:mb-[72px]">
+        <div className="mb-14 md:mb-24">
+          <h2 className="text-2xl md:text-4xl font-medium mb-6 md:mb-[72px]">
             Meet the <span className="text-indigo-600">E-Board</span>
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-5 gap-y-10 mb-14 md:mb-[72px]">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-5 gap-y-5 md:gap-y-10 mb-14 md:mb-[72px]">
             {eboard.map((person, i) => (
               <div key={i} className="flex justify-center">
                 <Member
@@ -177,19 +179,24 @@ export default function People() {
         </div>
 
         <div className="mb-16">
-          <h2 className="text-2xl/8 font-medium md:text-4xl md:mb-3">
+          <h2 className="text-2xl font-medium mb-2 md:text-4xl md:mb-3">
             Meet the <span className="text-indigo-600">Project Teams</span>
           </h2>
           <h3 className="text-base md:text-2xl mb-5 md:mb-10">
             Click on a team name to meet the people behind each project
           </h3>
           <div>
-            <div className="mb-6 md:mb-8 flex gap-2.5">
+            <div className="mb-6 md:mb-8 flex flex-wrap gap-2.5">
               {teamNames.map((name, i) => (
                 <div key={i}>
                   <Button
                     variant={"outline"}
                     onClick={() => handleButtonClick(name)}
+                    className={`transition-colors duration-200 ${
+                      selectedTeam === name
+                        ? "bg-[#F8EDFF] hover:bg-[#EED2FF]"
+                        : "hover:bg-[#EED2FF]"
+                    }`}
                   >
                     {name}
                     <br />
@@ -197,7 +204,8 @@ export default function People() {
                 </div>
               ))}
             </div>
-            <p className="mb-9 md:mb-5 h-20 overflow-y-auto w-4/5">
+
+            <p className="mb-9 md:mb-5 h-36 md:h-20 overflow-y-auto w-full md:w-4/5">
               {selectedTeam && teams.get(selectedTeam)?.description}
             </p>
             <div>
@@ -210,11 +218,11 @@ export default function People() {
                       ).map(
                         ([roleType, people]) =>
                           people.length > 0 && (
-                            <div key={roleType}>
-                              <h2 className="text-xl font-semibold capitalize mb-4">
+                            <div className="mb-10" key={roleType}>
+                              <h2 className="text-2xl font-medium capitalize mb-4">
                                 {displayRoleType(roleType)}
                               </h2>
-                              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-5 gap-y-10 mb-0 md:mb-6">
+                              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-5 gap-y-5 md:gap-y-10 mb-0 md:mb-6">
                                 {people?.map((person, i) => {
                                   const showRole = roleType === RoleType.LEAD;
                                   return (

@@ -25,10 +25,10 @@ export const loader = async () => {
 
 export default function FAQs() {
   const faqs = useLoaderData<FaqDocument>();
-  console.log("faqs", faqs.data);
+
   return (
     <div className="flex justify-center">
-      <div className=" w-full max-w-[1100px]">
+      <div className="mt-24 w-[90%] md:max-w-[1100px]">
         <h1 className="mt-12 mb-9 md:mt-[120px] md:mb-[72px] text-2xl md:text-5xl font-medium shrink-0">
           Frequently Asked <span className="text-indigo-600">Questions</span>
         </h1>
@@ -36,9 +36,9 @@ export default function FAQs() {
           <Accordion type="multiple" key={key}>
             <AccordionItem
               value="item-1"
-              className="shadow-small mb-5 md:mb-8 border border-black px-2.5 py-2.5 md:py-6 md:px-8"
+              className="shadow-small mb-5 md:mb-8 border border-black px-3 py-1 md:py-6 md:px-8"
             >
-              <AccordionTrigger className="font-medium text-xs md:text-2xl">
+              <AccordionTrigger className="font-medium text-m md:text-2xl">
                 {asText(item.question)}
               </AccordionTrigger>
               <AccordionContent>

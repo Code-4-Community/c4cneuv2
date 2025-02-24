@@ -5,7 +5,7 @@ const ApplyClient = () => {
   return (
     <div className="w-full mb-20">
       <div className="pb-8">
-        <h2 className="text-indigo-600 text-4xl font-medium mb-8">
+        <h2 className="text-indigo-600 text-xl md:text-4xl font-medium mb-2 md:mb-8">
           Partner Organizations
         </h2>
         <p>

@@ -410,15 +410,15 @@ interface ApplyDocumentData {
   application_decision_end: prismic.DateField;
 
   /**
-   * client reach out description field in *Apply*
+   * partner reach out description field in *Apply*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: apply.client_reach_out_description
+   * - **API ID Path**: apply.partner_reach_out_description
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  client_reach_out_description: prismic.RichTextField;
+  partner_reach_out_description: prismic.RichTextField;
 }
 
 /**
@@ -1332,11 +1332,11 @@ export type PersonDocument<Lang extends string = string> =
   >;
 
 /**
- * Item in *Positions → position*
+ * Item in *Position → position*
  */
 export interface PositionDocumentDataPositionItem {
   /**
-   * name field in *Positions → position*
+   * name field in *Position → position*
    *
    * - **Field Type**: Title
    * - **Placeholder**: *None*
@@ -1346,7 +1346,7 @@ export interface PositionDocumentDataPositionItem {
   name: prismic.TitleField;
 
   /**
-   * short_description field in *Positions → position*
+   * short_description field in *Position → position*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1356,7 +1356,7 @@ export interface PositionDocumentDataPositionItem {
   short_description: prismic.RichTextField;
 
   /**
-   * tag_line field in *Positions → position*
+   * tag_line field in *Position → position*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1366,7 +1366,7 @@ export interface PositionDocumentDataPositionItem {
   tag_line: prismic.RichTextField;
 
   /**
-   * work field in *Positions → position*
+   * work field in *Position → position*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1376,7 +1376,7 @@ export interface PositionDocumentDataPositionItem {
   work: prismic.RichTextField;
 
   /**
-   * looking_for field in *Positions → position*
+   * looking_for field in *Position → position*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1386,7 +1386,17 @@ export interface PositionDocumentDataPositionItem {
   looking_for: prismic.RichTextField;
 
   /**
-   * application field in *Positions → position*
+   * ideal_candidate field in *Position → position*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: position.position[].ideal_candidate
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  ideal_candidate: prismic.RichTextField;
+
+  /**
+   * application field in *Position → position*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -1397,11 +1407,11 @@ export interface PositionDocumentDataPositionItem {
 }
 
 /**
- * Content for Positions documents
+ * Content for Position documents
  */
 interface PositionDocumentData {
   /**
-   * position field in *Positions*
+   * position field in *Position*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -1413,7 +1423,7 @@ interface PositionDocumentData {
 }
 
 /**
- * Positions document from Prismic
+ * Position document from Prismic
  *
  * - **API ID**: `position`
  * - **Repeatable**: `false`

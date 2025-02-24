@@ -63,22 +63,22 @@ export default function Clients() {
 
   return (
     <div className="flex justify-center">
-      <div className=" w-full max-w-[1100px]">
+      <div className="mt-24 w-[90%] md:max-w-[1100px]">
         <PartnerHeader {...clientQuote} />
-        <h3 className="text-2xl md:text-4xl mb-4 md:mb-8 font-medium">
+        <h3 className="text-xl md:text-4xl mb-5 md:mb-8 font-medium">
           Current Partner Organizations
         </h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 md:gap-x-6 gap-y-7 md:gap-y-10">
+        <div className="grid md:grid-cols-3 gap-x-3 md:gap-x-6 gap-y-7 md:gap-y-10">
           {currClients.map((client, index) => (
             <PartnerCard {...client} key={index} />
           ))}
         </div>
 
         <div>
-          <h3 className="text-2xl md:text-4xl mt-16 md:mt-0 mb-4 md:mb-8 font-medium">
+          <h3 className="text-2xl md:text-4xl mt-16 md:mt-0  mb-5 md:mb-8 font-medium">
             Past Partner Organizations
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-7 md:gap-y-10 mb-14 md:mb-6">
+          <div className="grid md:grid-cols-3 gap-x-6 gap-y-7 md:gap-y-10 mb-14 md:mb-6">
             {pastClients.map((client, index) => (
               <PartnerCard {...client} key={index} />
             ))}

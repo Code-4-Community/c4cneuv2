@@ -6,7 +6,7 @@ interface RoleDetailsProps {
   image2Alt?: string;
   title?: string;
   tagline?: string;
-  roleParagraph?: string;
+  roleParagraph?: string[];
   canidateParagrah?: string;
   qualityList: string[];
 }
@@ -22,66 +22,74 @@ const RoleDetailsCard = ({
   canidateParagrah,
   qualityList,
 }: RoleDetailsProps) => {
+  console.log(qualityList);
+  console.log(roleParagraph);
+
   return (
-    <div
-      className="pl-8 pr-8"
-      style={{ paddingLeft: "120px", paddingRight: "120px" }}
-    >
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <Link to="/apply">
-          <img
-            src="/app/icons/arrow.svg"
-            style={{ height: 100, width: 100 }}
-            alt="arrow"
-          />
-        </Link>
-        <div>
-          <h1 className="text-3xl text-gray-700 font-semibold">
-            {title ?? "Role Title"}
-          </h1>
-          <h2 className="text-xl text-gray-700 font-semibold  pb-8">
-            {tagline ?? "Tagline"}
+    <div className="flex justify-center">
+      <div className=" w-full max-w-[1100px]">
+        <div className="md:mt-[120px] flex align-center mb-20">
+          <Link to="/apply">
+            <img
+              src="/app/icons/arrow.svg"
+              style={{ height: 100, width: 100 }}
+              alt="arrow"
+            />
+          </Link>
+          <div className="flex flex-col justify-center items-start">
+            <h1 className="text-3xl text-gray-700 font-semibold">
+              {title ?? "Role Title"}
+            </h1>
+            <h2 className="text-xl text-gray-700">{tagline ?? "Tagline"}</h2>
+          </div>
+        </div>
+
+        <div className="border-2 border-gray-300 shadow-lg p-14 mb-4">
+          <h2 className="text-indigo-600 text-3xl font-semibold text-left mb-8">
+            What You’ll Be Doing
           </h2>
-        </div>
-      </div>
-      <div className="border-2 border-gray-300 shadow-lg p-8 mb-4">
-        <div className="flex justify-left mb-4"></div>
-        <h2 className="text-indigo-600 text-xl font-semibold text-left mb-2">
-          What You’ll Be Doing
-        </h2>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <p className="text-gray-700 text-left mb-6">
-            {roleParagraph ?? "paragraph explaining role"}
-          </p>
-          <img
-            src={image1 ?? "/app/icons/software-engineer.svg"}
-            style={{ height: 290.811, width: 360 }}
-            alt={image1Alt ?? "software-engineer"}
-          />
-        </div>
-      </div>
-      <div className="border-2 border-gray-300 shadow-lg p-8 mb-4">
-        <h2 className="text-indigo-600 text-xl font-semibold text-left mb-2">
-          What We’re Looking For
-        </h2>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <img
-            src={image2 ?? "/app/icons/website-gear.svg"}
-            style={{ height: 297.342, width: 360 }}
-            alt={image2Alt ?? "website gear"}
-          />
-          <div style={{ paddingLeft: "60px" }}>
-            <p className="text-gray-700 text-left mb-6">
-              {canidateParagrah ?? "canidate paragraph"}
-            </p>
-            <p className="text-gray-700 text-left mb-6">
-              Our ideal candidate is someone who is...
-            </p>
-            <ul className="text-gray-700 text-left mb-6 list-disc pl-5">
-              {qualityList.map((item, index) => (
-                <li key={index}>{item}</li>
+          <div className="flex align-center">
+            <div className="text-gray-700 text-left mb-6 w-1/2 pr-10	">
+              {roleParagraph?.map((par, index) => (
+                <p className="mb-4" key={index}>
+                  {par}
+                </p>
               ))}
-            </ul>
+            </div>
+            <div className="w-1/2 flex justify-center">
+              <img
+                src={image1 ?? "/app/icons/software-engineer.svg"}
+                alt={image1Alt ?? "software-engineer"}
+              />
+            </div>
+          </div>
+        </div>
+        <div className="border-2 border-gray-300 shadow-lg p-14 mb-4">
+          <h2 className="text-indigo-600 text-3xl font-semibold text-left mb-8">
+            What We're Looking For
+          </h2>
+
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <div className="w-1/2 flex justify-center pr-10">
+              <img
+                src={image2 ?? "/app/icons/website-gear.svg"}
+                alt={image2Alt ?? "website gear"}
+              />
+            </div>
+
+            <div className="w-1/2">
+              <p className="text-gray-700 text-left mb-6 pr-10">
+                {canidateParagrah ?? "candidate paragraph"}
+              </p>
+              <p className="text-gray-700 text-left mb-6 pr-10 font-semibold">
+                Our ideal candidate is someone who is..
+              </p>
+              <ul className="text-gray-700 text-left mb-6 list-disc pl-5">
+                {qualityList.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

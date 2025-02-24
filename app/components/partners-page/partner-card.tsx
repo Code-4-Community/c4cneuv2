@@ -16,19 +16,19 @@ const PartnerCard = ({
   websiteLink,
 }: ClientProps) => {
   return (
-    <div className="flex flex-col items-start md:mb-14">
-      <div className="w-full flex-grow min-h-[100px] shadow-small border-[2px] border-[#4A4A51] p-8 mb-11">
+    <div className="flex flex-col items-start mb-6 md:mb-14">
+      <div className="w-full flex-grow min-h-[100px] shadow-small border-[2px] border-[#4A4A51] p-8 mb-4 md:mb-11">
         <div className="flex justify-center mb-4">
           <img
             src={image ?? "app/icons/community.png"}
             alt={title ?? "Title"}
-            className="h-16 w-16 md:h-[100px] md:w-[100px] object-cover"
+            className="h-40 w-40 md:h-[100px] md:w-[100px] object-cover"
           />
         </div>
-        <h3 className="text-sm md:text-xl font-medium text-center mb-4 md:mb-9">
+        <h3 className="text-lg md:text-xl font-medium text-center mb-4 md:mb-9">
           {title ?? "Title"}
         </h3>
-        <p className="text-[10px] leading-none md:text-base text-gray mb-6">
+        <p className="text-sm md:text-base text-gray mb-3 md:mb-6 text-center md:text-left">
           {description ?? "lorem ipsum"}
         </p>
       </div>

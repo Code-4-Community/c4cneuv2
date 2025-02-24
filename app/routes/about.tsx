@@ -1,8 +1,8 @@
-import { MetaFunction, useLoaderData } from "@remix-run/react";
+import { MetaFunction } from "@remix-run/react";
 import WeAreSection from "~/components/about-page/we-are-section";
 import MainSection from "~/components/about-page/main-section";
-import EventsSection from "~/components/about-page/events-section";
-import NumbersSection from "~/components/about-page/numbers-section";
+// import EventsSection from "~/components/about-page/events-section";
+// import NumbersSection from "~/components/about-page/numbers-section";
 import { AboutCdeDocument } from "types.generated";
 import { AboutPdeDocument } from "types.generated";
 import { getPrismicClient } from "~/utils/prismicio";
@@ -25,10 +25,10 @@ export const loader = async () => {
 };
 
 export default function About() {
-  const { cde, pde } = useLoaderData<{
-    cde: AboutCdeDocument;
-    pde: AboutPdeDocument;
-  }>();
+  // const { cde, pde } = useLoaderData<{
+  //   cde: AboutCdeDocument;
+  //   pde: AboutPdeDocument;
+  // }>();
   const aboutItems = [
     {
       image: "app/images/problem-solvers.jpeg",
@@ -52,11 +52,11 @@ export default function About() {
 
   return (
     <div className="flex justify-center">
-      <div className="w-full max-w-[1100px]">
+      <div className="mt-24 w-[90%] md:max-w-[1100px]">
         <MainSection />
         <WeAreSection aboutItems={aboutItems} />
-        <EventsSection cde={cde} pde={pde} />
-        <NumbersSection />
+        {/* <EventsSection cde={cde} pde={pde} /> */}
+        {/* <NumbersSection /> */}
       </div>
     </div>
   );

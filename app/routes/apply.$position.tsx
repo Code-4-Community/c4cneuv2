@@ -72,15 +72,20 @@ export default function Role() {
   return (
     <div>
       <RoleDetailsCard
-        image1={""}
+        image1={"/app/icons/software-engineer.svg"}
         image1Alt={"missing"}
-        image2={""}
+        image2={"/app/icons/website-gear.svg"}
         image2Alt={"idk"}
         title={asText(position?.name) ?? ""}
         tagline={asText(position?.tag_line) ?? ""}
-        roleParagraph={asText(position?.work) ?? ""}
+        roleParagraph={
+          asText(position?.work, { separator: "\n" })?.split("\n") ?? []
+        }
         canidateParagrah={asText(position?.looking_for) ?? ""}
-        qualityList={[""]}
+        qualityList={
+          asText(position?.ideal_candidate, { separator: "\n" })?.split("\n") ??
+          []
+        }
       />
     </div>
   );

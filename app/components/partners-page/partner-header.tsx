@@ -16,25 +16,26 @@ const PartnerHeader = ({ client, title, quote }: QuoteProps) => {
         <div className="md:w-2/3 flex flex-col">
           <div className="mb-3.5 md:mb-10">
             <div className="flex items-start">
-              <LQuote className="w-3 h-3 md:w-8 md:h-8" />
+              <LQuote className="w-8 h-8" />
             </div>
 
-            <h3 className="text-[8px] md:text-xl leading-tight md:leading-7 px-2 md:px-11 font-medium">
+            <h3 className="text-m md:text-xl leading-tight md:leading-7 px-2 py-5 md:px-11 text-center md:text-left">
               {quote ?? "lorem ipsum"}
             </h3>
+
             <div className="flex justify-end">
-              <RQuote className="w-3 h-3 md:w-8 md:h-8" />
+              <RQuote className="w-8 h-8" />
             </div>
           </div>
 
           <div className="text-right leading-tight">
-            <h3 className="text-[10px] md:text-2xl font-medium">
+            <h3 className="text-lg md:text-2xl font-medium">
               {client ?? "Name"}
             </h3>
-            <h3 className="text-[8px] md:text-base">{title ?? "Title"}</h3>
+            <h3 className="text-sm md:text-base">{title ?? "Title"}</h3>
           </div>
         </div>
-        <div className="md:w-1/3 flex justify-center">
+        <div className="hidden md:flex justify-center md:w-1/3">
           <SoftwareEngineer className="w-36 h-36 md:w-72 md:h-72" />
         </div>
       </div>

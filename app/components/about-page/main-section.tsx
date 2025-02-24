@@ -8,7 +8,7 @@ const MainSection = () => {
         <div
           className="bg-[linear-gradient(to_right_bottom,rgba(243,235,249,0.75),rgba(243,235,249,0.75)),url('app/images/main.png')]
                         bg-cover bg-no-repeat border border-black shadow
-                        text-xs px-6 py-10
+                        text-lg px-6 py-10
                         md:text-3xl md:px-48 md:py-32
                         font-medium"
         >
@@ -17,10 +17,10 @@ const MainSection = () => {
         </div>
       </div>
 
-      <h2 className="text-lg mt-16 font-medium md:text-4xl md:mt-20">
+      <h2 className="text-xl mt-16 font-medium md:text-4xl md:mt-20">
         Our Culture
       </h2>
-      <h3 className="text-xs my-6 md:text-xl md:my-16">
+      <h3 className="text-m my-14 md:text-xl md:my-16">
         At C4C, we embody a culture of purposeful innovation, where impactful,
         deliberate, and inclusive software development is not just a goal but a
         way of life. As Northeastern University’s sole student-led collective

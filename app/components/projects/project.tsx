@@ -18,8 +18,8 @@ const Project = ({
   has_case,
 }: ProjectProps) => {
   return (
-    <div className="px-2 py-6 flex flex-col justify-between items-center h-full bg-[#FDFDFD] ">
-      <div className="px-8 py-8 border-2 border-[#4a4951] flex flex-col justify-between items-center gap-2 h-full object-cover shadow-default">
+    <div className="py-6 flex flex-col justify-between items-center h-full bg-transparent">
+      <div className="px-8 py-8 border-2 border-[#4a4951] flex flex-col justify-between items-center gap-2 h-full object-cover shadow-default bg-[#FDFDFD] ">
         <img
           src={logo ?? "https://i.imgur.com/BlBH8Ak.jpeg"}
           alt={title}

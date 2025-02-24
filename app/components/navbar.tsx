@@ -11,14 +11,14 @@ export default function Navbar(): React.ReactElement {
   return (
     <header>
       <div
-        className="fixed md:relative w-full md:w-[98%] flex justify-between items-center bg-white
+        className="fixed md:relative w-[90vw] md:w-[98vw] flex justify-between items-center bg-white
                       shadow-small md:shadow-small m-5 md:p-4 md:m-4
                       border-[1px] md:border-2 border-[#4A4A51]
-                      h-11 md:h-24 z-40"
+                      h-14 md:h-24 z-40"
       >
-        <div className="flex items-center ml-4 md:ml-14">
+        <div className="flex items-center justify-start ml-3 md:ml-4">
           <a href="/">
-            <C4C className="w-6 md:w-12" />
+            <C4C className="aspect-square w-10 md:w-16 md:h-auto" />
           </a>
         </div>
         <div className="md:hidden">
@@ -28,69 +28,56 @@ export default function Navbar(): React.ReactElement {
             />
           </button>
         </div>
-      </div>
-      <nav
-        className={`fixed md:absolute top-0 right-0 h-full w-2/3
-                      md:flex md:items-center md:top-11 md:justify-between md:h-auto
-                      bg-indigo-600 md:bg-transparent transition-transform duration-300 transform md:transform-none z-50
+        <nav
+          className={`fixed md:absolute top-0 right-0 md:top-7 h-full w-2/3
+                      md:flex md:items-center md:h-auto md:justify-end md:mr-8
+                      bg-[#EFEEFF] md:bg-transparent transition-transform duration-300 transform md:transform-none z-50
                       ${
                         isOpen
                           ? "translate-x-0 shadow-[-7px_8px_rgba(74,74,81,1)]"
                           : "translate-x-full"
                       }`}
-      >
-        {isOpen && (
-          <button
-            onClick={() => setIsOpen(false)}
-            className="absolute top-5 right-5"
-          >
-            <X className="w-2.5 h-2.5" />
-          </button>
-        )}
-        <div
-          className="flex flex-col text-white md:text-black
-                      mt-20 md:mt-0 ml-11 md:flex-row md:justify-center md:gap-6"
         >
-          <Link
-            className={`text-xl mb-4 ${isOpen ? "block" : "hidden"}`}
-            to="/"
-            onClick={() => setIsOpen(false)}
-          >
-            Home
-          </Link>
-          {[
-            { name: "People", href: "/people" },
-            { name: "Projects", href: "/projects" },
-            { name: "Partners", href: "/partners" },
-            { name: "Apply", href: "/apply" },
-            { name: "FAQs", href: "/faqs" },
-          ].map((link) => (
+          {isOpen && (
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-5 right-5"
+            >
+              <X className="w-2.5 h-2.5" />
+            </button>
+          )}
+          <div className="flex flex-col md:flex-row ml-11 md:ml-0 md:gap-6 mt-20 md:mt-0">
             <Link
-              key={link.name}
-              to={link.href}
-              className={`text-xl md:text-2xl mb-4 md:mb-0 text-white ${
-                isActive(link.href)
-                  ? "font-bold md:font-medium md:text-indigo-600"
-                  : "md:font-medium md:text-[#333333]"
-              }`}
+              to="/"
+              className="text-xl md:text-2xl mb-4 md:mb-0 text-black md:hidden" // Hidden on larger screens
               onClick={() => setIsOpen(false)}
             >
-              {link.name}
+              Home
             </Link>
-          ))}
-        </div>
-        <Link
-          className={`text-xl md:text-2xl ml-11 md:mr-20 ${
-            isActive("/about")
-              ? "font-bold text-white md:font-medium md:text-indigo-600"
-              : "md:font-medium text-white md:text-[#333333]"
-          } ${isOpen ? "block" : "hidden md:block"}`}
-          to="/about"
-          onClick={() => setIsOpen(false)}
-        >
-          About Us
-        </Link>
-      </nav>
+            {[
+              { name: "Projects", href: "/projects" },
+              { name: "Partners", href: "/partners" },
+              { name: "People", href: "/people" },
+              { name: "Apply", href: "/apply" },
+              { name: "About Us", href: "/about" },
+              { name: "FAQs", href: "/faqs" },
+            ].map((link) => (
+              <Link
+                key={link.name}
+                to={link.href}
+                className={`text-xl md:text-2xl mb-4 md:mb-0 text-black whitespace-nowrap ${
+                  isActive(link.href)
+                    ? "font-bold md:font-medium md:text-indigo-600"
+                    : "md:font-medium md:text-[#333333]"
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+        </nav>
+      </div>
     </header>
   );
 }

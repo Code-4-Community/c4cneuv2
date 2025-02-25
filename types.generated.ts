@@ -722,16 +722,6 @@ export interface CurrclientDocumentDataCurrclientItem {
   description: prismic.RichTextField;
 
   /**
-   * caseStudyLink field in *CurrClient → currclient*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: currclient.currclient[].casestudylink
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  casestudylink: prismic.LinkField;
-
-  /**
    * case_study field in *CurrClient → currclient*
    *
    * - **Field Type**: Content Relationship
@@ -986,6 +976,16 @@ export interface HomeDocumentDataWeAreSectionItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   button_text: prismic.RichTextField;
+
+  /**
+   * link field in *Home → we are section*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.we_are_section[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
 }
 
 /**
@@ -1353,16 +1353,6 @@ export interface PastclientDocumentDataPastclientItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description: prismic.RichTextField;
-
-  /**
-   * caseStudyLink field in *PastClient → pastclient*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: pastclient.pastclient[].casestudylink
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  casestudylink: prismic.LinkField;
 
   /**
    * case_study field in *PastClient → pastclient*

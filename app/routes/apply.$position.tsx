@@ -4,6 +4,7 @@ import { useLoaderData } from "@remix-run/react";
 import { PositionDocument } from "types.generated";
 import RoleDetailsCard from "~/components/apply-page/role-details";
 import { getPrismicClient } from "~/utils/prismicio";
+import { resolveParams } from "~/utils/util";
 
 export const meta: MetaFunction = () => {
   return [
@@ -13,7 +14,7 @@ export const meta: MetaFunction = () => {
 };
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
-  const given_pos = params.position?.split("_").join(" ");
+  const given_pos = resolveParams(params.position);
   const client = await getPrismicClient();
   const document = await client.getSingle<PositionDocument>("position");
   return { document, given_pos };
@@ -26,7 +27,7 @@ export default function Role() {
   }>();
 
   const position = document.data.position.find(
-    (pos) => asText(pos.name) === given_pos,
+    (pos) => asText(pos.name).toLowerCase() === given_pos,
   );
 
   return (

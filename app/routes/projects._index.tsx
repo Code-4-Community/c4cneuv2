@@ -4,6 +4,7 @@ import { Project2Document } from "types.generated";
 import ProjectsCarousel from "~/components/projects/projects-carousel";
 import { getPrismicClient } from "~/utils/prismicio";
 import { isFilled } from "@prismicio/client";
+import { prismicLinkGen } from "~/utils/util";
 
 export const meta: MetaFunction = () => {
   return [
@@ -28,7 +29,7 @@ export default function Projects() {
     subtitle: asText(project.subtitle),
     description: asText(project.description),
     has_case: isFilled.contentRelationship(project.case_study),
-    link: `${asText(project.title).split(" ").join("-")}`, // make this a shared util
+    link: `${prismicLinkGen(project.title)}`,
   }));
 
   return (

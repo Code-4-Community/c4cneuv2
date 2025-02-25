@@ -39,18 +39,17 @@ const Project = ({
           </div>
         </div>
         <div className="mt-2 w-full text-left ">
-          {link && (
-            <Link
-              to={has_case ? link : ""}
-              className={` object-cover shadow-small px-8 py-3 w-full mt-6 text-[#333333] text-center border border-[#4a4951] px-6 py-2 object-cover shadow-small font-bold text-sm  ${
-                has_case
-                  ? "bg-[#f8ecff] border-[#4a4951] hover:bg-[#EDBAFF] transition"
-                  : "bg-[#E7E5EE] text-[#CAC9D0] border-[#9A98A2]"
-              } flex justify-center items-center`}
-            >
-              View Case Study
-            </Link>
-          )}
+          {/* make this shared because its same on partner page */}
+          <Link
+            to={has_case ? (link ?? "") : ""}
+            className={` object-cover shadow-small px-8 py-3 w-full mt-6 text-[#333333] text-center border border-[#4a4951] px-6 py-2 object-cover shadow-small font-bold text-sm  ${
+              has_case
+                ? "bg-[#f8ecff] border-[#4a4951] hover:bg-[#EDBAFF] transition"
+                : "bg-[#E7E5EE] text-[#CAC9D0] border-[#9A98A2] pointer-events-none"
+            } flex justify-center items-center`}
+          >
+            View Case Study
+          </Link>
         </div>
       </div>
     </div>

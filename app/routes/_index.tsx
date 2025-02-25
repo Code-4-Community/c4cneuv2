@@ -11,7 +11,7 @@ import {
   PositionDocumentDataPositionItem,
 } from "types.generated";
 import { useLoaderData } from "@remix-run/react";
-import { asImageSrc, asText, ImageField } from "@prismicio/client";
+import { asImageSrc, asLink, asText, ImageField } from "@prismicio/client";
 import { RichTextField } from "@prismicio/types";
 
 // needed since some of prismic types lacking a bit
@@ -102,6 +102,7 @@ export default function Index() {
                 title={asText(item.title)}
                 description={asText(item.description)}
                 image={image}
+                link={asLink(item.link) ?? undefined}
                 buttonText={asText(item.button_text)}
                 left={index % 2 !== 0}
               />

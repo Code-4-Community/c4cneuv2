@@ -22,7 +22,7 @@ export default function MailingList() {
           />
           <button
             type="submit"
-            className="px-6 bg-[#f8ecff] border border-[#4a4951] text-[#333333] text-sm font-bold"
+            className="px-6 bg-[#f8ecff] border bg-[#E7E5EE] text-[#CAC9D0] border-[#9A98A2] pointer-events-none text-sm font-bold"
           >
             Join Mailing List!
           </button>

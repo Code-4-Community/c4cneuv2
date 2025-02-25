@@ -27,7 +27,7 @@ export default function Role() {
   }>();
 
   const position = document.data.position.find(
-    (pos) => asText(pos.name) === given_pos,
+    (pos) => asText(pos.name).toLowerCase() === given_pos,
   );
 
   return (

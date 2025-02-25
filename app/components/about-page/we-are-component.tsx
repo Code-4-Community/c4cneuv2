@@ -7,7 +7,7 @@ export interface WeAreProps {
 const WeAreComponent = ({ image, title, description }: WeAreProps) => {
   return (
     <div className="flex flex-row md:flex-col items-start">
-      <div className="relative w-36 h-36 hidden md:block md:w-full md:h-auto max-w-full max-h-full">
+      <div className="relative w-36 h-36 hidden md:block md:w-full md:h-auto max-w-full max-h-full shadow">
         <img
           src={image ?? "app/icons/community.png"}
           alt={title ?? "About component image"}

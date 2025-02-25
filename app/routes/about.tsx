@@ -1,11 +1,10 @@
-import { MetaFunction } from "@remix-run/react";
-import WeAreSection from "~/components/about-page/we-are-section";
+import { MetaFunction, useLoaderData } from "@remix-run/react";
 import MainSection from "~/components/about-page/main-section";
-// import EventsSection from "~/components/about-page/events-section";
-// import NumbersSection from "~/components/about-page/numbers-section";
-import { AboutCdeDocument } from "types.generated";
-import { AboutPdeDocument } from "types.generated";
+import { AboutDocument } from "types.generated";
 import { getPrismicClient } from "~/utils/prismicio";
+// import EventsSection from "~/components/about-page/events-section";
+import WeAreComponent from "~/components/about-page/we-are-component";
+import { asImageSrc, asText } from "@prismicio/client";
 
 export const meta: MetaFunction = () => {
   return [
@@ -17,46 +16,55 @@ export const meta: MetaFunction = () => {
 export const loader = async () => {
   const client = await getPrismicClient();
 
-  const [cde, pde] = await Promise.all([
-    client.getSingle<AboutCdeDocument>("about-cde"),
-    client.getSingle<AboutPdeDocument>("about-pde"),
-  ]);
-  return { cde, pde };
+  return await client.getSingle<AboutDocument>("about");
 };
 
 export default function About() {
-  // const { cde, pde } = useLoaderData<{
-  //   cde: AboutCdeDocument;
-  //   pde: AboutPdeDocument;
-  // }>();
-  const aboutItems = [
-    {
-      image: "app/images/problem-solvers.jpeg",
-      title: "Problem-Solvers",
-      description:
-        "We're a community of forward-thinkers and solution architects. Embrace challenges, spark innovation, and connect with a network of dynamic individuals.",
-    },
-    {
-      image: "app/images/leaders.jpeg",
-      title: "Leaders",
-      description:
-        "We are a community dedicated to nurturing leadership potential. Explore mentorship, engage in skill-building, and connect with aspiring leaders.",
-    },
-    {
-      image: "app/images/community.jpeg",
-      title: "A Tight-Knit Community",
-      description:
-        "We embrace the strength of togetherness. We are a tight-knit community that fosters genuine relationships and shared experiences.",
-    },
-  ];
+  const document = useLoaderData<AboutDocument>();
+  const aboutData = document.data;
+
+  // const cde = aboutData.comm_dev_events.map((item) => ({
+  //   image: asImageSrc(item.pic) ?? undefined,
+  //   title: asText(item.title),
+  //   description: asText(item.description),
+  // }));
+
+  // const pde = aboutData.pro_dev_events.map((item) => ({
+  //   image: asImageSrc(item.pic) ?? undefined,
+  //   title: asText(item.title),
+  //   description: asText(item.description),
+  // }));
 
   return (
     <div className="flex justify-center">
       <div className="mt-24 w-[90%] md:max-w-[1100px]">
-        <MainSection />
-        <WeAreSection aboutItems={aboutItems} />
-        {/* <EventsSection cde={cde} pde={pde} /> */}
-        {/* <NumbersSection /> */}
+        <MainSection
+          tagline={asText(aboutData.about_pic_text)}
+          culture_description={asText(aboutData.culture_description)}
+        />
+        <div>
+          <h2 className="text-xl mb-10 md:text-4xl md:mb-12 text-indigo-600 font-medium">
+            We are
+          </h2>
+          <div className="flex flex-col items-center text-indigo-600">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {aboutData.we_are.map((item, index) => (
+                <WeAreComponent
+                  key={index}
+                  image={asImageSrc(item.pic) ?? undefined}
+                  title={asText(item.title)}
+                  description={asText(item.description)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+        {/* <EventsSection
+          description={asText(aboutData.event_description)}
+          cde={cde}
+          pde={pde}
+        /> */}
+        {/* <NumbersSection /> maybe figure out how to do this shit */}
       </div>
     </div>
   );

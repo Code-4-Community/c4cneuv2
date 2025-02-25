@@ -3,10 +3,11 @@ import { useLoaderData } from "@remix-run/react";
 import { PeopleDocumentDataPeopleItem, TeamDocument } from "types.generated";
 import { getPrismicClient } from "~/utils/prismicio";
 import Member from "~/components/member";
-import { asLink, asText } from "@prismicio/client";
+import { asLink, asText, ContentRelationshipField } from "@prismicio/client";
 import { useState } from "react";
 import { RichTextField } from "@prismicio/types";
 import { Button } from "~/components/ui/button";
+import { isFilled } from "@prismicio/client";
 
 const eboardTeam = "eboard";
 
@@ -47,6 +48,7 @@ const seasonToMonth = (month: number): string => {
 interface TeamInfo {
   description: string;
   members: Map<string, PeopleDocumentDataPeopleItem[]>;
+  has_case_study: boolean;
 }
 
 // needed since some of prismic types lacking a bit
@@ -59,6 +61,7 @@ interface TeamData {
         people: PeopleDocumentDataPeopleItem[];
       };
     };
+    case_study: ContentRelationshipField<"case_study">;
   };
 }
 
@@ -78,6 +81,7 @@ const transformTeams = (document: TeamData[]): Map<string, TeamInfo> => {
         acc.set(teamName, {
           description,
           members: orderedMap,
+          has_case_study: isFilled.contentRelationship(obj.data.case_study),
         });
       }
 
@@ -99,8 +103,8 @@ const transformTeams = (document: TeamData[]): Map<string, TeamInfo> => {
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "People" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "C4C People" },
+    { name: "C4C People page", content: "Meet the Team" },
   ];
 };
 
@@ -115,14 +119,12 @@ export const loader = async () => {
             people {
             ...peopleFields
             }
-            case_study {
-            ...case_studyFields
-            }
           }
         }`,
   });
 };
 
+// TODO: add case_study link
 export default function People() {
   const document = useLoaderData<TeamData[]>();
 
@@ -207,6 +209,7 @@ export default function People() {
 
             <p className="mb-9 md:mb-5 h-36 md:h-20 overflow-y-auto w-full md:w-4/5">
               {selectedTeam && teams.get(selectedTeam)?.description}
+              {/* {selectedTeam && teams.get(selectedTeam)?.has_case_study} TODO: link to case_study*/}
             </p>
             <div>
               {selectedTeam && (

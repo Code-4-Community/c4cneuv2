@@ -1,4 +1,3 @@
-import { Link } from "@remix-run/react";
 import PositionBaseCard, { PositionProps } from "../shared/position-card";
 
 export interface PositionApplyCardProps extends PositionProps {
@@ -18,11 +17,11 @@ const PositionApplyCard = ({
         description={description}
         linkLearnMore={linkLearnMore}
       />
-      <Link to={linkApply} className="w-full">
+      <a href={linkApply} className="w-full">
         <button className="bg-[#F8EDFF] hover:bg-[#EED2FF] text-[#333333] font-semibold py-2 px-4 w-full mt-auto shadow-small border-[2px] border-[#4A4A51]">
           Apply Now
         </button>
-      </Link>
+      </a>
     </div>
   );
 };

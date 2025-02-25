@@ -76,7 +76,7 @@ const EventsCarousel = ({ events }: EventsCarouselProps) => {
           {Array.from({ length: count }).map((_, index) => (
             <Button
               key={index}
-              variant="outline"
+              variant="ghost"
               size="icon"
               className={`rounded-full ${
                 index === current

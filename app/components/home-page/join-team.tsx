@@ -1,3 +1,4 @@
+import { linkGen } from "~/utils/util";
 import { PositionApplyCardProps } from "../apply-page/position-apply-card";
 import PositionBaseCard from "../shared/position-card";
 import WeAreBlock from "./we-are-block";
@@ -42,9 +43,7 @@ const JoinTeamSection = ({
               key={index}
               title={position.title}
               description={position.description}
-              linkLearnMore={
-                "/apply/" + (position.title?.split(" ").join("_") ?? "")
-              }
+              linkLearnMore={"/apply/" + linkGen(position.title)}
               //TODO: dont hardcode apply
             />
           </div>

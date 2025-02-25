@@ -12,6 +12,7 @@ import {
 import { useLoaderData } from "@remix-run/react";
 import { asLink, asText, DateField, asDate } from "@prismicio/client";
 import { RichTextField } from "@prismicio/types";
+import { prismicLinkGen } from "~/utils/util";
 
 // needed since some of linked document type is lacking
 interface ApplyData {
@@ -76,7 +77,7 @@ export default function Apply() {
                 key={index}
                 title={asText(position.name)}
                 description={asText(position.short_description)}
-                linkLearnMore={asText(position.name).split(" ").join("_")}
+                linkLearnMore={prismicLinkGen(position.name)}
                 linkApply={asLink(position.application) ?? ""}
               />
             ))}

@@ -5,6 +5,7 @@ import { CaseStudyDocument } from "types.generated";
 import Case from "~/components/projects/case";
 import { getPrismicClient } from "~/utils/prismicio";
 import { filter } from "@prismicio/client";
+import { resolveParams } from "~/utils/util";
 
 export const meta: MetaFunction = () => {
   return [
@@ -15,7 +16,7 @@ export const meta: MetaFunction = () => {
 
 // TODO: add a default 404 error page
 export const loader = async ({ params }: LoaderFunctionArgs) => {
-  const caseId = params.caseId?.split("-").join(" ").toLowerCase() ?? "";
+  const caseId = resolveParams(params.caseId);
   const client = await getPrismicClient();
 
   try {

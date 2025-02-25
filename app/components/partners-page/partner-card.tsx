@@ -48,15 +48,18 @@ const PartnerCard = ({
           {/* make this the standard button */}
         </div>
 
-        <div className="text-sm md:text-base block w-full bg-white-200 font-bold border-[1px] md:border-[1.5px] border-black shadow-mobile md:shadow-small py-2.5 text-center">
-          <a
-            href={websiteLink}
-            className="flex justify-center items-center gap-1 md:gap-2"
-          >
-            Client Website
+        <a
+          href={websiteLink}
+          className={`flex justify-center items-center gap-1 md:gap-2 text-sm md:text-base block w-full bg-white-200 font-bold border-[1px] md:border-[1.5px] border-black shadow-mobile md:shadow-small py-2.5 text-center
+              ${websiteLink ? "hover:bg-[#EDBAFF] transition" : "text-[#CAC9D0] pointer-events-none"}
+              // TODO: background of hover should be different since background is white
+              `}
+        >
+          Client Website
+          {websiteLink && (
             <NewWindow className="w-2.5 h-2.5 md:w-3.5 md:h-3.5" />
-          </a>
-        </div>
+          )}
+        </a>
       </div>
     </div>
   );

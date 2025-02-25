@@ -1,8 +1,11 @@
+import { Link } from "@remix-run/react";
+
 interface WeAreBlockProps {
   title?: string;
   description?: string;
   image?: string;
   buttonText?: string;
+  link?: string;
   left?: boolean;
 }
 
@@ -11,6 +14,7 @@ const WeAreBlock = ({
   description,
   image,
   buttonText,
+  link,
   left,
 }: WeAreBlockProps) => {
   return (
@@ -22,10 +26,12 @@ const WeAreBlock = ({
             {description}
           </p>
         </div>
-
-        <button className="bg-[#F8EDFF] hover:bg-[#EED2FF] text-[#333333] font-semibold py-2 px-4 w-full mt-auto shadow-small border-[2px] border-[#4A4A51]">
+        <Link
+          className="bg-[#F8EDFF] hover:bg-[#EED2FF] text-[#333333] font-semibold py-2 px-4 w-full mt-auto shadow-small border-[2px] border-[#4A4A51] flex justify-center"
+          to={link ?? ""}
+        >
           {buttonText}
-        </button>
+        </Link>
       </div>
 
       <div

@@ -2,14 +2,57 @@ import { type MetaFunction } from "@remix-run/node";
 import WeAreBlock from "~/components/home-page/we-are-block";
 import MissionStatement from "~/components/home-page/landing";
 import JoinTeamSection from "~/components/home-page/join-team";
+import { getPrismicClient } from "~/utils/prismicio";
+import {
+  HomeDocument,
+  HomeDocumentDataReviewsItem,
+  HomeDocumentDataTopPicturesItem,
+  HomeDocumentDataWeAreSectionItem,
+  PositionDocumentDataPositionItem,
+} from "types.generated";
+import { useLoaderData } from "@remix-run/react";
+import { asImageSrc, asText, ImageField } from "@prismicio/client";
+import { RichTextField } from "@prismicio/types";
+
+// needed since some of prismic types lacking a bit
+interface HomeData {
+  data: {
+    top_pictures: HomeDocumentDataTopPicturesItem[];
+    we_are_section: HomeDocumentDataWeAreSectionItem[];
+    reviews: HomeDocumentDataReviewsItem[];
+    join_team_bottom_pic: ImageField<never>;
+    join_team_people_pic: ImageField<never>;
+    join_team_description: RichTextField;
+    join_team_button_text: RichTextField;
+    positions: {
+      data: {
+        position: PositionDocumentDataPositionItem[];
+      };
+    };
+  };
+}
 
 export const meta: MetaFunction = () => {
   return [
     { title: "Code4Community" },
-    { name: "description", content: "Welcome to Code4Community!" },
+    { name: "C4C Home Page", content: "Welcome to Code4Community!" },
   ];
 };
 
+export const loader = async () => {
+  const client = await getPrismicClient();
+
+  return await client.getSingle<HomeDocument>("home", {
+    graphQuery: `{
+        home {
+          ...homeFields
+          positions {
+            ...positionsFields
+          }
+        }
+      }`,
+  });
+};
 const c4cPurple = "#605ACD";
 
 const weLove = "people and causes we love.";
@@ -22,10 +65,20 @@ const images = [
 const image =
   "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//IMG_0440.jpg";
 
-const image2 =
-  "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//Screenshot%202025-02-21%20at%202.13.40%20AM.png";
+// const image2 =
+//   "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//Screenshot%202025-02-21%20at%202.13.40%20AM.png";
 
 export default function Index() {
+  const document = useLoaderData<HomeData>();
+  const home = document.data;
+
+  const positions = home.positions.data.position.map((item) => ({
+    title: asText(item.name),
+    description: asText(item.short_description),
+    linkLearnMore: "/apply", //TODO: remove not needed, doesnt do anything
+    linkApply: "/apply",
+  }));
+
   return (
     <div className="flex justify-center">
       <div className="w-[90%] md:max-w-[1100px]">
@@ -43,31 +96,28 @@ export default function Index() {
             >
               We are
             </p>
-            <WeAreBlock
-              title="Northeastern University's only student-led collective for charitable software development."
-              description="C4C is led by Northeastern students who are passionate about developing meaningful and exciting products. Students have the opportunity to learn the fundamentals of product and software development, while also contributing to the Boston community."
-              image={image}
-              buttonText="Meet Our Team"
-              left={false}
-            />
-            <WeAreBlock
-              title="Delivering impactful, deliberate and inclusive software at no cost."
-              description="C4C strives to deliver work engineered with excellence and led by inclusive design principles to ensure our solutions are intuitive, performant, and deliver the best user experience."
-              image={image2}
-              buttonText="See Our Projects"
-              left={true}
-            />
-            <WeAreBlock
-              title="Empowering through tech, fostering diversity, and leaving a lasting impact."
-              description="C4C is a dynamic and inclusive community that empowers students with aspirations in the tech industry. We are a hub for fostering collaboration, skill development, and real-world experience, creating a supportive environment for students to thrive in the rapidly evolving fields of software development, product management, and product design."
-              image="https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//nefac%20(1).jpg"
-              buttonText="Learn More"
-              left={false}
-            />
+            {home.we_are_section.map((item, index) => (
+              <WeAreBlock
+                key={index}
+                title={asText(item.title)}
+                description={asText(item.description)}
+                image={image}
+                buttonText={asText(item.button_text)}
+                left={index % 2 !== 0}
+              />
+            ))}
           </div>
         </div>
 
-        <JoinTeamSection />
+        <JoinTeamSection
+          image={asImageSrc(home.join_team_people_pic) ?? ""}
+          // TODO: dont hardcode
+          title={"Join Our Team!"}
+          description={asText(home.join_team_description)}
+          applyLink={"/apply"}
+          positions={positions}
+        />
+        {/* TODO: maybe dont hard code /apply */}
 
         <div className="mt-20 mb-16">
           <img

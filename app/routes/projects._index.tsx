@@ -1,56 +1,25 @@
-import {
-  asImageSrc,
-  asText,
-  ImageField,
-  RichTextField,
-  TitleField,
-} from "@prismicio/client";
+import { asImageSrc, asText } from "@prismicio/client";
 import { MetaFunction, useLoaderData } from "@remix-run/react";
-import { CaseStudyDocument, Project2Document } from "types.generated";
+import { Project2Document } from "types.generated";
 import ProjectsCarousel from "~/components/projects/projects-carousel";
 import { getPrismicClient } from "~/utils/prismicio";
-
-// needed since some of linked document type is lacking
-interface Project2Data {
-  data: {
-    projects: {
-      logo: ImageField<never>;
-      title: TitleField;
-      subtitle: RichTextField;
-      description: RichTextField;
-      case_study: {
-        data: CaseStudyDocument;
-      };
-    }[];
-  };
-}
+import { isFilled } from "@prismicio/client";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Projects" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "C4C Projects" },
+    { name: "C4C Projects Page", content: "Check out some of our work!" },
   ];
 };
 
 export const loader = async () => {
   const client = await getPrismicClient();
 
-  return await client.getSingle<Project2Document>("project2", {
-    graphQuery: `{
-          project2 {
-            projects {
-            ...projectsFields
-              case_study {
-                ...case_studyFields
-              }
-            }
-          }
-        }`,
-  });
+  return await client.getSingle<Project2Document>("project2");
 };
 
 export default function Projects() {
-  const document = useLoaderData<Project2Data>();
+  const document = useLoaderData<Project2Document>();
   const projects = document.data.projects;
 
   const projectsList = projects.map((project) => ({
@@ -58,8 +27,8 @@ export default function Projects() {
     title: asText(project.title),
     subtitle: asText(project.subtitle),
     description: asText(project.description),
-    has_case: !!project.case_study.data, // !! exists to force into a boolean value
-    link: `${asText(project.title).split(" ").join("_")}`, // make this a shared util
+    has_case: isFilled.contentRelationship(project.case_study),
+    link: `${asText(project.title).split(" ").join("-")}`, // make this a shared util
   }));
 
   return (

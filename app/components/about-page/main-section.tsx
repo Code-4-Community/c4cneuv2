@@ -1,4 +1,9 @@
-const MainSection = () => {
+interface MainSectionProps {
+  tagline: string;
+  culture_description: string;
+}
+
+const MainSection = ({ tagline, culture_description }: MainSectionProps) => {
   return (
     <div>
       <h1 className="mt-12 mb-9 md:mt-[120px] md:mb-[72px] text-2xl md:text-5xl font-medium shrink-0">
@@ -12,8 +17,9 @@ const MainSection = () => {
                         md:text-3xl md:px-48 md:py-32
                         font-medium"
         >
-          Empowering through tech, fostering diversity, and leaving a lasting
-          impact.
+          {/* Empowering through tech, fostering diversity, and leaving a lasting
+          impact. */}
+          {tagline}
         </div>
       </div>
 
@@ -21,7 +27,7 @@ const MainSection = () => {
         Our Culture
       </h2>
       <h3 className="text-m my-14 md:text-xl md:my-16">
-        At C4C, we embody a culture of purposeful innovation, where impactful,
+        {/* At C4C, we embody a culture of purposeful innovation, where impactful,
         deliberate, and inclusive software development is not just a goal but a
         way of life. As Northeastern University’s sole student-led collective
         for charitable software development, we are driven by a mission –
@@ -31,7 +37,8 @@ const MainSection = () => {
         We believe in the transformative power of technology, and we leverage it
         to empower individuals, fostering a culture where every voice is heard.
         Join us in building a future where tech is a force for positive change,
-        diversity is celebrated, and our impact is enduring.
+        diversity is celebrated, and our impact is enduring. */}
+        {culture_description}
       </h3>
     </div>
   );

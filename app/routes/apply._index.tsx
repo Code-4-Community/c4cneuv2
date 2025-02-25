@@ -1,7 +1,7 @@
 import { type MetaFunction } from "@remix-run/node";
 import PositionCard from "~/components/apply-page/position-apply-card";
 import JoinTeamSection from "~/components/apply-page/join-team";
-import ApplyClient from "~/components/apply-page/apply-client";
+// import ApplyClient from "~/components/apply-page/apply-client";
 import AppTimeline from "~/components/apply-page/app-timeline";
 import { Period } from "~/components/apply-page/app-timeline";
 import { getPrismicClient } from "~/utils/prismicio";
@@ -24,6 +24,7 @@ interface ApplyData {
     application_decision_start: DateField;
     application_decision_end: DateField;
     client_reach_out_description: RichTextField;
+    join_team_description: RichTextField;
     positions: {
       data: {
         position: PositionDocumentDataPositionItem[];
@@ -32,7 +33,10 @@ interface ApplyData {
   };
 }
 export const meta: MetaFunction = () => {
-  return [{ title: "Apply" }, { name: "apply", content: "Welcome to Remix!" }];
+  return [
+    { title: "Apply" },
+    { name: "C4C Apply Page", content: "Join Our Team" },
+  ];
 };
 
 export const loader = async () => {
@@ -59,7 +63,9 @@ export default function Apply() {
   return (
     <div className="flex justify-center">
       <div className="mt-24 w-[90%] md:max-w-[1100px]">
-        <JoinTeamSection />
+        <JoinTeamSection
+          description={asText(applyPage.join_team_description) ?? ""}
+        />
         <div className="mb-20">
           <h3 className="text-xl text-left font-medium text-[#4A4A51] mb-4 md:mb-2 md:pb-8">
             Positions
@@ -95,7 +101,7 @@ export default function Apply() {
             ] as [Period, Period, Period]
           }
         />
-        <ApplyClient />
+        {/* <ApplyClient />  add email capabilities */}
       </div>
     </div>
   );

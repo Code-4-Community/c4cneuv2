@@ -1,4 +1,8 @@
-const JoinTeamSection = () => {
+interface JoinTeamSectionProps {
+  description: string;
+}
+
+const JoinTeamSection = ({ description }: JoinTeamSectionProps) => {
   return (
     <div className="mb-7 md:mb-10">
       <h1 className="mt-12 mb-9 md:mt-[120px] md:mb-[72px] text-2xl md:text-5xl font-medium shrink-0">
@@ -7,14 +11,7 @@ const JoinTeamSection = () => {
       <h2 className="text-indigo-600 text-xl md:text-4xl font-medium mb-4 md:mb-8">
         Students
       </h2>
-      <h3 className="pb-4 md:pb-8 text-m md:text-lg">
-        We are a community-driven organization dedicated to creating impactful
-        websites for nonprofits. Our mission is to harness the power of
-        technology to amplify the voices of organizations working towards
-        positive change. By joining us, you'll become part of a collaborative
-        and creative environment where your skills will be put to meaningful
-        use.
-      </h3>
+      <h3 className="pb-4 md:pb-8 text-m md:text-lg">{description}</h3>
       <h2 className="text-m md:text-lg text-indigo-600 md:pb-8">
         We recruit new member prior to the start of each semester. Please learn
         more about our application process below!

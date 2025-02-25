@@ -11,8 +11,8 @@ import { QuoteProps } from "~/components/partners-page/partner-header";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Partners" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "C4C Partners" },
+    { name: "C4C Partners Page", content: "Learn more about our Partners" },
   ];
 };
 

@@ -1,5 +1,6 @@
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import { OpenLink } from "../icons";
+import { useNavigate } from "@remix-run/react";
 
 export interface CaseProps {
   logo?: string;
@@ -22,19 +23,21 @@ const Case = ({ case: caseData }: { case: CaseProps }) => {
     link,
   } = caseData;
 
+  const navigate = useNavigate();
+  const goBack = () => navigate(-1);
   return (
     <div className="flex flex-col items-center px-4 md:px-8 lg:px-16">
       <div className="w-full max-w-5xl text-left my-8 flex">
-        <a
+        <button
           className="relative flex items-center justify-center ms-2 me-14"
-          href={"/projects"}
+          onClick={goBack}
         >
           <div
             className="absolute inset-0 h-20 w-20 rounded-full 
                bg-[radial-gradient(circle,_rgba(238,210,255,0.5)_30%,_transparent_70%)] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           ></div>
           <ArrowLeftIcon className="relative z-10 h-8 w-8 text-gray-800" />
-        </a>
+        </button>
         <h1 className="text-3xl md:text-5xl font-medium text-[#333333]">
           {title ?? "Title"}
         </h1>

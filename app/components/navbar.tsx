@@ -17,9 +17,9 @@ export default function Navbar(): React.ReactElement {
                       h-14 md:h-24 z-40"
       >
         <div className="flex items-center justify-start ml-3 md:ml-4">
-          <a href="/">
+          <Link to="/">
             <C4C className="aspect-square w-10 md:w-16 md:h-auto" />
-          </a>
+          </Link>
         </div>
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>

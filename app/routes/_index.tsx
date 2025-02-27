@@ -57,13 +57,13 @@ const c4cPurple = "#605ACD";
 
 const weLove = "people and causes we love.";
 const images = [
-  "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//IMG_7712.jpg",
   "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//Screenshot%202025-01-30%20at%204.04.07%20PM.png",
   "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//shelterlink%20(1).jpg",
-  "https://images.unsplash.com/photo-1499796683658-b659bc751db1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//nefac%20(2)%20(1).jpg",
+  "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//gi%20boston.jpg",
 ];
-const image =
-  "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//IMG_0440.jpg";
+// const image =
+//   "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//IMG_0440.jpg";
 
 // const image2 =
 //   "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//Screenshot%202025-02-21%20at%202.13.40%20AM.png";
@@ -101,7 +101,7 @@ export default function Index() {
                 key={index}
                 title={asText(item.title)}
                 description={asText(item.description)}
-                image={image}
+                image={asImageSrc(item.pic) ?? undefined}
                 link={asLink(item.link) ?? undefined}
                 buttonText={asText(item.button_text)}
                 left={index % 2 !== 0}

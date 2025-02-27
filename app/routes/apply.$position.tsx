@@ -31,23 +31,26 @@ export default function Role() {
   );
 
   return (
-    <div>
-      <RoleDetailsCard
-        image1={"/app/icons/software-engineer.svg"}
-        image1Alt={"missing"}
-        image2={"/app/icons/website-gear.svg"}
-        image2Alt={"idk"}
-        title={asText(position?.name) ?? ""}
-        tagline={asText(position?.tag_line) ?? ""}
-        roleParagraph={
-          asText(position?.work, { separator: "\n" })?.split("\n") ?? [] // TODO: do properly in prismic
-        }
-        canidateParagrah={asText(position?.looking_for) ?? ""}
-        qualityList={
-          asText(position?.ideal_candidate, { separator: "\n" })?.split("\n") ?? //TODO: do properly in prismic
-          []
-        }
-      />
+    <div className="flex justify-center">
+      <div className="mt-24 md:mt-12 w-[90%] md:max-w-[1100px]">
+        <RoleDetailsCard
+          image1={"/app/icons/software-engineer.svg"}
+          image1Alt={"missing"}
+          image2={"/app/icons/website-gear.svg"}
+          image2Alt={"idk"}
+          title={asText(position?.name) ?? ""}
+          tagline={asText(position?.tag_line) ?? ""}
+          roleParagraph={
+            asText(position?.work, { separator: "\n" })?.split("\n") ?? [] // TODO: do properly in prismic
+          }
+          canidateParagrah={asText(position?.looking_for) ?? ""}
+          qualityList={
+            asText(position?.ideal_candidate, { separator: "\n" })?.split(
+              "\n",
+            ) ?? [] //TODO: do properly in prismic
+          }
+        />
+      </div>
     </div>
   );
 }

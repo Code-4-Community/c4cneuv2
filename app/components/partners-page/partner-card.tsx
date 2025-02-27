@@ -55,7 +55,7 @@ const PartnerCard = ({
               // TODO: background of hover should be different since background is white
               `}
         >
-          Client Website
+          Partner Website
           {websiteLink && (
             <NewWindow className="w-2.5 h-2.5 md:w-3.5 md:h-3.5" />
           )}

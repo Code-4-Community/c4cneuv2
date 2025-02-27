@@ -35,9 +35,9 @@ export default function Role() {
       <div className="mt-24 md:mt-12 w-[90%] md:max-w-[1100px]">
         <RoleDetailsCard
           image1={asImageSrc(position?.top_pic) ?? undefined}
-          image1Alt={"missing"}
+          //image1Alt={"missing"}
           image2={asImageSrc(position?.bottom_pic) ?? undefined}
-          image2Alt={"idk"}
+          //image2Alt={"idk"}
           title={asText(position?.name) ?? ""}
           tagline={asText(position?.tag_line) ?? ""}
           roleParagraph={

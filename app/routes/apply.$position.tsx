@@ -1,4 +1,4 @@
-import { asText } from "@prismicio/client";
+import { asImageSrc, asText } from "@prismicio/client";
 import { LoaderFunctionArgs, type MetaFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { PositionDocument } from "types.generated";
@@ -34,10 +34,10 @@ export default function Role() {
     <div className="flex justify-center">
       <div className="mt-24 md:mt-12 w-[90%] md:max-w-[1100px]">
         <RoleDetailsCard
-          image1={"/app/icons/software-engineer.svg"}
-          image1Alt={"missing"}
-          image2={"/app/icons/website-gear.svg"}
-          image2Alt={"idk"}
+          image1={asImageSrc(position?.top_pic) ?? undefined}
+          // image1Alt={"missing"}
+          image2={asImageSrc(position?.bottom_pic) ?? undefined}
+          // image2Alt={"idk"}
           title={asText(position?.name) ?? ""}
           tagline={asText(position?.tag_line) ?? ""}
           roleParagraph={

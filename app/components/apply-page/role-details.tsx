@@ -2,9 +2,9 @@ import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import { useNavigate } from "@remix-run/react";
 interface RoleDetailsProps {
   image1?: string;
-  image1Alt?: string;
+  // image1Alt?: string;
   image2?: string;
-  image2Alt?: string;
+  // image2Alt?: string;
   title?: string;
   tagline?: string;
   roleParagraph?: string[];
@@ -14,9 +14,9 @@ interface RoleDetailsProps {
 
 const RoleDetailsCard = ({
   image1,
-  image1Alt,
+  // image1Alt,
   image2,
-  image2Alt,
+  // image2Alt,
   title,
   tagline,
   roleParagraph,
@@ -69,7 +69,7 @@ const RoleDetailsCard = ({
             <div className="hidden md:w-1/2 md:flex justify-center">
               <img
                 src={image1 ?? "/app/icons/software-engineer.svg"}
-                alt={image1Alt ?? "software-engineer"}
+                alt={"what you'll be doing"} // TODO: don't hardocde
               />
             </div>
           </div>
@@ -83,7 +83,7 @@ const RoleDetailsCard = ({
             <div className="hidden md:w-1/2 md:flex justify-center pr-10">
               <img
                 src={image2 ?? "/app/icons/website-gear.svg"}
-                alt={image2Alt ?? "website gear"}
+                alt={"what we're looking for"} // TODO: don't hardcode
               />
             </div>
 

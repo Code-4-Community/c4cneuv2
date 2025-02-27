@@ -1606,6 +1606,26 @@ export type PersonDocument<Lang extends string = string> =
  */
 export interface PositionDocumentDataPositionItem {
   /**
+   * top_pic field in *Position → position*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: position.position[].top_pic
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  top_pic: prismic.ImageField<never>;
+
+  /**
+   * bottom_pic field in *Position → position*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: position.position[].bottom_pic
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  bottom_pic: prismic.ImageField<never>;
+
+  /**
    * name field in *Position → position*
    *
    * - **Field Type**: Title

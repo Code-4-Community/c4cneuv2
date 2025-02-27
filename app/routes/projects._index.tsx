@@ -1,17 +1,17 @@
-import { asImageSrc, asText } from "@prismicio/client";
-import { MetaFunction, useLoaderData } from "@remix-run/react";
+// import { asImageSrc, asText } from "@prismicio/client";
+// import { MetaFunction, useLoaderData } from "@remix-run/react";
 import { Project2Document } from "types.generated";
-import ProjectsCarousel from "~/components/projects/projects-carousel";
+//import ProjectsCarousel from "~/components/projects/projects-carousel";
 import { getPrismicClient } from "~/utils/prismicio";
-import { isFilled } from "@prismicio/client";
-import { prismicLinkGen } from "~/utils/util";
+// import { isFilled } from "@prismicio/client";
+// import { prismicLinkGen } from "~/utils/util";
 
-export const meta: MetaFunction = () => {
-  return [
-    { title: "C4C Projects" },
-    { name: "C4C Projects Page", content: "Check out some of our work!" },
-  ];
-};
+// export const meta: MetaFunction = () => {
+//   return [
+//     { title: "C4C Projects" },
+//     { name: "C4C Projects Page", content: "Check out some of our work!" },
+//   ];
+// };
 
 export const loader = async () => {
   const client = await getPrismicClient();
@@ -20,22 +20,26 @@ export const loader = async () => {
 };
 
 export default function Projects() {
-  const document = useLoaderData<Project2Document>();
-  const projects = document.data.projects;
+  // const document = useLoaderData<Project2Document>();
+  // const projects = document.data.projects;
 
-  const projectsList = projects.map((project) => ({
-    logo: asImageSrc(project.logo) ?? undefined,
-    title: asText(project.title),
-    subtitle: asText(project.subtitle),
-    description: asText(project.description),
-    has_case: isFilled.contentRelationship(project.case_study),
-    link: `${prismicLinkGen(project.title)}`,
-  }));
+  // const projectsList = projects.map((project) => ({
+  //   logo: asImageSrc(project.logo) ?? undefined,
+  //   title: asText(project.title),
+  //   subtitle: asText(project.subtitle),
+  //   description: asText(project.description),
+  //   has_case: isFilled.contentRelationship(project.case_study),
+  //   link: `${prismicLinkGen(project.title)}`,
+  // }));
 
   return (
     <div className="flex justify-center overflow-hidden relative">
-      <div className="mt-24 w-[90%] md:max-w-[1100px]">
-        <h1 className="mt-12 md:mt-[120px] md:mb-2 text-2xl md:text-5xl font-medium shrink-0">
+      <div className="mt-24 w-[90%] md:max-w-[1100px] h-[45vh] flex justify-center items-center">
+        <h1 className="items-center  text-2xl md:text-5xl font-light">
+          {" "}
+          Coming soon ^_^
+        </h1>
+        {/* <h1 className="mt-12 md:mt-[120px] md:mb-2 text-2xl md:text-5xl font-medium shrink-0">
           Projects
         </h1>
         <h3 className="text-[#333333] text-lg sm:text-2xl">

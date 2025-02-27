@@ -66,7 +66,7 @@ const RoleDetailsCard = ({
                 ),
               )}
             </div>
-            <div className="hidden md:block md:w-1/2 flex justify-center">
+            <div className="hidden md:w-1/2 md:flex justify-center">
               <img
                 src={image1 ?? "/app/icons/software-engineer.svg"}
                 alt={image1Alt ?? "software-engineer"}
@@ -80,7 +80,7 @@ const RoleDetailsCard = ({
           </h2>
 
           <div style={{ display: "flex", alignItems: "center" }}>
-            <div className="hidden md:block md:w-1/2 flex justify-center pr-10">
+            <div className="hidden md:w-1/2 md:flex justify-center pr-10">
               <img
                 src={image2 ?? "/app/icons/website-gear.svg"}
                 alt={image2Alt ?? "website gear"}

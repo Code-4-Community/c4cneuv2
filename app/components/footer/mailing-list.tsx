@@ -6,7 +6,7 @@ export default function MailingList() {
       <div className="w-12 h-[34px] flex justify-center items-center">
         <C4C />
       </div>
-      <div className="hidden md:block">
+      <div className="hidden">
         <label
           className="text-[#333333] text-2xl font-medium"
           htmlFor="mailing-list-input"

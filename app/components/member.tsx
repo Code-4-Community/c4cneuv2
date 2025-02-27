@@ -35,7 +35,12 @@ const Member = ({
       </p>
       <div className="flex space-x-4">
         {linkedin && (
-          <a href={linkedin} className="text-blue-600">
+          <a
+            href={linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600"
+          >
             <Linkedin />
           </a>
         )}
@@ -45,12 +50,22 @@ const Member = ({
           </a>
         )}
         {site && (
-          <a href={site} className="text-gray-600">
+          <a
+            href={site}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-600"
+          >
             <Site />
           </a>
         )}
         {github && (
-          <a href={github} className="text-gray-800">
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-800"
+          >
             <Github />
           </a>
         )}

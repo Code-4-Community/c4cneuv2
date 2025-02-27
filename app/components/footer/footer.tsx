@@ -62,15 +62,15 @@ export default function Footer() {
               href: "https://youtube.com/channel/UC7FI2u_BVjB0EkKMmx-yibA",
             },
           ].map((social) => (
-            <Link
+            <a
               key={social.name}
-              to={social.href}
+              href={social.href}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="text-[#4a4951] text-m font-medium underline "
             >
               {social.name}
-            </Link>
+            </a>
           ))}
         </div>
       </div>

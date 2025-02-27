@@ -1,4 +1,3 @@
-import { Link } from "@remix-run/react";
 import PositionBaseCard, { PositionProps } from "../shared/position-card";
 
 export interface PositionApplyCardProps extends PositionProps {
@@ -18,11 +17,20 @@ const PositionApplyCard = ({
         description={description}
         linkLearnMore={linkLearnMore}
       />
-      <Link to={linkApply} className="w-full">
-        <button className="bg-[#F8EDFF] hover:bg-[#EED2FF] text-[#333333] font-semibold py-2 px-4 w-full mt-auto shadow-small border-[2px] border-[#4A4A51]">
-          Apply Now
-        </button>
-      </Link>
+      <button
+        onClick={() => {
+          window.open(linkApply);
+        }}
+        className={`bg-[#F8EDFF] hover:bg-[#EED2FF] text-[#333333] font-semibold py-2 px-4 w-full mt-auto shadow-small border-[2px] border-[#4A4A51]
+            ${
+              linkApply
+                ? "bg-[#f8ecff] border-[#4a4951] hover:bg-[#EDBAFF] transition"
+                : "bg-[#E7E5EE] text-[#CAC9D0] border-[#9A98A2] pointer-events-none"
+            }
+            `}
+      >
+        Apply Now
+      </button>
     </div>
   );
 };

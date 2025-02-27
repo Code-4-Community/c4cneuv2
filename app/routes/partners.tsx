@@ -6,13 +6,14 @@ import { PastclientDocument } from "types.generated";
 import { getPrismicClient } from "~/utils/prismicio";
 import { ClientProps } from "~/components/partners-page/partner-card";
 import { useLoaderData } from "@remix-run/react";
-import { asText, asLink } from "@prismicio/client";
+import { asText, asLink, isFilled } from "@prismicio/client";
 import { QuoteProps } from "~/components/partners-page/partner-header";
+import { prismicLinkGen } from "~/utils/util";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Partners" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "C4C Partners" },
+    { name: "C4C Partners Page", content: "Learn more about our Partners" },
   ];
 };
 
@@ -39,20 +40,20 @@ export default function Clients() {
     image: client.logo.url ?? "app/icons/leaders.jpeg",
     title: asText(client.title),
     description: asText(client.description),
-    caseStudyLink:
-      asLink(client.casestudylink) ?? "https://github.com/Code-4-Community",
-    websiteLink:
-      asLink(client.websitelink) ?? "https://github.com/Code-4-Community",
+    caseStudyLink: isFilled.contentRelationship(client.case)
+      ? "/projects/" + prismicLinkGen(client.title) // TODO: don't hardcode projects
+      : undefined,
+    websiteLink: asLink(client.websitelink) ?? undefined,
   }));
 
   const pastClients: ClientProps[] = past.data.pastclient.map((client) => ({
     image: client.logo.url ?? "app/icons/leaders.jpeg",
     title: asText(client.title),
     description: asText(client.description),
-    caseStudyLink:
-      asLink(client.casestudylink) ?? "https://github.com/Code-4-Community",
-    websiteLink:
-      asLink(client.websitelink) ?? "https://github.com/Code-4-Community",
+    caseStudyLink: isFilled.contentRelationship(client.case_study)
+      ? "/projects/" + prismicLinkGen(client.title) // TODO: don't hardcode projects
+      : undefined,
+    websiteLink: asLink(client.websitelink) ?? undefined,
   }));
 
   const clientQuote: QuoteProps = {

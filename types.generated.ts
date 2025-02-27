@@ -40,50 +40,70 @@ export interface AboutDocumentDataWeAreItem {
 }
 
 /**
- * Item in *About → event_titles*
+ * Item in *About → comm_dev_events*
  */
-export interface AboutDocumentDataEventTitlesItem {
+export interface AboutDocumentDataCommDevEventsItem {
   /**
-   * title field in *About → event_titles*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about.event_titles[].title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-}
-
-/**
- * Item in *About → events*
- */
-export interface AboutDocumentDataEventsItem {
-  /**
-   * pic field in *About → events*
+   * pic field in *About → comm_dev_events*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: about.events[].pic
+   * - **API ID Path**: about.comm_dev_events[].pic
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   pic: prismic.ImageField<never>;
 
   /**
-   * title field in *About → events*
+   * title field in *About → comm_dev_events*
    *
    * - **Field Type**: Title
    * - **Placeholder**: *None*
-   * - **API ID Path**: about.events[].title
+   * - **API ID Path**: about.comm_dev_events[].title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.TitleField;
 
   /**
-   * description field in *About → events*
+   * description field in *About → comm_dev_events*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: about.events[].description
+   * - **API ID Path**: about.comm_dev_events[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Item in *About → pro_dev_events*
+ */
+export interface AboutDocumentDataProDevEventsItem {
+  /**
+   * pic field in *About → pro_dev_events*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.pro_dev_events[].pic
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  pic: prismic.ImageField<never>;
+
+  /**
+   * title field in *About → pro_dev_events*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.pro_dev_events[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *About → pro_dev_events*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.pro_dev_events[].description
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description: prismic.RichTextField;
@@ -138,26 +158,30 @@ interface AboutDocumentData {
   we_are: prismic.GroupField<Simplify<AboutDocumentDataWeAreItem>>;
 
   /**
-   * event_titles field in *About*
+   * comm_dev_events field in *About*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: about.event_titles[]
+   * - **API ID Path**: about.comm_dev_events[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  event_titles: prismic.GroupField<Simplify<AboutDocumentDataEventTitlesItem>>;
+  comm_dev_events: prismic.GroupField<
+    Simplify<AboutDocumentDataCommDevEventsItem>
+  >;
 
   /**
-   * events field in *About*
+   * pro_dev_events field in *About*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: about.events[]
+   * - **API ID Path**: about.pro_dev_events[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  events: prismic.GroupField<Simplify<AboutDocumentDataEventsItem>>;
+  pro_dev_events: prismic.GroupField<
+    Simplify<AboutDocumentDataProDevEventsItem>
+  >;
 
   /**
    * event_description field in *About*
@@ -344,6 +368,17 @@ interface ApplyDocumentData {
   positions: prismic.ContentRelationshipField<"position">;
 
   /**
+   * join_team_description field in *Apply*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: apply.join_team_description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  join_team_description: prismic.RichTextField;
+
+  /**
    * application open field in *Apply*
    *
    * - **Field Type**: Date
@@ -438,26 +473,81 @@ export type ApplyDocument<Lang extends string = string> =
  */
 interface CaseStudyDocumentData {
   /**
-   * Name field in *Case Study*
+   * logo field in *Case Study*
    *
-   * - **Field Type**: Title
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: case_study.name
+   * - **API ID Path**: case_study.logo
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#image
    */
-  name: prismic.TitleField;
+  logo: prismic.ImageField<never>;
 
   /**
-   * description field in *Case Study*
+   * title field in *Case Study*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: case_study.description
+   * - **API ID Path**: case_study.title
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  description: prismic.RichTextField;
+  title: prismic.RichTextField;
+
+  /**
+   * introduction field in *Case Study*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_study.introduction
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  introduction: prismic.RichTextField;
+
+  /**
+   * problem_statement field in *Case Study*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_study.problem_statement
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  problem_statement: prismic.RichTextField;
+
+  /**
+   * solution field in *Case Study*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_study.solution
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  solution: prismic.RichTextField;
+
+  /**
+   * website_image field in *Case Study*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_study.website_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  website_image: prismic.ImageField<never>;
+
+  /**
+   * link field in *Case Study*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_study.link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
 }
 
 /**
@@ -630,16 +720,6 @@ export interface CurrclientDocumentDataCurrclientItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description: prismic.RichTextField;
-
-  /**
-   * caseStudyLink field in *CurrClient → currclient*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: currclient.currclient[].casestudylink
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  casestudylink: prismic.LinkField;
 
   /**
    * case_study field in *CurrClient → currclient*
@@ -896,6 +976,16 @@ export interface HomeDocumentDataWeAreSectionItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   button_text: prismic.RichTextField;
+
+  /**
+   * link field in *Home → we are section*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.we_are_section[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
 }
 
 /**
@@ -1041,6 +1131,196 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 /**
+ * Item in *Partners → current_clients*
+ */
+export interface PartnersDocumentDataCurrentClientsItem {
+  /**
+   * image field in *Partners → current_clients*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partners.current_clients[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * title field in *Partners → current_clients*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partners.current_clients[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * description field in *Partners → current_clients*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partners.current_clients[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * case_study field in *Partners → current_clients*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partners.current_clients[].case_study
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  case_study: prismic.ContentRelationshipField<"case_study">;
+
+  /**
+   * website_link field in *Partners → current_clients*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partners.current_clients[].website_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  website_link: prismic.LinkField;
+}
+
+/**
+ * Item in *Partners → past_clients*
+ */
+export interface PartnersDocumentDataPastClientsItem {
+  /**
+   * image field in *Partners → past_clients*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partners.past_clients[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * title field in *Partners → past_clients*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partners.past_clients[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * description field in *Partners → past_clients*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partners.past_clients[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * case_study field in *Partners → past_clients*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partners.past_clients[].case_study
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  case_study: prismic.ContentRelationshipField;
+
+  /**
+   * website_link field in *Partners → past_clients*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partners.past_clients[].website_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  website_link: prismic.LinkField;
+}
+
+/**
+ * Content for Partners documents
+ */
+interface PartnersDocumentData {
+  /**
+   * partner_title field in *Partners*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partners.partner_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  partner_title: prismic.TitleField;
+
+  /**
+   * partner_name field in *Partners*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partners.partner_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  partner_name: prismic.TitleField;
+
+  /**
+   * partner_quote field in *Partners*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partners.partner_quote
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  partner_quote: prismic.RichTextField;
+
+  /**
+   * current_clients field in *Partners*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partners.current_clients[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  current_clients: prismic.GroupField<
+    Simplify<PartnersDocumentDataCurrentClientsItem>
+  >;
+
+  /**
+   * past_clients field in *Partners*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partners.past_clients[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  past_clients: prismic.GroupField<
+    Simplify<PartnersDocumentDataPastClientsItem>
+  >;
+}
+
+/**
+ * Partners document from Prismic
+ *
+ * - **API ID**: `partners`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PartnersDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<PartnersDocumentData>,
+    "partners",
+    Lang
+  >;
+
+/**
  * Item in *PastClient → pastclient*
  */
 export interface PastclientDocumentDataPastclientItem {
@@ -1073,16 +1353,6 @@ export interface PastclientDocumentDataPastclientItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description: prismic.RichTextField;
-
-  /**
-   * caseStudyLink field in *PastClient → pastclient*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: pastclient.pastclient[].casestudylink
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  casestudylink: prismic.LinkField;
 
   /**
    * case_study field in *PastClient → pastclient*
@@ -1741,6 +2011,7 @@ export type AllDocumentTypes =
   | EventDocument
   | FaqDocument
   | HomeDocument
+  | PartnersDocument
   | PastclientDocument
   | PeopleDocument
   | PersonDocument
@@ -1774,8 +2045,8 @@ declare module "@prismicio/client" {
       AboutDocument,
       AboutDocumentData,
       AboutDocumentDataWeAreItem,
-      AboutDocumentDataEventTitlesItem,
-      AboutDocumentDataEventsItem,
+      AboutDocumentDataCommDevEventsItem,
+      AboutDocumentDataProDevEventsItem,
       AboutCdeDocument,
       AboutCdeDocumentData,
       AboutCdeDocumentDataEventsItem,
@@ -1806,6 +2077,10 @@ declare module "@prismicio/client" {
       HomeDocumentDataTopPicturesItem,
       HomeDocumentDataWeAreSectionItem,
       HomeDocumentDataReviewsItem,
+      PartnersDocument,
+      PartnersDocumentData,
+      PartnersDocumentDataCurrentClientsItem,
+      PartnersDocumentDataPastClientsItem,
       PastclientDocument,
       PastclientDocumentData,
       PastclientDocumentDataPastclientItem,

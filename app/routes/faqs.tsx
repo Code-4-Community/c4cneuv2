@@ -12,8 +12,8 @@ import { asLink, asText } from "@prismicio/client";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "FAQs" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "C4C FAQs" },
+    { name: "C4C FAQ Page", content: "Frequently asked questions" },
   ];
 };
 
@@ -48,7 +48,7 @@ export default function FAQs() {
                 {item.link && item.link_text && (
                   <Link
                     to={asLink(item.link) ?? ""}
-                    className="underline underline-offset-2 md:underline-offset-4 font-bold"
+                    className="underline underline-offset-4 md:underline-offset-8 font-bold"
                   >
                     {asText(item.link_text)}
                   </Link>

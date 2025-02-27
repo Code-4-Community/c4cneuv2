@@ -1,4 +1,5 @@
-import { Link } from "@remix-run/react";
+import { ArrowLeftIcon } from "@radix-ui/react-icons";
+import { useNavigate } from "@remix-run/react";
 interface RoleDetailsProps {
   image1?: string;
   image1Alt?: string;
@@ -22,17 +23,22 @@ const RoleDetailsCard = ({
   canidateParagrah,
   qualityList,
 }: RoleDetailsProps) => {
+  const navigate = useNavigate();
+  const goBack = () => navigate(-1);
   return (
     <div className="flex justify-center">
       <div className=" w-full max-w-[1100px]">
         <div className="md:mt-[120px] flex align-center mb-20">
-          <Link to="/apply">
-            <img
-              src="/app/icons/arrow.svg"
-              style={{ height: 100, width: 100 }}
-              alt="arrow"
-            />
-          </Link>
+          <button
+            className="relative flex items-center justify-center ms-2 me-14"
+            onClick={goBack}
+          >
+            <div
+              className="absolute inset-0 h-20 w-20 rounded-full 
+               bg-[radial-gradient(circle,_rgba(238,210,255,0.5)_30%,_transparent_70%)] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            ></div>
+            <ArrowLeftIcon className="relative z-10 h-8 w-8 text-gray-800" />
+          </button>
           <div className="flex flex-col justify-center items-start">
             <h1 className="text-3xl text-gray-700 font-semibold">
               {title ?? "Role Title"}

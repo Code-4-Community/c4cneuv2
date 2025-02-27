@@ -9,9 +9,9 @@ export default function Navbar(): React.ReactElement {
   const isActive = (path: string): boolean => location.pathname === path;
 
   return (
-    <header>
+    <header className="flex justify-center">
       <div
-        className="fixed md:relative w-[90vw] md:w-[98vw] flex justify-between items-center bg-white
+        className="fixed md:relative w-[90vw] md:w-[95vw] flex justify-between items-center bg-white
                       shadow-small md:shadow-small m-5 md:p-4 md:m-4
                       border-[1px] md:border-2 border-[#4A4A51]
                       h-14 md:h-24 z-40"

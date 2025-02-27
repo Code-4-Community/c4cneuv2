@@ -15,7 +15,7 @@ export interface JoinTeamSectionProps {
 const JoinTeamSection = ({
   image,
   title,
-  description,
+  //description,
   applyLink,
   positions,
 }: JoinTeamSectionProps) => {
@@ -29,7 +29,9 @@ const JoinTeamSection = ({
       </p>
 
       <WeAreBlock
-        description={description}
+        title="Are you passionate about making a positive impact with technology? Do you have a knack for coding, designing, or managing projects?"
+        description="C4C recruits talented individuals like you to join our team prior to the start of each semester. Check out our open positions below!"
+        // description={description}
         image={image}
         buttonText="Apply"
         link={applyLink}

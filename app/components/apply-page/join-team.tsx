@@ -13,7 +13,7 @@ const JoinTeamSection = ({ description }: JoinTeamSectionProps) => {
       </h2>
       <h3 className="pb-4 md:pb-8 text-m md:text-lg">{description}</h3>
       <h2 className="text-m md:text-lg text-indigo-600 md:pb-8">
-        We recruit new member prior to the start of each semester. Please learn
+        We recruit new members prior to the start of each semester. Please learn
         more about our application process below!
       </h2>
     </div>

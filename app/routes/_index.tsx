@@ -84,7 +84,7 @@ export default function Index() {
       <div className="w-[90%] md:max-w-[1100px]">
         <MissionStatement
           weLove={weLove}
-          subtitle="Learn more about Code4Commmunity's mission below."
+          subtitle="Learn more about Code4Community's mission below."
           images={images}
         />
 

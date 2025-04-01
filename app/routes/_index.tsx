@@ -56,17 +56,6 @@ export const loader = async () => {
 const c4cPurple = "#605ACD";
 
 const weLove = "people and causes we love.";
-const images = [
-  "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//shelterlink%20(1).jpg",
-  "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//Screenshot%202025-01-30%20at%204.04.07%20PM.png",
-  "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//nefac%20(2)%20(1).jpg",
-  "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//gi%20boston.jpg",
-];
-// const image =
-//   "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//IMG_0440.jpg";
-
-// const image2 =
-//   "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//Screenshot%202025-02-21%20at%202.13.40%20AM.png";
 
 export default function Index() {
   const document = useLoaderData<HomeData>();
@@ -79,13 +68,16 @@ export default function Index() {
     linkApply: "/apply",
   }));
 
+  // images displayed in order in prismic
+  const topImages = home.top_pictures;
+  const bottomImage = home.join_team_bottom_pic;
   return (
     <div className="flex justify-center">
       <div className="w-[90%] md:max-w-[1100px]">
         <MissionStatement
           weLove={weLove}
           subtitle="Learn more about Code4Community's mission below."
-          images={images}
+          images={topImages}
         />
 
         <div className="flex flex-col md:flex-row">
@@ -122,7 +114,7 @@ export default function Index() {
 
         <div className="mt-20 mb-16">
           <img
-            src="https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//Screenshot%202025-02-21%20at%202.15.06%20AM.png"
+            src={asImageSrc(bottomImage) ?? undefined}
             alt="C4C"
             className="hidden md:block h-72 w-full object-cover shadow-small border-[2px] border-[#4A4A51]"
           />

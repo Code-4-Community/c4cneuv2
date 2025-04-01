@@ -1,7 +1,10 @@
+import { asImageSrc } from "@prismicio/client";
+import { HomeDocumentDataTopPicturesItem } from "types.generated";
+
 interface MissionStatementProps {
   weLove?: string;
   subtitle?: string;
-  images?: string[];
+  images?: HomeDocumentDataTopPicturesItem[];
 }
 
 const MissionStatement = ({
@@ -25,10 +28,10 @@ const MissionStatement = ({
         {subtitle}
       </p>
       <div>
-        {images?.[0] && (
+        {images?.[0].pic && (
           <div className="block md:hidden w-full">
             <img
-              src={images[0]}
+              src={asImageSrc(images[0].pic) ?? undefined}
               alt=""
               className="w-full aspect-[5/3] md:aspect-square object-cover shadow-small border-[2px] border-[#4A4A51]"
             />
@@ -42,7 +45,7 @@ const MissionStatement = ({
               className="w-full h-full shadow-small border-[2px] border-[#4A4A51]"
             >
               <img
-                src={image}
+                src={asImageSrc(images[0].pic) ?? undefined}
                 alt=""
                 className="w-full aspect-square object-cover"
               />

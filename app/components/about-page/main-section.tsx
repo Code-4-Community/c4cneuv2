@@ -1,9 +1,14 @@
 interface MainSectionProps {
   tagline: string;
   culture_description: string;
+  imageUrl: string | undefined;
 }
 
-const MainSection = ({ tagline, culture_description }: MainSectionProps) => {
+const MainSection = ({
+  tagline,
+  culture_description,
+  imageUrl,
+}: MainSectionProps) => {
   return (
     <div>
       <h1 className="mt-12 mb-9 md:mt-[120px] md:mb-[72px] text-2xl md:text-5xl font-medium shrink-0">
@@ -11,14 +16,11 @@ const MainSection = ({ tagline, culture_description }: MainSectionProps) => {
       </h1>
       <div className="flex justify-center">
         <div
-          className="bg-[linear-gradient(to_right_bottom,rgba(243,235,249,0.75),rgba(243,235,249,0.75)),url('app/images/main.png')]
-                        bg-cover bg-no-repeat border border-black shadow
-                        text-lg px-6 py-10
-                        md:text-3xl md:px-48 md:py-32
-                        font-medium"
+          className="bg-cover bg-no-repeat border border-black shadow text-lg px-6 py-10 md:text-3xl md:px-48 md:py-32 font-medium"
+          style={{
+            backgroundImage: `linear-gradient(to right bottom, rgba(243,235,249,0.75), rgba(243,235,249,0.75)), url(${imageUrl})`,
+          }}
         >
-          {/* Empowering through tech, fostering diversity, and leaving a lasting
-          impact. */}
           {tagline}
         </div>
       </div>

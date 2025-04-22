@@ -41,6 +41,7 @@ export default function About() {
         <MainSection
           tagline={asText(aboutData.about_pic_text)}
           culture_description={asText(aboutData.culture_description)}
+          imageUrl={asImageSrc(aboutData.about_pic) ?? undefined}
         />
         <div>
           <h2 className="text-xl mb-10 md:text-4xl md:mb-12 text-indigo-600 font-medium">

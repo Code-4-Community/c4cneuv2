@@ -56,17 +56,12 @@ export const loader = async () => {
 const c4cPurple = "#605ACD";
 
 const weLove = "people and causes we love.";
-const images = [
-  "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//shelterlink%20(1).jpg",
-  "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//Screenshot%202025-01-30%20at%204.04.07%20PM.png",
-  "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//nefac%20(2)%20(1).jpg",
-  "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//gi%20boston.jpg",
-];
-// const image =
-//   "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//IMG_0440.jpg";
-
-// const image2 =
-//   "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//Screenshot%202025-02-21%20at%202.13.40%20AM.png";
+// const images = [
+//   "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//shelterlink%20(1).jpg",
+//   "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//Screenshot%202025-01-30%20at%204.04.07%20PM.png",
+//   "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//nefac%20(2)%20(1).jpg",
+//   "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//gi%20boston.jpg",
+// ];
 
 export default function Index() {
   const document = useLoaderData<HomeData>();
@@ -78,6 +73,10 @@ export default function Index() {
     linkLearnMore: "/apply", //TODO: remove not needed, doesnt do anything
     linkApply: "/apply",
   }));
+
+  const images = home.top_pictures
+    .map((item) => asImageSrc(item.pic))
+    .filter((src): src is string => src !== null);
 
   return (
     <div className="flex justify-center">

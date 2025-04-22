@@ -121,7 +121,7 @@ export default function Index() {
 
         <div className="mt-20 mb-16">
           <img
-            src="https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//Screenshot%202025-02-21%20at%202.15.06%20AM.png"
+            src={asImageSrc(home.join_team_bottom_pic) ?? ""}
             alt="C4C"
             className="hidden md:block h-72 w-full object-cover shadow-small border-[2px] border-[#4A4A51]"
           />

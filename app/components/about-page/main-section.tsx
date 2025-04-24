@@ -11,7 +11,7 @@ const MainSection = ({
 }: MainSectionProps) => {
   return (
     <div>
-      <h1 className="mt-12 mb-9 md:mt-[120px] md:mb-[72px] text-2xl md:text-5xl font-medium shrink-0">
+      <h1 className="mb-9 md:mt-[120px] md:mb-[72px] text-2xl md:text-5xl font-medium shrink-0">
         About <span className="text-indigo-600">Code4Community</span>
       </h1>
       <div className="flex justify-center">

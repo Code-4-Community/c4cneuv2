@@ -57,7 +57,7 @@ export default function Navbar(): React.ReactElement {
             {[
               { name: "Partners", href: "/partners" },
               { name: "People", href: "/people" },
-              { name: "Projects", href: "/projects" },
+              // { name: "Projects", href: "/projects" },
               { name: "Apply", href: "/apply" },
               { name: "About Us", href: "/about" },
               { name: "FAQs", href: "/faqs" },

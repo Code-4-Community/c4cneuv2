@@ -5,7 +5,7 @@ interface JoinTeamSectionProps {
 const JoinTeamSection = ({ description }: JoinTeamSectionProps) => {
   return (
     <div className="mb-7 md:mb-10">
-      <h1 className="mt-12 mb-9 md:mt-[120px] md:mb-[72px] text-2xl md:text-5xl font-medium shrink-0">
+      <h1 className="mb-9 md:mt-[120px] md:mb-[72px] text-2xl md:text-5xl font-medium shrink-0">
         Join Our <span className="text-indigo-600"> Team</span>
       </h1>
       <h2 className="text-indigo-600 text-xl md:text-4xl font-medium mb-4 md:mb-8">

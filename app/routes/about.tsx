@@ -37,10 +37,11 @@ export default function About() {
 
   return (
     <div className="flex justify-center">
-      <div className="mt-24 w-[90%] md:max-w-[1100px]">
+      <div className="w-[90%] md:max-w-[1100px]">
         <MainSection
           tagline={asText(aboutData.about_pic_text)}
           culture_description={asText(aboutData.culture_description)}
+          imageUrl={asImageSrc(aboutData.about_pic) ?? undefined}
         />
         <div>
           <h2 className="text-xl mb-10 md:text-4xl md:mb-12 text-indigo-600 font-medium">

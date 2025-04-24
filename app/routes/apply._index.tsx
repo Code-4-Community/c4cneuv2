@@ -63,7 +63,7 @@ export default function Apply() {
 
   return (
     <div className="flex justify-center">
-      <div className="mt-24 w-[90%] md:max-w-[1100px]">
+      <div className="w-[90%] md:max-w-[1100px]">
         <JoinTeamSection
           description={asText(applyPage.join_team_description) ?? ""}
         />

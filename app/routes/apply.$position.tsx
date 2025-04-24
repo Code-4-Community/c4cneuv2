@@ -32,7 +32,7 @@ export default function Role() {
 
   return (
     <div className="flex justify-center">
-      <div className="mt-24 md:mt-12 w-[90%] md:max-w-[1100px]">
+      <div className="md-12 w-[90%] md:max-w-[1100px]">
         <RoleDetailsCard
           image1={asImageSrc(position?.top_pic) ?? undefined}
           //image1Alt={"missing"}

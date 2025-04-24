@@ -28,7 +28,7 @@ const RoleDetailsCard = ({
   return (
     <div className="flex justify-center">
       <div className="w-full max-w-[1100px]">
-        <div className="mt-10 md:mt-[120px] flex align-center mb-10 md:mb-20">
+        <div className="md:mt-[120px] flex align-center mb-10 md:mb-20">
           <button
             className="relative flex items-center justify-center ms-2 me-14"
             onClick={goBack}

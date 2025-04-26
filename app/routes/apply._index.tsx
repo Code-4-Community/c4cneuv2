@@ -13,6 +13,7 @@ import { useLoaderData } from "@remix-run/react";
 import { asLink, asText, DateField, asDate } from "@prismicio/client";
 import { RichTextField } from "@prismicio/types";
 import { prismicLinkGen } from "~/utils/util";
+import ApplyClient from "~/components/apply-page/apply-client";
 
 // needed since some of linked document type is lacking
 interface ApplyData {
@@ -103,6 +104,7 @@ export default function Apply() {
           }
         />
         {/* <ApplyClient />  add email capabilities */}
+        <ApplyClient />
       </div>
     </div>
   );

@@ -8,8 +8,8 @@ const ApplyClient = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [showSuccess, setShowSuccess] = useState(false);
-  const [showError, setShowError] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(true);
+  const [showError, setShowError] = useState(true);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

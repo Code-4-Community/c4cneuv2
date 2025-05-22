@@ -13,6 +13,7 @@ import {
 import { useLoaderData } from "@remix-run/react";
 import { asImageSrc, asLink, asText, ImageField } from "@prismicio/client";
 import { RichTextField } from "@prismicio/types";
+import HearFrom from "~/components/home-page/hear-from";
 
 // needed since some of prismic types lacking a bit
 interface HomeData {
@@ -108,6 +109,8 @@ export default function Index() {
             ))}
           </div>
         </div>
+
+        <HearFrom reviews={home.reviews} />
 
         <JoinTeamSection
           image={asImageSrc(home.join_team_people_pic) ?? ""}

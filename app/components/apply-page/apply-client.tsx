@@ -106,7 +106,7 @@ const ApplyClient = () => {
         </Label>
         <Textarea
           className="w-full h-40 border border-gray-400 p-3 rounded-md text-gray-700"
-          placeholder="Your Message"
+          placeholder="How can we help you? Please include your availability for an initial call."
           id="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}

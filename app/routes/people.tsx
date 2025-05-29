@@ -149,7 +149,8 @@ export default function People() {
   const month = seasonToMonth(currDate.getMonth());
 
   return (
-    <div className="flex justify-center">
+    <div className="relative flex justify-center">
+      <div className="absolute left-0 w-[50%] aspect-square bg-[radial-gradient(circle_at_5%,#ffb3ff,transparent_50%)] opacity-50 z-[-1] "></div>
       <div className="w-[90%] md:max-w-[1100px]">
         <h1 className="mb-9 md:mt-[120px] md:mb-[72px] text-4xl md:text-5xl font-medium shrink-0 text-left">
           Meet the <br className="block md:hidden" />

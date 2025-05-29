@@ -2,7 +2,7 @@ import { MetaFunction, useLoaderData } from "@remix-run/react";
 import MainSection from "~/components/about-page/main-section";
 import { AboutDocument } from "types.generated";
 import { getPrismicClient } from "~/utils/prismicio";
-// import EventsSection from "~/components/about-page/events-section";
+import EventsSection from "~/components/about-page/events-section";
 import WeAreComponent from "~/components/about-page/we-are-component";
 import { asImageSrc, asText } from "@prismicio/client";
 
@@ -23,17 +23,17 @@ export default function About() {
   const document = useLoaderData<AboutDocument>();
   const aboutData = document.data;
 
-  // const cde = aboutData.comm_dev_events.map((item) => ({
-  //   image: asImageSrc(item.pic) ?? undefined,
-  //   title: asText(item.title),
-  //   description: asText(item.description),
-  // }));
+  const cde = aboutData.comm_dev_events.map((item) => ({
+    image: asImageSrc(item.pic) ?? undefined,
+    title: asText(item.title),
+    description: asText(item.description),
+  }));
 
-  // const pde = aboutData.pro_dev_events.map((item) => ({
-  //   image: asImageSrc(item.pic) ?? undefined,
-  //   title: asText(item.title),
-  //   description: asText(item.description),
-  // }));
+  const pde = aboutData.pro_dev_events.map((item) => ({
+    image: asImageSrc(item.pic) ?? undefined,
+    title: asText(item.title),
+    description: asText(item.description),
+  }));
 
   return (
     <div className="flex justify-center">
@@ -60,11 +60,11 @@ export default function About() {
             </div>
           </div>
         </div>
-        {/* <EventsSection
+        <EventsSection
           description={asText(aboutData.event_description)}
           cde={cde}
           pde={pde}
-        /> */}
+        />
         {/* <NumbersSection /> maybe figure out how to do this shit */}
       </div>
     </div>

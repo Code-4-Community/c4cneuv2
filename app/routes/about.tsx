@@ -36,7 +36,9 @@ export default function About() {
   // }));
 
   return (
-    <div className="flex justify-center">
+    <div className="relative flex justify-center">
+      <div className="absolute top-0 left-0 w-[50%] aspect-square bg-[radial-gradient(circle_at_5%,#d8bcfc,transparent_50%)] opacity-50 z-[-1] "></div>
+      <div className="absolute bottom-0 right-0 w-[50%] aspect-square bg-[radial-gradient(circle_at_95%,#ffb3ff,transparent_50%)] opacity-50 z-[-1] "></div>
       <div className="w-[90%] md:max-w-[1100px]">
         <MainSection
           tagline={asText(aboutData.about_pic_text)}

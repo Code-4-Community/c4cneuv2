@@ -934,6 +934,21 @@ export interface HomeDocumentDataTopPicturesItem {
 }
 
 /**
+ * Item in *Home → people_and_causes*
+ */
+export interface HomeDocumentDataPeopleAndCausesItem {
+  /**
+   * causes field in *Home → people_and_causes*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.people_and_causes[].causes
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  causes: prismic.RichTextField;
+}
+
+/**
  * Item in *Home → we are section*
  */
 export interface HomeDocumentDataWeAreSectionItem {
@@ -1037,6 +1052,19 @@ interface HomeDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   top_pictures: prismic.GroupField<Simplify<HomeDocumentDataTopPicturesItem>>;
+
+  /**
+   * people_and_causes field in *Home*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.people_and_causes[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  people_and_causes: prismic.GroupField<
+    Simplify<HomeDocumentDataPeopleAndCausesItem>
+  >;
 
   /**
    * we are section field in *Home*
@@ -2095,6 +2123,7 @@ declare module "@prismicio/client" {
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataTopPicturesItem,
+      HomeDocumentDataPeopleAndCausesItem,
       HomeDocumentDataWeAreSectionItem,
       HomeDocumentDataReviewsItem,
       PartnersDocument,

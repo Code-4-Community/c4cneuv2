@@ -9,6 +9,7 @@ import {
   HomeDocumentDataTopPicturesItem,
   HomeDocumentDataWeAreSectionItem,
   PositionDocumentDataPositionItem,
+  HomeDocumentDataPeopleAndCausesItem,
 } from "types.generated";
 import { useLoaderData } from "@remix-run/react";
 import { asImageSrc, asLink, asText, ImageField } from "@prismicio/client";
@@ -25,6 +26,7 @@ interface HomeData {
     join_team_people_pic: ImageField<never>;
     join_team_description: RichTextField;
     join_team_button_text: RichTextField;
+    people_and_causes: HomeDocumentDataPeopleAndCausesItem[];
     positions: {
       data: {
         position: PositionDocumentDataPositionItem[];

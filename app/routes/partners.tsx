@@ -64,7 +64,7 @@ export default function Clients() {
 
   return (
     <div className="flex justify-center">
-      <div className="w-[90%] md:max-w-[1100px]">
+      <div className="mt-24 md:mt-0 w-[90%] md:max-w-[1100px]">
         <PartnerHeader {...clientQuote} />
         <h3 className="text-xl md:text-4xl mb-5 md:mb-8 font-medium">
           Current Partner Organizations

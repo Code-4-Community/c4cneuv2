@@ -10,7 +10,7 @@ const Event = ({ image, title, description }: EventProps) => {
       <img
         src={image ?? "app/icons/leaders.png"}
         alt={title ?? "Event Title"}
-        className="w-full border border-black object-cover shadow-mobile md:shadow md:mb-4"
+        className="w-full max-w-md aspect-[3/2] border border-black object-cover shadow-mobile md:shadow md:mb-4"
       />
       <p className="text-[10px] md:text-2xl text-indigo-600 mt-3 md:mt-4">
         {title ?? "Event Title"}

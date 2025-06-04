@@ -7,6 +7,7 @@ import {
   HomeDocument,
   HomeDocumentDataReviewsItem,
   HomeDocumentDataTopPicturesItem,
+  HomeDocumentDataPeopleAndCausesItem,
   HomeDocumentDataWeAreSectionItem,
   PositionDocumentDataPositionItem,
 } from "types.generated";
@@ -20,6 +21,7 @@ interface HomeData {
   data: {
     top_pictures: HomeDocumentDataTopPicturesItem[];
     we_are_section: HomeDocumentDataWeAreSectionItem[];
+    people_and_causes: HomeDocumentDataPeopleAndCausesItem[];
     reviews: HomeDocumentDataReviewsItem[];
     join_team_bottom_pic: ImageField<never>;
     join_team_people_pic: ImageField<never>;
@@ -56,17 +58,13 @@ export const loader = async () => {
 };
 const c4cPurple = "#605ACD";
 
-const weLove = "people and causes we love.";
-// const images = [
-//   "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//shelterlink%20(1).jpg",
-//   "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//Screenshot%202025-01-30%20at%204.04.07%20PM.png",
-//   "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//nefac%20(2)%20(1).jpg",
-//   "https://rdwnhypfduxqjqtibscs.supabase.co/storage/v1/object/public/photos//gi%20boston.jpg",
-// ];
-
 export default function Index() {
   const document = useLoaderData<HomeData>();
   const home = document.data;
+
+  const peopleAndCauses: string[] = home.people_and_causes
+    .map((item) => asText(item.causes))
+    .filter((text) => text.trim() !== "");
 
   const positions = home.positions.data.position.map((item) => ({
     title: asText(item.name),
@@ -83,7 +81,7 @@ export default function Index() {
     <div className="flex justify-center">
       <div className="w-[90%] md:max-w-[1100px]">
         <MissionStatement
-          weLove={weLove}
+          peopleAndCauses={peopleAndCauses}
           subtitle="Learn more about Code4Community's mission below."
           images={images}
         />

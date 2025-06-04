@@ -22,7 +22,7 @@ const MissionStatement = ({
       >
         <Typewriter
           words={peopleAndCauses}
-          loop={0}
+          loop={1}
           cursor
           cursorStyle="|"
           typeSpeed={50}

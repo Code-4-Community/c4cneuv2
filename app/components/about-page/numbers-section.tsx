@@ -1,4 +1,9 @@
-const NumbersSection = () => {
+interface NumbersSectionProps {
+  stats: { statistic: string; description: string }[];
+}
+
+const NumbersSection = ({ stats }: NumbersSectionProps) => {
+  console.log(stats);
   return (
     <div className="mb-20 md:mb-28">
       <h2 className="text-lg mb-4 md:text-3xl md:mb-16 font-medium">
@@ -11,24 +16,30 @@ const NumbersSection = () => {
                           md:ml-10 md:mb-9 md:static
                           absolute left-[-5%]"
           >
-            <span className="text-indigo-600 text-lg md:text-5xl">50+ </span>
-            active members
+            <span className="text-indigo-600 text-lg md:text-5xl">
+              {stats[0]["statistic"]}{" "}
+            </span>
+            {stats[0]["description"]}
           </h2>
           <h2
             className="text-sm md:text-4xl font-medium
                         md:pl-16 md:pb-9 md:static
-                        absolute top-20 left-[-3%]"
+                        absolute top-20 left-[-3%] whitespace-nowrap"
           >
-            <span className="text-indigo-600 text-lg md:text-5xl">100k </span>
-            users
+            <span className="text-indigo-600 text-lg md:text-5xl">
+              {stats[1]["statistic"]}{" "}
+            </span>
+            {stats[1]["description"]}
           </h2>
           <h2
             className="text-sm md:text-4xl font-medium
                         md:pb-9 md:static
                         absolute top-52 left-0"
           >
-            <span className="text-indigo-600 text-lg md:text-5xl">10 </span>
-            nonprofit partners
+            <span className="text-indigo-600 text-lg md:text-5xl">
+              {stats[2]["statistic"]}{" "}
+            </span>
+            {stats[2]["description"]}
           </h2>
         </div>
         <div className="flex justify-center md:static z-0 relative w-52 md:w-80">
@@ -44,24 +55,30 @@ const NumbersSection = () => {
                         md:mr-14 md:mb-9 md:static
                         absolute top-[-10%] left-[60%]"
           >
-            <span className="text-indigo-600 text-lg md:text-5xl">10k </span>
-            lines of code
+            <span className="text-indigo-600 text-lg md:text-5xl">
+              {stats[3]["statistic"]}{" "}
+            </span>
+            {stats[3]["description"]}
           </h2>
           <h2
             className="text-sm md:text-4xl font-medium
                         md:mr-28 md:mb-9 md:static
-                        absolute top-16 left-[80%]"
+                        absolute top-16 left-[80%] whitespace-nowrap"
           >
-            <span className="text-indigo-600 text-lg md:text-5xl">500 </span>
-            pull requests
+            <span className="text-indigo-600 text-lg md:text-5xl">
+              {stats[4]["statistic"]}{" "}
+            </span>
+            {stats[4]["description"]}
           </h2>
           <h2
             className="text-sm md:text-4xl font-medium
-                        md:mb-9 md:static
-                        absolute top-48 left-2/3"
+                        md:mr-14 md:mb-9 md:static
+                        absolute top-[-10%] left-[60%] whitespace-nowrap"
           >
-            <span className="text-indigo-600 text-lg md:text-5xl">5 </span>
-            websites deployed
+            <span className="text-indigo-600 text-lg md:text-5xl">
+              {stats[5]["statistic"]}{" "}
+            </span>
+            {stats[5]["description"]}
           </h2>
         </div>
       </div>

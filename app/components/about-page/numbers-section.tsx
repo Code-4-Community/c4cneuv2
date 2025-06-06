@@ -3,7 +3,6 @@ interface NumbersSectionProps {
 }
 
 const NumbersSection = ({ stats }: NumbersSectionProps) => {
-  console.log(stats);
   return (
     <div className="mb-20 md:mb-28">
       <h2 className="text-lg mb-4 md:text-3xl md:mb-16 font-medium">
@@ -63,7 +62,7 @@ const NumbersSection = ({ stats }: NumbersSectionProps) => {
           <h2
             className="text-sm md:text-4xl font-medium
                         md:mr-28 md:mb-9 md:static
-                        absolute top-16 left-[80%] whitespace-nowrap"
+                        absolute sm:top-20 md:top-16 left-[80%] whitespace-nowrap"
           >
             <span className="text-indigo-600 text-lg md:text-5xl">
               {stats[4]["statistic"]}{" "}
@@ -73,7 +72,7 @@ const NumbersSection = ({ stats }: NumbersSectionProps) => {
           <h2
             className="text-sm md:text-4xl font-medium
                         md:mr-14 md:mb-9 md:static
-                        absolute top-[-10%] left-[60%] whitespace-nowrap"
+                        absolute sm:top-52 md:top-[-10%] left-[60%] whitespace-nowrap"
           >
             <span className="text-indigo-600 text-lg md:text-5xl">
               {stats[5]["statistic"]}{" "}

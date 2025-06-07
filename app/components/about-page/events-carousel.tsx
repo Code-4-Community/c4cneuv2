@@ -5,8 +5,8 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  CarouselDots,
 } from "../ui/carousel";
-import { Button } from "../ui/button";
 import Event, { EventProps } from "./event";
 import { CarouselApi } from "../ui/carousel";
 
@@ -18,8 +18,6 @@ interface EventsCarouselProps {
 
 const EventsCarousel = ({ events }: EventsCarouselProps) => {
   const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const count = events.length;
   const [alignOption, setAlignOption] = useState(
     "start" as AlignmentOptionType,
   );
@@ -28,10 +26,6 @@ const EventsCarousel = ({ events }: EventsCarouselProps) => {
     if (!api) {
       return;
     }
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
-    });
   }, [api]);
 
   useEffect(() => {
@@ -70,24 +64,8 @@ const EventsCarousel = ({ events }: EventsCarouselProps) => {
 
         <CarouselPrevious className="hidden md:flex" />
         <CarouselNext className="hidden md:flex" />
+        <CarouselDots className="md:pt-2 pb-14 md:pb-16" />
       </Carousel>
-      <div className="md:py-2 text-center">
-        <div className="flex justify-center items-center gap-2 md:pt-2 pb-14 md:pb-16">
-          {Array.from({ length: count }).map((_, index) => (
-            <Button
-              key={index}
-              variant="ghost"
-              size="icon"
-              className={`rounded-full ${
-                index === current
-                  ? "bg-indigo-600 w-3 h-3 md:w-4 md:h-4 " + current + index
-                  : "bg-muted w-2 h-2 md:w-2.5 md:h-2.5 " + current + index
-              }`}
-              onClick={() => api?.scrollTo(index)}
-            />
-          ))}
-        </div>
-      </div>
     </div>
   );
 };

@@ -5,6 +5,16 @@ export default {
   content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        "purple-radial-gradient-left":
+          "radial-gradient(circle at 5%, #d8bcfc, transparent 50%)",
+        "pink-radial-gradient-left":
+          "radial-gradient(circle at 5%,rgb(231, 166, 231), transparent 50%)",
+        "purple-radial-gradient-right":
+          "radial-gradient(circle at 95%, #d8bcfc, transparent 50%)",
+        "pink-radial-gradient-right":
+          "radial-gradient(circle at 95%,rgb(231, 166, 231), transparent 50%)"
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

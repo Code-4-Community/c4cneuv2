@@ -1,13 +1,14 @@
+import { Typewriter } from "react-simple-typewriter";
 interface MissionStatementProps {
-  weLove?: string;
   subtitle?: string;
   images?: string[];
+  peopleAndCauses: string[];
 }
 
 const MissionStatement = ({
-  weLove,
   subtitle,
   images,
+  peopleAndCauses,
 }: MissionStatementProps) => {
   const c4cPurple = "#605ACD";
   return (
@@ -20,7 +21,15 @@ const MissionStatement = ({
         className="text-3xl md:text-5xl font-medium mb-3"
         style={{ color: c4cPurple }}
       >
-        {weLove ?? "default text"}
+        <Typewriter
+          words={peopleAndCauses}
+          loop={1}
+          cursor
+          cursorStyle="|"
+          typeSpeed={50}
+          deleteSpeed={50}
+          delaySpeed={2000}
+        />
       </p>
       <p className="text-xl md:text-4xl text-[#333333] md:font-medium mb-8 mt-5 md:mb-14 md:mt-8">
         {subtitle}

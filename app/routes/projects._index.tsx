@@ -34,7 +34,7 @@ export default function Projects() {
 
   return (
     <div className="flex justify-center overflow-hidden relative">
-      <div className="mt-24 w-[90%] md:max-w-[1100px] h-[45vh] flex justify-center items-center">
+      <div className="mt-24 md:mt-0 w-[90%] md:max-w-[1100px] h-[45vh] flex justify-center items-center">
         <h1 className="items-center  text-2xl md:text-5xl font-light">
           {" "}
           Coming soon ^_^

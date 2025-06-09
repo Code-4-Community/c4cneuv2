@@ -36,8 +36,10 @@ export default function About() {
   }));
 
   return (
-    <div className="flex justify-center">
-      <div className="mt-24 md:mt-0 w-[90%] md:max-w-[1100px]">
+    <div className="relative flex justify-center">
+      <div className="absolute top-0 left-0 w-[80%] md:w-[60%] aspect-square bg-purple-radial-gradient-left z-[-1] "></div>
+      <div className="absolute bottom-0 right-0 w-[80%] md:w-[60%] aspect-square bg-pink-radial-gradient-right z-[-1] "></div>
+      <div className="w-[90%] md:max-w-[1100px]">
         <MainSection
           tagline={asText(aboutData.about_pic_text)}
           culture_description={asText(aboutData.culture_description)}

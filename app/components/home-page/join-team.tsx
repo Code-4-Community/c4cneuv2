@@ -39,17 +39,19 @@ const JoinTeamSection = ({
       />
 
       <div className="flex flex-col -mt-12 md:mt-0 md:flex-row basis-full items-stretch md:gap-6">
-        {positions?.map((position, index) => (
-          <div key={index} className="w-full md:w-1/3">
-            <PositionBaseCard
-              key={index}
-              title={position.title}
-              description={position.description}
-              linkLearnMore={"/apply/" + linkGen(position.title)}
-              //TODO: dont hardcode apply
-            />
-          </div>
-        ))}
+        {positions?.map((position, index) =>
+          index < 3 ? (
+            <div key={index} className="w-full md:w-1/3">
+              <PositionBaseCard
+                key={index}
+                title={position.title}
+                description={position.description}
+                linkLearnMore={"/apply/" + linkGen(position.title)}
+                //TODO: dont hardcode apply
+              />
+            </div>
+          ) : null,
+        )}
       </div>
     </div>
   );

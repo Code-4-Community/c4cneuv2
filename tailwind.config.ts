@@ -7,13 +7,13 @@ export default {
     extend: {
       backgroundImage: {
         "purple-radial-gradient-left":
-          "radial-gradient(circle at 5%, #d8bcfc, transparent 50%)",
+          "radial-gradient(circle at 5%, #d8bcfc, transparent 45%)",
         "pink-radial-gradient-left":
-          "radial-gradient(circle at 5%,rgb(231, 166, 231), transparent 50%)",
+          "radial-gradient(circle at 5%,rgb(252, 204, 252), transparent 45%)",
         "purple-radial-gradient-right":
-          "radial-gradient(circle at 95%, #d8bcfc, transparent 50%)",
+          "radial-gradient(circle at 95%, #d8bcfc, transparent 45%)",
         "pink-radial-gradient-right":
-          "radial-gradient(circle at 95%,rgb(231, 166, 231), transparent 50%)"
+          "radial-gradient(circle at 95%,rgb(252, 204, 252), transparent 45%)",
       },
       borderRadius: {
         lg: "var(--radius)",

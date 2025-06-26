@@ -13,6 +13,7 @@ const MissionStatement = ({
   const c4cPurple = "#605ACD";
   return (
     <div className="flex flex-col h-[110vh] md:h-[90vh] justify-center">
+      <div className="absolute left-0 w-[120%] md:w-[60%] aspect-square bg-purple-radial-gradient-left z-[-1]"></div>
       <p className="text-3xl md:text-5xl text-[#333333] md:mb-3 font-medium">
         Designing software solutions for
       </p>

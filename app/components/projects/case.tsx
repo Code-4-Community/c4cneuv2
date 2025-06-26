@@ -2,7 +2,6 @@ import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import { OpenLink } from "../icons";
 import { useNavigate } from "@remix-run/react";
 
-
 export interface CaseProps {
   logo?: string;
   title?: string;
@@ -12,7 +11,6 @@ export interface CaseProps {
   website_image?: string;
   link?: string;
 }
-
 
 const Case = ({ case: caseData }: { case: CaseProps }) => {
   const {
@@ -24,7 +22,6 @@ const Case = ({ case: caseData }: { case: CaseProps }) => {
     website_image,
     link,
   } = caseData;
-
 
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
@@ -75,7 +72,6 @@ const Case = ({ case: caseData }: { case: CaseProps }) => {
         </p>
       </div>
 
-
       <div className="w-full max-w-5xl bg-[#fcfcfc] object-cover shadow-small border-[2px] border-[#4A4A51] p-8 mb-4 md:mb-5">
         <h2 className="text-2xl md:text-4xl font-medium text-[#6059cd] mb-4 md:mb-8">
           Our Solution
@@ -109,8 +105,4 @@ const Case = ({ case: caseData }: { case: CaseProps }) => {
   );
 };
 
-
 export default Case;
-
-
-

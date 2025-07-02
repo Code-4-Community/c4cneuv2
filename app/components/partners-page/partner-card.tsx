@@ -34,10 +34,10 @@ const PartnerCard = ({
         </p>
       </div>
       <div className="flex flex-col w-full space-y-1.5 md:space-y-3">
-        <div className="mt-2 w-full text-left ">
+        <div className="mt-2 w-full text-left">
           <Link
             to={caseStudyLink ? caseStudyLink : ""}
-            className={` object-cover shadow-small px-8 py-3 w-full mt-6 text-[#333333] text-center border border-[#4a4951] px-6 py-2 object-cover shadow-small font-bold text-sm  ${
+            className={` object-cover shadow-small px-8 py-3 w-full mt-6  mb-3 text-[#333333] text-center border border-[#4a4951] px-6 py-2 object-cover shadow-small font-bold text-sm  ${
               caseStudyLink
                 ? "bg-[#f8ecff] border-[#4a4951] hover:bg-[#EDBAFF] transition"
                 : "bg-[#E7E5EE] text-[#CAC9D0] border-[#9A98A2] pointer-events-none"

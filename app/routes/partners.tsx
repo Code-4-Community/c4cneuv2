@@ -1,6 +1,6 @@
 import { type MetaFunction } from "@remix-run/node";
-import PartnerCard from "~/components/partners-page/partner-card";
 import PartnerHeader from "~/components/partners-page/partner-header";
+import PartnerCarousel from "~/components/partners-page/partner-carousel";
 import { ClientquoteDocument, CurrclientDocument } from "types.generated";
 import { PastclientDocument } from "types.generated";
 import { getPrismicClient } from "~/utils/prismicio";
@@ -72,9 +72,7 @@ export default function Clients() {
           Current Partner Organizations
         </h3>
         <div className="grid md:grid-cols-3 gap-x-3 md:gap-x-6 gap-y-7 md:gap-y-10">
-          {currClients.map((client, index) => (
-            <PartnerCard {...client} key={index} />
-          ))}
+          <PartnerCarousel partners={currClients} />
         </div>
 
         <div>
@@ -82,9 +80,7 @@ export default function Clients() {
             Past Partner Organizations
           </h3>
           <div className="grid md:grid-cols-3 gap-x-6 gap-y-7 md:gap-y-10 mb-14 md:mb-6">
-            {pastClients.map((client, index) => (
-              <PartnerCard {...client} key={index} />
-            ))}
+            <PartnerCarousel partners={pastClients} />
           </div>
         </div>
       </div>

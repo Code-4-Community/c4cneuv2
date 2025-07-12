@@ -1,5 +1,8 @@
 import { type MetaFunction } from "@remix-run/node";
-// import { getPrismicClient } from "~/utils/prismicio";
+import { getPrismicClient } from "~/utils/prismicio";
+import Timeline from "~/components/jumpstart-page/timeline";
+import { JumpstartDocument } from "types.generated";
+import { useLoaderData } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -11,15 +14,25 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-// export const loader = async () => {
-//   const client = await getPrismicClient();
-// };
+export const loader = async () => {
+  const client = await getPrismicClient();
+
+  return await client.getSingle<JumpstartDocument>("jumpstart");
+};
 
 export default function Jumpstart() {
+  const jumpStartData = useLoaderData<JumpstartDocument>();
+  console.log("Jumpstart Data:", jumpStartData.data.timeline);
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-4xl font-bold mb-4">Jumpstart Page</h1>
-      <p className="text-lg">This is a placeholder for the Jumpstart page.</p>
+    <div className="relative flex justify-center">
+      <div className="w-[90%] md:max-w-[1100px]">
+        <Timeline
+          timelineData={(jumpStartData.data.timeline ?? []).map((item) => ({
+            title: item.title ?? "",
+            description1: item.description1 ?? "",
+          }))}
+        />
+      </div>
     </div>
   );
 }

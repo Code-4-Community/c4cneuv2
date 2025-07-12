@@ -1,6 +1,8 @@
+import { asText, asLink } from "@prismicio/client";
+
 interface JumpstartIntroProps {
-  description?: string;
-  signUpLink?: string;
+  description: import("@prismicio/client").RichTextField;
+  signUpLink: import("@prismicio/client").LinkField;
 }
 
 const JumpstartIntro = ({ description, signUpLink }: JumpstartIntroProps) => {
@@ -11,10 +13,10 @@ const JumpstartIntro = ({ description, signUpLink }: JumpstartIntroProps) => {
           Jumpstart
         </p>
         <p className="text-md md:text-2xl text-[#333333] mb-16 mt-6 md:mb-24 md:mt-10">
-          {description}
+          {asText(description)}
         </p>
         <a
-          href={signUpLink}
+          href={asLink(signUpLink) ?? "#"}
           target="_blank"
           rel="noopener noreferrer"
           className={`flex justify-center items-center gap-1 md:gap-2 text-sm md:text-base block w-1/3 bg-white-200 font-bold border-[1px] md:border-[1.5px] border-black shadow-mobile md:shadow-small py-2.5 text-center bg-[#f8ecff] border-[#4a4951] hover:bg-[#EDBAFF] transition

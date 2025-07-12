@@ -1,4 +1,4 @@
-import AccordionFold from "../AccordionFold";
+import AccordionFold from "../ui/accordion-fold";
 import { asText } from "@prismicio/client";
 
 interface TimelineProps {

@@ -3,7 +3,7 @@ import { useLoaderData } from "@remix-run/react";
 import { getPrismicClient } from "~/utils/prismicio";
 import { FaqDocument } from "types.generated";
 import { asLink, asText } from "@prismicio/client";
-import AccordionFold from "~/components/AccordionFold";
+import AccordionFold from "~/components/ui/accordion-fold";
 
 export const meta: MetaFunction = () => {
   return [

@@ -1,11 +1,16 @@
-import { asText, asLink } from "@prismicio/client";
+import { asText, asLink, asImageSrc } from "@prismicio/client";
 
 interface JumpstartIntroProps {
   description: import("@prismicio/client").RichTextField;
   signUpLink: import("@prismicio/client").LinkField;
+  image: import("@prismicio/client").ImageField;
 }
 
-const JumpstartIntro = ({ description, signUpLink }: JumpstartIntroProps) => {
+const JumpstartIntro = ({
+  description,
+  signUpLink,
+  image,
+}: JumpstartIntroProps) => {
   return (
     <div className="flex flex-row items-center overflow-x-hidden">
       <div className="flex flex-col h-[110vh] md:h-[90vh] justify-center md:mr-16 relative">
@@ -27,7 +32,10 @@ const JumpstartIntro = ({ description, signUpLink }: JumpstartIntroProps) => {
         </a>
       </div>
       <div className="hidden md:flex justify-center md:w-1/2">
-        <img src="/app/icons/typing.svg" alt={"web development"} />
+        <img
+          src={asImageSrc(image) ?? "/app/icons/typing.svg"}
+          alt={"web development"}
+        />
       </div>
     </div>
   );

@@ -1322,6 +1322,17 @@ export interface JumpstartDocumentDataTimelineItem {
  */
 interface JumpstartDocumentData {
   /**
+   * main_pic field in *Jumpstart*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: jumpstart.main_pic
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  main_pic: prismic.ImageField<never>;
+
+  /**
    * description field in *Jumpstart*
    *
    * - **Field Type**: Rich Text

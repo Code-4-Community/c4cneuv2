@@ -5,6 +5,7 @@ import { getPrismicClient } from "~/utils/prismicio";
 import EventsSection from "~/components/about-page/events-section";
 import WeAreComponent from "~/components/about-page/we-are-component";
 import { asImageSrc, asText } from "@prismicio/client";
+import NumbersSection from "~/components/about-page/numbers-section";
 
 export const meta: MetaFunction = () => {
   return [
@@ -32,6 +33,11 @@ export default function About() {
   const pde = aboutData.pro_dev_events.map((item) => ({
     image: asImageSrc(item.pic) ?? undefined,
     title: asText(item.title),
+    description: asText(item.description),
+  }));
+
+  const numbersData = aboutData.by_the_numbers.map((item) => ({
+    statistic: asText(item.statistic),
     description: asText(item.description),
   }));
 
@@ -67,7 +73,7 @@ export default function About() {
           cde={cde}
           pde={pde}
         />
-        {/* <NumbersSection /> maybe figure out how to do this shit */}
+        <NumbersSection stats={numbersData} />
       </div>
     </div>
   );

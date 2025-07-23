@@ -12,7 +12,7 @@ const HearFrom = (props: HearFromProps) => {
   const [quotes, setQuotes] = useState<QuoteProps[]>([]);
 
   useEffect(() => {
-    const sliced = props.reviews.slice(0, 3).map((item) => ({
+    const sliced = props.reviews.map((item) => ({
       name: asText(item.name),
       role: asText(item.role),
       description: asText(item.description),

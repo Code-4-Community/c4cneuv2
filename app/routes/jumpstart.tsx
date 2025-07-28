@@ -34,7 +34,7 @@ export default function Jumpstart() {
             signUpLink={jumpStartData.signup}
             image={jumpStartData.main_pic}
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-28 items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-28 items-stretch">
             {(jumpStartData.faqs ?? []).map((faq, index) => (
               <div key={index} className="h-full">
                 <FAQCard question={faq.question} answer={faq.answer} />

@@ -64,27 +64,22 @@ export default function Apply() {
 
   return (
     <div className="flex justify-center">
-      <div className="w-[90%] md:max-w-[1100px]">
+      <div className="mt-24 md:mt-0 w-[90%] md:max-w-[1100px]">
         <JoinTeamSection
           description={asText(applyPage.join_team_description) ?? ""}
         />
-        <div className="mb-20">
-          <h3 className="text-xl text-left font-medium text-[#4A4A51] mb-4 md:mb-2 md:pb-8">
-            Positions
-          </h3>
-          <div className="flex flex-col md:flex-row gap-y-14 md:gap-x-6">
-            {positions.map((position, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 items-stretch">
+          {positions.map((position, index) => (
+            <div key={index} className="h-full">
               <PositionCard
-                key={index}
                 title={asText(position.name)}
                 description={asText(position.short_description)}
                 linkLearnMore={prismicLinkGen(position.name)}
                 linkApply={asLink(position.application) ?? ""}
               />
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-
         <AppTimeline
           periods={
             [
@@ -103,7 +98,6 @@ export default function Apply() {
             ] as [Period, Period, Period]
           }
         />
-        {/* <ApplyClient />  add email capabilities */}
         <ApplyClient />
       </div>
     </div>

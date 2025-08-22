@@ -1,14 +1,9 @@
 import { type MetaFunction } from "@remix-run/node";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../components/ui/accordion";
-import { Link, useLoaderData } from "@remix-run/react";
+import { useLoaderData } from "@remix-run/react";
 import { getPrismicClient } from "~/utils/prismicio";
 import { FaqDocument } from "types.generated";
 import { asLink, asText } from "@prismicio/client";
+import AccordionFold from "~/components/ui/accordion-fold";
 
 export const meta: MetaFunction = () => {
   return [
@@ -28,45 +23,20 @@ export default function FAQs() {
 
   return (
     <div className="flex justify-center">
-      <div className="w-[90%] md:max-w-[1100px]">
+      <div className="mt-24 md:mt-0 w-[90%] md:max-w-[1100px]">
         <h1 className="mb-9 md:mt-[120px] md:mb-[72px] text-2xl md:text-5xl font-medium shrink-0">
           Frequently Asked <span className="text-indigo-600">Questions</span>
         </h1>
         {faqs.data.question_answer.map((item, key) => (
-          <Accordion type="multiple" key={key}>
-            <AccordionItem
-              value="item-1"
-              className="shadow-small mb-5 md:mb-8 border border-black px-3 py-1 md:py-6 md:px-8"
-            >
-              <AccordionTrigger className="font-medium text-m md:text-2xl">
-                {asText(item.question)}
-              </AccordionTrigger>
-              <AccordionContent>
-                <div className="mb-2 mt-3 md:mb-4 md:mt-5">
-                  {asText(item.answer, { separator: "\n" })
-                    ?.split("\n")
-                    .map(
-                      (
-                        par,
-                        index, // TODO: change in prismic because this is a hack
-                      ) => (
-                        <p className="mb-4" key={index}>
-                          {par}
-                        </p>
-                      ),
-                    )}
-                </div>
-                {item.link && item.link_text && (
-                  <Link
-                    to={asLink(item.link) ?? ""}
-                    className="underline underline-offset-4 md:underline-offset-8 font-bold"
-                  >
-                    {asText(item.link_text)}
-                  </Link>
-                )}
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <AccordionFold
+            key={key}
+            item={{
+              title: asText(item.question),
+              description: asText(item.answer, { separator: "\n" }),
+              link: asLink(item.link) ?? undefined,
+              link_text: asText(item.link_text),
+            }}
+          />
         ))}
       </div>
     </div>

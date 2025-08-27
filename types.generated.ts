@@ -110,6 +110,31 @@ export interface AboutDocumentDataProDevEventsItem {
 }
 
 /**
+ * Item in *About → by the numbers*
+ */
+export interface AboutDocumentDataByTheNumbersItem {
+  /**
+   * statistic field in *About → by the numbers*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.by_the_numbers[].statistic
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  statistic: prismic.RichTextField;
+
+  /**
+   * description field in *About → by the numbers*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.by_the_numbers[].description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+}
+
+/**
  * Content for About documents
  */
 interface AboutDocumentData {
@@ -193,6 +218,19 @@ interface AboutDocumentData {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   event_description: prismic.RichTextField;
+
+  /**
+   * by the numbers field in *About*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.by_the_numbers[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  by_the_numbers: prismic.GroupField<
+    Simplify<AboutDocumentDataByTheNumbersItem>
+  >;
 }
 
 /**
@@ -1165,6 +1203,132 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 /**
+ * Item in *Jumpstart → FAQs*
+ */
+export interface JumpstartDocumentDataFaqsItem {
+  /**
+   * question field in *Jumpstart → FAQs*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: jumpstart.faqs[].question
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  question: prismic.RichTextField;
+
+  /**
+   * answer field in *Jumpstart → FAQs*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: jumpstart.faqs[].answer
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  answer: prismic.RichTextField;
+}
+
+/**
+ * Item in *Jumpstart → timeline*
+ */
+export interface JumpstartDocumentDataTimelineItem {
+  /**
+   * title field in *Jumpstart → timeline*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: jumpstart.timeline[].title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *Jumpstart → timeline*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: jumpstart.timeline[].description1
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description1: prismic.RichTextField;
+}
+
+/**
+ * Content for Jumpstart documents
+ */
+interface JumpstartDocumentData {
+  /**
+   * main_pic field in *Jumpstart*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: jumpstart.main_pic
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  main_pic: prismic.ImageField<never>;
+
+  /**
+   * description field in *Jumpstart*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: jumpstart.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * FAQs field in *Jumpstart*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: jumpstart.faqs[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  faqs: prismic.GroupField<Simplify<JumpstartDocumentDataFaqsItem>>;
+
+  /**
+   * timeline field in *Jumpstart*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: jumpstart.timeline[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  timeline: prismic.GroupField<Simplify<JumpstartDocumentDataTimelineItem>>;
+
+  /**
+   * signup field in *Jumpstart*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: jumpstart.signup
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  signup: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Jumpstart document from Prismic
+ *
+ * - **API ID**: `jumpstart`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type JumpstartDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<JumpstartDocumentData>,
+    "jumpstart",
+    Lang
+  >;
+
+/**
  * Item in *Partners → current_clients*
  */
 export interface PartnersDocumentDataCurrentClientsItem {
@@ -2107,6 +2271,7 @@ export type AllDocumentTypes =
   | EventDocument
   | FaqDocument
   | HomeDocument
+  | JumpstartDocument
   | PartnersDocument
   | PastclientDocument
   | PeopleDocument
@@ -2143,6 +2308,7 @@ declare module "@prismicio/client" {
       AboutDocumentDataWeAreItem,
       AboutDocumentDataCommDevEventsItem,
       AboutDocumentDataProDevEventsItem,
+      AboutDocumentDataByTheNumbersItem,
       AboutCdeDocument,
       AboutCdeDocumentData,
       AboutCdeDocumentDataEventsItem,
@@ -2174,6 +2340,10 @@ declare module "@prismicio/client" {
       HomeDocumentDataPeopleAndCausesItem,
       HomeDocumentDataWeAreSectionItem,
       HomeDocumentDataReviewsItem,
+      JumpstartDocument,
+      JumpstartDocumentData,
+      JumpstartDocumentDataFaqsItem,
+      JumpstartDocumentDataTimelineItem,
       PartnersDocument,
       PartnersDocumentData,
       PartnersDocumentDataCurrentClientsItem,

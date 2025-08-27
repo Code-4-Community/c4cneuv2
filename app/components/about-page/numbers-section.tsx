@@ -1,8 +1,9 @@
 interface NumbersSectionProps {
+  img: string | undefined;
   stats: { statistic: string; description: string }[];
 }
 
-const NumbersSection = ({ stats }: NumbersSectionProps) => {
+const NumbersSection = ({ img, stats }: NumbersSectionProps) => {
   return (
     <div className="mb-20 md:mb-28">
       <h2 className="text-lg mb-4 md:text-3xl md:mb-16 font-medium">
@@ -43,7 +44,7 @@ const NumbersSection = ({ stats }: NumbersSectionProps) => {
         </div>
         <div className="flex justify-center md:static z-0 relative w-52 md:w-80">
           <img
-            src="app/images/numbers.png"
+            src={img}
             alt="Illustration"
             className="h-full w-full object-contain"
           />

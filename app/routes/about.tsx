@@ -36,6 +36,8 @@ export default function About() {
     description: asText(item.description),
   }));
 
+  const byTheNumbersImage = aboutData.by_the_numbers_image;
+
   const numbersData = aboutData.by_the_numbers.map((item) => ({
     statistic: asText(item.statistic),
     description: asText(item.description),
@@ -73,7 +75,10 @@ export default function About() {
           cde={cde}
           pde={pde}
         />
-        <NumbersSection stats={numbersData} />
+        <NumbersSection
+          img={asImageSrc(byTheNumbersImage) ?? undefined}
+          stats={numbersData}
+        />
       </div>
     </div>
   );

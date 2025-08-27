@@ -220,6 +220,17 @@ interface AboutDocumentData {
   event_description: prismic.RichTextField;
 
   /**
+   * by_the_numbers_image field in *About*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.by_the_numbers_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  by_the_numbers_image: prismic.ImageField<never>;
+
+  /**
    * by the numbers field in *About*
    *
    * - **Field Type**: Group

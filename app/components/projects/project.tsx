@@ -23,7 +23,7 @@ const Project = ({
         <img
           src={logo ?? "https://i.imgur.com/BlBH8Ak.jpeg"}
           alt={title}
-          className="w-96 h-44 object-cover rounded-sm mb-4"
+          className="h-40 w-40 md:h-[100px] md:w-[100px] object-cover"
         />
         <div className="flex flex-col justify-start items-center gap-6 mx-6 flex-grow w-full max-w-lg">
           <div>

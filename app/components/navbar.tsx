@@ -61,7 +61,6 @@ export default function Navbar(): React.ReactElement {
               { name: "Apply", href: "/apply" },
               { name: "About Us", href: "/about" },
               { name: "FAQs", href: "/faqs" },
-              { name: "Jumpstart", href: "/jumpstart" },
             ].map((link) => (
               <Link
                 key={link.name}

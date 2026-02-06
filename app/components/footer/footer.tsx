@@ -19,7 +19,6 @@ export default function Footer() {
               { name: "Partners", href: "/partners" },
               { name: "Apply", href: "/apply" },
               { name: "FAQs", href: "/faqs" },
-              { name: "Jumpstart", href: "/jumpstart" },
             ].map((link) => (
               <Link
                 key={link.name}

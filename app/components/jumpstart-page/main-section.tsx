@@ -13,7 +13,7 @@ const JumpstartIntro = ({
 }: JumpstartIntroProps) => {
   return (
     <div className="flex flex-row items-center overflow-x-hidden">
-      <div className="flex flex-col h-[100vh] md:h-[90vh] justify-center md:mr-10 md:w-2/3 relative">
+      <div className="flex flex-col justify-center md:mr-10 md:w-2/3 relative py-10 md:py-20">
         <p className="text-2xl md:text-4xl text-[#333333] md:mb-3 font-medium">
           Jumpstart
         </p>
@@ -31,7 +31,7 @@ const JumpstartIntro = ({
         </a>
       </div>
 
-      <div className="hidden md:flex md:w-1/3 justify-center items-center h-[100vh]">
+      <div className="flex md:w-1/3 justify-center items-center">
         <img
           src={asImageSrc(image) ?? "/app/icons/typing.svg"}
           alt="web development"

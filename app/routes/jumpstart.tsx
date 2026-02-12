@@ -28,7 +28,7 @@ export default function Jumpstart() {
       <div className="relative flex justify-center">
         <div className="absolute top-[1%] md:top-0 left-0 w-[100%] md:w-[60%] aspect-square bg-purple-radial-gradient-left z-[-1] "></div>
         <div className="absolute top-1/3 right-0 w-[100%] md:w-[60%] aspect-square bg-pink-radial-gradient-right z-[-1] "></div>
-        <div className="w-[90%] md:max-w-[1100px]">
+        <div className="mt-24 md:mt-0 w-[90%] md:max-w-[1100px]">
           <JumpstartIntro
             description={jumpStartData.description}
             signUpLink={jumpStartData.signup}

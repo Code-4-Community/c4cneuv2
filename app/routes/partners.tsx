@@ -66,7 +66,7 @@ export default function Clients() {
     <div className="relative flex justify-center">
       <div className="absolute top-0 left-0 w-[120%] md:w-[60%] aspect-square bg-purple-radial-gradient-left z-[-1]"></div>
       <div className="absolute bottom-[45%] right-0 w-[120%] md:w-[60%] aspect-square bg-pink-radial-gradient-right z-[-1]"></div>
-      <div className="w-[90%] md:max-w-[1100px]">
+      <div className="mt-24 md:mt-0 w-[90%] md:max-w-[1100px]">
         <PartnerHeader {...clientQuote} />
         <h3 className="text-xl md:text-4xl mb-5 md:mb-8 font-medium">
           Current Partner Organizations

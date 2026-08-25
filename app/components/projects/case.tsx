@@ -24,7 +24,14 @@ const Case = ({ case: caseData }: { case: CaseProps }) => {
   } = caseData;
 
   const navigate = useNavigate();
-  const goBack = () => navigate(-1);
+
+  // The router tracks its position in the history stack as `idx`. It is 0 when
+  // this page is the first entry, i.e. the visitor landed here directly from a
+  // search result or a shared link, so going back would leave the site.
+  const goBack = () => {
+    const idx = window.history.state?.idx ?? 0;
+    return idx > 0 ? navigate(-1) : navigate("/projects");
+  };
   return (
     <div className="flex flex-col items-center px-4 md:px-8 lg:px-16">
       <div className="w-full max-w-5xl text-left my-8 flex">

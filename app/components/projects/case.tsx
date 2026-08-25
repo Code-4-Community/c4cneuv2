@@ -25,9 +25,6 @@ const Case = ({ case: caseData }: { case: CaseProps }) => {
 
   const navigate = useNavigate();
 
-  // The router tracks its position in the history stack as `idx`. It is 0 when
-  // this page is the first entry, i.e. the visitor landed here directly from a
-  // search result or a shared link, so going back would leave the site.
   const goBack = () => {
     const idx = window.history.state?.idx ?? 0;
     return idx > 0 ? navigate(-1) : navigate("/projects");

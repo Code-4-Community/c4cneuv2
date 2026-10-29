@@ -17,7 +17,8 @@ const eboardTeam = "eboard";
 enum RoleType {
   LEAD = "lead",
   DEV = "dev",
-  DESIGNER = "designer",
+  PRODUCT_DESIGNER = "product_designer",
+  BRAND_DESIGNER = "brand_designer",
 }
 
 const stringToRoleType = (role: string): RoleType | undefined => {
@@ -30,8 +31,10 @@ const displayRoleType = (role: string): string => {
       return "Project Leads";
     case RoleType.DEV:
       return "Software developers";
-    case RoleType.DESIGNER:
+    case RoleType.PRODUCT_DESIGNER:
       return "Product Designers";
+    case RoleType.BRAND_DESIGNER:
+      return "Brand Designers";
     default:
       return "";
   }
@@ -66,7 +69,12 @@ interface TeamData {
 }
 
 const transformTeams = (document: TeamData[]): Map<string, TeamInfo> => {
-  const roleOrder = [RoleType.LEAD, RoleType.DESIGNER, RoleType.DEV];
+  const roleOrder = [
+    RoleType.LEAD,
+    RoleType.PRODUCT_DESIGNER,
+    RoleType.DEV,
+    RoleType.BRAND_DESIGNER,
+  ];
   return document
     .filter((obj) => obj.data.team_name !== eboardTeam)
     .reduce<Map<string, TeamInfo>>((acc, obj) => {

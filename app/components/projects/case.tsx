@@ -24,7 +24,11 @@ const Case = ({ case: caseData }: { case: CaseProps }) => {
   } = caseData;
 
   const navigate = useNavigate();
-  const goBack = () => navigate(-1);
+
+  const goBack = () => {
+    const idx = window.history.state?.idx ?? 0;
+    return idx > 0 ? navigate(-1) : navigate("/projects");
+  };
   return (
     <div className="flex flex-col items-center px-4 md:px-8 lg:px-16">
       <div className="w-full max-w-5xl text-left my-8 flex">
